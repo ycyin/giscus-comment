@@ -1,3 +1,9 @@
+#######利用githu提供的workflows编译vuepress文件,并将文件推送到gh-pages分支上创建githu pages.
+# github actions官网：https://github.com/features/actions
+# 配置按照以下步骤执行
+# 1.创建personal access token,参考：https://docs.github.com/cn/github/authenticating-to-github/creating-a-personal-access-token
+# 2.创建encrypted-secrets,参考：https://docs.github.com/en/actions/reference/encrypted-secrets
+# 3.创建本workflows文件,语法参考：https://docs.github.com/cn/actions/reference/workflow-syntax-for-github-actions
 name: github pages
 
 on:
@@ -9,13 +15,18 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1 #使用actions/checkout@v1插件拉取代码。
-    - run: npm ci # 相当于npm install
-    - run: npm run docs:build
+    # 使用actions/checkout@v2插件拉取代码,插件更多用法https://github.com/marketplace/actions/checkout
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    # 下载依赖包npm install和打包项目npm run build
+    - name: Clean install dependencies and build
+      run: |
+        npm ci
+        npm run docs:build 
 
-    #发布到yinyicao.github.io/master
-    - name: Deploy yinyicao.github.io/master
-      # 使用actions-gh-pages@v3插件发布到相关仓库中,插件更多用法https://github.com/marketplace/actions/github-pages-action
+    # 使用actions-gh-pages@v3插件发布到gh-pages分支上,插件更多用法https://github.com/marketplace/actions/github-pages-action
+    - name: Deploy yinyicao.github.io/gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.ACCESS_TOKEN }}
