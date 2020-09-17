@@ -1,0 +1,24 @@
+name: github pages
+
+on:
+  push: # 当push文件到仓库 master分支上时触发流程。
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1 #使用actions/checkout@v1插件拉取代码。
+    - run: npm ci # 相当于npm install
+    - run: npm run docs:build
+
+    #发布到yinyicao.github.io/master
+    - name: Deploy yinyicao.github.io/master
+      # 使用actions-gh-pages@v3插件发布到相关仓库中,插件更多用法https://github.com/marketplace/actions/github-pages-action
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.ACCESS_TOKEN }}
+        publish_branch: gh-pages  # default: gh-pages
+        publish_dir: docs/.vuepress/dist
+        allow_empty_commit: false
