@@ -1,0 +1,20 @@
+{
+  "name": "blog_yyc",
+  "version": "1.0.0",
+  "description": "博客",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "keywords": [
+    "尹以操的博客"
+  ],
+  "author": "尹以操",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.5.4",
+    "vuepress-theme-reco": "^1.5.7"
+  }
+}
