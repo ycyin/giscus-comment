@@ -1,4 +1,12 @@
 module.exports = {
+  plugins: [
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'chtml'
+      },
+    ],  
+  ],
   // 移动端优化
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
@@ -13,6 +21,8 @@ module.exports = {
   themeConfig: {
    type: 'blog',
    sidebar: 'auto',
+   sidebarDepth: 2,
+   displayAllHeaders: true,
    smoothScroll: true,
    author: '小松鼠',
    //authorAvatar: '/img/avatar/bitbug_favicon128.ico',
@@ -20,6 +30,8 @@ module.exports = {
    nav: [
      { text: '主页', link: '/',icon: 'reco-home' },
      { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
+     { text: '常用网站', link: '/websites', icon: 'reco-document' },
+     { text: '留言板', link: '/messageboard', icon: 'reco-suggestion' },
      { text: 'GitHub', link: 'https://github.com/yinyicao',icon: 'reco-github' }
    ],
     // 博客配置
@@ -33,6 +45,12 @@ module.exports = {
        text: '标签'      // 默认文案 “标签”
      }
    },
+   // valine评论系统（showComment: false 默认不加载）
+   valineConfig: {
+    appId: 'MzWUFw6KWun6JXiHvkwwMdIF-gzGzoHsz',
+    appKey: 'eKS3DlOEPpav4sMyuQYpBmO9', 
+    showComment: false
+  },
     // 备案
     record: 'ICP 备案文案',
     recordLink: 'ICP 备案指向链接',
