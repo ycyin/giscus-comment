@@ -9,7 +9,8 @@ module.exports = {
   ],
   // 移动端优化
   head: [
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+    ["script", { src: "scripts/myfooter.js" }]
   ],
   title: '敲代码的小松鼠',
   locales: {
