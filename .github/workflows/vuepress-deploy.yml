@@ -24,7 +24,7 @@ jobs:
       run: |
         npm ci
         npm run docs:build
-        echo ${{ secrets.CNAME_URL }} > docs/.vuepress/dist 
+        echo ${{ secrets.CNAME_URL }} > docs/.vuepress/dist/CNAME 
 
     # 使用actions-gh-pages@v3插件发布到gh-pages分支上,插件更多用法https://github.com/marketplace/actions/github-pages-action
     - name: Deploy yinyicao.github.io/gh-pages
