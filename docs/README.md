@@ -8,4 +8,12 @@ bgImageStyle: {
 }
 ---
 
+<script>
+export default {
+  mounted () {
+    // 隐藏页脚的主题版本信息
+    document.getElementsByClassName("footer-wrapper footer")[0].firstElementChild.style.display="none"
+  }
+}
+</script>
 
