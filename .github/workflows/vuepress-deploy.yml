@@ -19,11 +19,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       
-    # 下载依赖包npm install和打包项目npm run build
+    # 下载依赖包npm install和打包项目npm run build、设置CNAME
     - name: Clean install dependencies and build
       run: |
         npm ci
-        npm run docs:build 
+        npm run docs:build
+        echo ${{ secrets.CNAME_URL }} > docs/.vuepress/dist 
 
     # 使用actions-gh-pages@v3插件发布到gh-pages分支上,插件更多用法https://github.com/marketplace/actions/github-pages-action
     - name: Deploy yinyicao.github.io/gh-pages
