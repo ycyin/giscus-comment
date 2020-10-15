@@ -9,7 +9,7 @@ keywords:
   - windows结束进程
   - taskkill
 date: 2020-06-26 16:02:33
-categories: 常用命令
+categories: Windows
 description: windows查看端口占用、结束进程。
 ---
 ### 前言
@@ -56,11 +56,11 @@ C:\Users\Administrator>taskkill /pid 9948 /F
 
 这一步同样可以在任务管理器中执行，右击windows任务栏，选择任务管理器（快捷键：`Ctrl+Shift+Esc`）选择详细信息找到PID为9948的条目，如下图所示。`javaw.exe`就是任务管理器中的映像名称，选中它并点击”结束进程”即可。
 
-<img :src="$withBase('/Windows/port-usage-and-taskkill-in-windows/945531-20170422114107571-1922132507.png')" alt="通过任务管理器结束">
+![通过任务管理器结束](./port-usage-and-taskkill-in-windows/945531-20170422114107571-1922132507.png)
 
 ### 完整命令截图
 
-<img :src="$withBase('/Windows/port-usage-and-taskkill-in-windows/945531-20170422114506899-1806573904.png')" alt="完整命令截图">
+![完整命令截图](./port-usage-and-taskkill-in-windows/945531-20170422114506899-1806573904.png)
 
 > 该篇文章转载自本人的博客园（不再更新）。
 

@@ -14,11 +14,11 @@ categories: Vue
 
 服务器返回数据
 
-<img :src="$withBase('/Web/gets-the-el-table-cell-value-and-renders-the-element-custom-style-in-element-ui/img-1.png')" alt="服务器返回数据">
+![服务器返回数据](./gets-the-el-table-cell-value-and-renders-the-element-custom-style-in-element-ui/img-1.png)
 
 页面显示效果
 
-<img :src="$withBase('/Web/gets-the-el-table-cell-value-and-renders-the-element-custom-style-in-element-ui/img-2.png')" alt="页面显示效果">
+![页面显示效果](./gets-the-el-table-cell-value-and-renders-the-element-custom-style-in-element-ui/img-2.png)
 
 ## 实现步骤
 

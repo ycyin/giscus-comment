@@ -236,9 +236,9 @@ public class NoPermissionException extends SimpleMappingExceptionResolver {
 
 `UnauthorizedException`与`UnauthenticatedException`异常
 
-<img :src="$withBase('/Shiro/ssm-integration-Shiro-custom-permission-filter-does-not-execute-solution/img-1.png')" alt="异常信息1">
+![异常信息1](./ssm-integration-Shiro-custom-permission-filter-does-not-execute-solution/img-1.png)
 
-<img :src="$withBase('/Shiro/ssm-integration-Shiro-custom-permission-filter-does-not-execute-solution/img-2.png')" alt="异常信息2">
+![异常信息2](./ssm-integration-Shiro-custom-permission-filter-does-not-execute-solution/img-2.png)
 
 ```json
 HTTP Status 500 - Request processing failed; nested exception is org.apache.shiro.authz.UnauthorizedException: Subject does not have permission [getBookPressData]

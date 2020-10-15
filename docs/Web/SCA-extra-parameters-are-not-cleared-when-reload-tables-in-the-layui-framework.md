@@ -13,7 +13,7 @@ categories: Layui
 
 &emsp;&emsp;在使用layui table实现搜索按钮（完整代码见<a href="#end">附1</a>）时，重载表格请求的额外参数不清空，上一次的字段还会出现的问题。这个问题的表现为，请求第一次选择姓名字段，发送请求：`page=1&limit=10&userName=%E5%B0%E4%BB%A5%E6%8D`，重新选择索引字段为电话后，<!--more-->发送请求：`page=1&limit=10&userName=%E5%B0%E4%BB%A5%E6%8D&phoneNumber=176`，即多次请求重载表格，出现之前重载表格时额外参数(`where{}`)不清空，导致请求字段不刷新，无法搜索到结果。见下图：
 
-<img :src="$withBase('/Web/SCA-extra-parameters-are-not-cleared-when-reload-tables-in-the-layui-framework/p1.png')" alt="参数不清空现象">
+![参数不清空现象](./SCA-extra-parameters-are-not-cleared-when-reload-tables-in-the-layui-framework/p1.png)
 
 ### 源码分析
 

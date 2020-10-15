@@ -29,11 +29,11 @@ mvn install:install-file -Dfile=C:\Users\yyc\Desktop\alipay-sdk-java-3.0.0.jar -
 
 执行成功，如下图所示：
 
-<img :src="$withBase('/Maven/local-package-to-local-maven-repository/build-success.png')" alt="执行成功">
+![执行成功](./local-package-to-local-maven-repository/build-success.png)
 
 这时候在maven本地仓库中就有相应的jar包，如下图所示：
 
-<img :src="$withBase('/Maven/local-package-to-local-maven-repository/local-repo.png')" alt="本地仓库有了jar包">
+![本地仓库有了jar包](./local-package-to-local-maven-repository/local-repo.png)
 
 已经添加成功，在pom.xml中使用即可。
 

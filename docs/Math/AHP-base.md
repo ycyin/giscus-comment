@@ -21,7 +21,7 @@ mathjax: true
 
 > 深入分析实际问题，将有关因素自上而下分层（目标—准则或指标一方案或对象），上层受下层影响，而层内各因素基本上相对独立。 按他们之间的相互关系分成最高层、中间层和最低层，绘制层次结构图。 
 
-<img :src="$withBase('/Math/AHP-base/1592461634677.png')" alt="层次结构模型">
+![层次结构模型](./AHP-base/1592461634677.png)
 
 
 ## 2. 构造各层次中的所有判断矩阵
@@ -46,7 +46,7 @@ mathjax: true
 | 倒数    | 因素$i$于$j$比较的判断$a_{ij}$，则因素$j$与$i$比较的判断$a_{ji}=1/a_{ij}$ |
 
 例如矩阵A：$a_{23}=5$ 就表示$A_2$因素比$A_3$因素对于目标层（Z）来说**明显重要**。
-<img :src="$withBase('/Math/AHP-base/CodeCogsEqn.gif')" alt="A = \begin{bmatrix} 1 & 2 & 6 \\ 1/2 & 1 & 5 \\ 1/6 & 1/5 & 1 \end{bmatrix}">
+![A = \begin{bmatrix} 1 & 2 & 6 \\ 1/2 & 1 & 5 \\ 1/6 & 1/5 & 1 \end{bmatrix}](./AHP-base/CodeCogsEqn.gif)
 
 
 | Z     | $A_1$ | $A_2$ | $A_3$ |
@@ -88,7 +88,7 @@ mathjax: true
 
 **第一种：**
 
-<img :src="$withBase('/Math/AHP-base/1592554190562.png')">
+![](./AHP-base/1592554190562.png)
 
 1. 先对矩阵列向量归一化；
 
@@ -98,12 +98,12 @@ mathjax: true
 
 &emsp;&emsp;每一行分别相加，再除以每一行的个数（即每一行的平均数）。如：$(0.6+0.615+0.545) \div 3=0.587$
 
-​	即得到<img :src="$withBase('/Math/AHP-base/CodeCogsEqn2.gif')" alt="W = \begin{bmatrix} 0.587 & 0.324 & 0.089\end{bmatrix} ^ T">。
+​	即得到![W = \begin{bmatrix} 0.587 & 0.324 & 0.089\end{bmatrix} ^ T](./AHP-base/CodeCogsEqn2.gif)。
 
 **第二种：**
 
 还是以上面这个矩阵为例。
-<img :src="$withBase('/Math/AHP-base/CodeCogsEqn3.gif')" alt="A = \begin{bmatrix}  1 & 2 & 6\\  1/2 & 1 & 4\\  1/6 & 1/4 & 1 \end{bmatrix}">
+![A = \begin{bmatrix}  1 & 2 & 6\\  1/2 & 1 & 4\\  1/6 & 1/4 & 1 \end{bmatrix}](./AHP-base/CodeCogsEqn3.gif)
 
 1. 分别求出$M_1 = 1  \times 2  \times  6 = 12$，$M_2 = 2$，$M_3 = 0.042$；
 
@@ -118,7 +118,7 @@ mathjax: true
    $W_1 =  \frac{\overline{W_1} }{\displaystyle \sum_{i=1}^3 \overline{W_i}} = \frac{2.289}{3.896} = 0.588$  ，$W_2 =  0.323$，$W_3 =  0.$089
 
 
-得出：<img :src="$withBase('/Math/AHP-base/CodeCogsEqn4.gif')" alt="W = \begin{bmatrix} 0.588 & 0.323 & 0.089\end{bmatrix} ^ T">
+得出：![W = \begin{bmatrix} 0.588 & 0.323 & 0.089\end{bmatrix} ^ T](./AHP-base/CodeCogsEqn4.gif)
 
 *注：以上两种方法由于手动计算，略有偏差*。
 
@@ -154,7 +154,7 @@ $CR=\frac{CI}{RI} = \frac{0.0045}{0.58}=0.0078 < 0.1$ ,通过一致性检验。
 - 计算某一层次所有因素对于最高层（总目标）相对重要性的权值，称为层次总排序。
 - 这一过程是从最高层次到最低层次依次进行的。
 
-<img :src="$withBase('/Math/AHP-base/20190107122323193.png')">
+![](./AHP-base/20190107122323193.png)
 
 A层$m$个因素$A_{1},A_{2},···,A_m$,对总目标Z的排序为$a_{1},a_{2},···,a_{m}$。
 
@@ -174,15 +174,15 @@ $B_{n}:a_{1}b_{n1}+a_{2}b_{n2}+···+a_{m}b_{nm}$,
 
 **1.建立阶梯层次结构模型**
 
-<img :src="$withBase('/Math/AHP-base/1592786136361.png')">
+![](./AHP-base/1592786136361.png)
 
 **2. 计算单一准则下元素的相对重要性**
 
 i. 第二层相对于第一层的判断矩阵
 
-<img :src="$withBase('/Math/AHP-base/1592786234121.png')">
+![](./AHP-base/1592786234121.png)
 
-<img :src="$withBase('/Math/AHP-base/1592786252028.png')">
+![](./AHP-base/1592786252028.png)
 
 通过计算得判断矩阵的特征向量和特征值分别为： 
 
@@ -196,15 +196,15 @@ $CI=0.019$，$CR=0.033<0.1$
 
 ii. 第三层元素相对于第二层元素判断矩阵
 
-<img :src="$withBase('/Math/AHP-base/1592786888249.png')"> 
+![](./AHP-base/1592786888249.png)
 
-<img :src="$withBase('/Math/AHP-base/1592786632387.png')">
+![](./AHP-base/1592786632387.png)
 
 **3.各个元素的权重**
 
 第二层对第一层各个元素的权重**乘**以第三层各个元素对第二层的权重得到的值**累加**等于第三层（方案）的总权重值。如：$0.105*0.491+0.637*0+0.258*0.406=0.157$
 
-<img :src="$withBase('/Math/AHP-base/1592787096526.png')">
+![](./AHP-base/1592787096526.png)
 
 **4.结论**
 

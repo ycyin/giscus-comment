@@ -25,7 +25,7 @@ description: 使用Vue+Element-UI的Table组件实现动态增加行列、可编
 
 可访问CodePen在线查看代码和效果展示：[https://codepen.io/yyc007/pen/abdyNeb](https://codepen.io/yyc007/pen/abdyNeb)
 
-<img :src="$withBase('/Web/dynamic-add-rows-columns-and-editable-table-in-element-ui/1593181815033.png')" alt="效果展示">
+![效果展示](./dynamic-add-rows-columns-and-editable-table-in-element-ui/1593181815033.png)
 
 ### 基本思路
 

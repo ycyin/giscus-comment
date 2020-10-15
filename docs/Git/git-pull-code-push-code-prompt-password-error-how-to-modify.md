@@ -23,10 +23,10 @@ categories: Git
 
 1、打开控制面板，选择查看方式为"小图标"，选择“凭据管理器”；
 
-<img :src="$withBase('/Git/git-pull-code-push-code-prompt-password-error-how-to-modify/img-1.png')" alt="凭据管理器">
+![凭据管理器](./git-pull-code-push-code-prompt-password-error-how-to-modify/img-1.png)
 
 2、选择“Windows凭据”，在下方的“普通凭据”中选择对应的账户修改密码即可。
 
-<img :src="$withBase('/Git/git-pull-code-push-code-prompt-password-error-how-to-modify/img-2.png')" alt="普通凭据">
+![普通凭据](./git-pull-code-push-code-prompt-password-error-how-to-modify/img-2.png)
 
 自此，该问题已解决，重新拉取/推送即可成功。

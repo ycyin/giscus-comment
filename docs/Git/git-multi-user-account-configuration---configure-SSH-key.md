@@ -34,7 +34,7 @@ git config --global user.email "34782655@qq.com" // 配置全局邮箱，如 Git
 git config --global --list
 ```
 
-<img :src="$withBase('/Git/git-multi-user-account-configuration---configure-SSH-key/img-1.png')" alt="全局配置信息">
+![全局配置信息](./git-multi-user-account-configuration---configure-SSH-key/img-1.png)
 
  发现其中有 `user.name` 和 `user.email` 信息，请执行以下命令将其清除掉： 
 

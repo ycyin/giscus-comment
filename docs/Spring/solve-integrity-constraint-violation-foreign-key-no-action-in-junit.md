@@ -1,5 +1,5 @@
 ---
-title: 解决Spring单元测试中因外键关联导致的失败integrity constraint violation &#58; foreign key no action
+title: 解决Spring单元测试中因外键关联导致的失败integrity constraint violation:foreign key no action
 tags:
   - spring
   - 单元测试
