@@ -11,12 +11,14 @@ isShowComments: true
 | 名称            | 地址                             | 备注                                     |
 | --------------- | -------------------------------- | ---------------------------------------- |
 | 在线工具大全    |<https://www.tooleyes.com/>       | 各种办公辅助、图片视频、网络等在线工具   |
+| 奇Q工具网 |<https://qqe2.com/> | 各种在线工具，如Cron生成器、各类文件格式化转换工具 |
 | SSL在线工具     |<https://www.ssleye.com/>         | 各种密码加密、证书工具、SSL检测、漏洞等  |
 | ProcessOn       |<https://www.processon.com/>      | 在线作图：流程图、UML、思维导图等        |
 | UZER.ME         |<https://uzer.me/>                | 云端工具：表格、Visio、Xmind等           |
 | draw.io在线作图 |<https://app.diagrams.net/>       | 在线作图：流程图、UML图等                |
 | Cmd Markdown    |<https://www.zybuluo.com/mdeditor/> | 在线Markdown编辑、云保存等               |
 | Codepen         |<https://codepen.io/>             | 在线编辑前端代码，还有一些优秀的前端特效 |
+| 在线代码测试 |<http://www.dooccn.com/> | 在线编辑后端代码，运行效果 |
 | mrw网址缩短     |<http://mrw.so/>                  | 长网址缩短，支持mrw.so和t.cn             |
 | 微微二维码      |<http://www.wwei.cn/>             | 可生成各种各样的二维码网站               |
 | JSON格式校验    |<http://www.bejson.com/>          | JSON校验、编辑、免费JSON接口等JSON工具   |
