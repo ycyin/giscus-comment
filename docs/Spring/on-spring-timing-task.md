@@ -2,7 +2,7 @@
 title: 浅谈Spring定时任务的使用(Scheduled注解)
 date: 2020-11-03 17:43:39
 tags:
-  - @Scheduled
+  - Scheduled
   - 定时任务
 categories: Spring
 ---
