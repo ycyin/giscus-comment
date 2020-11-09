@@ -235,6 +235,10 @@ TASK1-Wed Nov 04 15:59:25 CST 2020--Thread[dataExecutor-3,5,RMI Runtime]
 
 可以发现，任务1使用了`@Async`注解后，任务1的线程是 dataExecutor-1 到 dataExecutor-10，说明 dataScheduler-1 这个调度线程调度了任务1，但是交给了线程池中的dataExecutor中的执行线程来具体执行的；而任务2没有使用`@Async`注解，所以还是使用dataScheduler-2 这个调度线程调度任务2。
 
+### 源码下载
+
+> 本文示例源码：<a :href="$withBase('/code/spring-scheduler.zip')" download="spring-scheduler.zip">点击下载</a>
+
 ### 总结
 
 1. Spring定时任务，需要spring-context jar包，我这里为了方便直接用的mvc的包；
