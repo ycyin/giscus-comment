@@ -229,3 +229,5 @@ $CR=0.03<0.10$
 [2]. <https://zhuanlan.zhihu.com/p/38207837>
 
 [3].<https://blog.csdn.net/mmm_jsw/article/details/84863416>
+
+[4].AHP(层次分析法)方法、步骤PPT,<a :href="$withBase('/file/AHP(层次分析法)方法、步骤.zip')" download="AHP(层次分析法)方法、步骤.zip">点击下载</a>
