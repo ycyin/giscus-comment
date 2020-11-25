@@ -70,7 +70,7 @@ categories: DB
     - **-v $PWD/conf:/etc/mysql/conf.d**：将主机当前目录下的 conf/my.cnf 挂载到容器的 /etc/mysql/my.cnf。
     - **-v $PWD/logs:/logs**：将主机当前目录下的 logs 目录挂载到容器的 /logs。
     - **-v $PWD/data:/var/lib/mysql** ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。
-    - **-e MYSQL_ROOT_PASSWORD=123456：**初始化 root 用户的密码。
+    - **-e MYSQL_ROOT_PASSWORD=123456** ：初始化 root 用户的密码。
     - **-d**：告诉容器在后台运行。
     - **mysql:5.7**：告诉容器运行的镜像名为mysql:5.7
 
