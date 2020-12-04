@@ -34,31 +34,31 @@ description: VirtualBox虚拟机网络设置
 
 VirtualBox主界面->管理->主机网络管理器(Ctrl+H)，点开就能看到一个Host-Only的网络适配器，选择属性，勾选DHCP服务器为启用，网卡设置为自动配置网卡。
 
-![](./complete-the-network-setup-of-VirtualBox\network1.png)
+![](./complete-the-network-setup-of-VirtualBox/network1.png)
 
 这个网卡地址（192.168.88.103）就和你本机的这个网络（VirtualBox Host-Only Network）一致，因为这里选择的是自动配置网卡，所以我本机查看也是自动获取的，<span style="color:red">不要手动去控制面板修改这个网络的IP地址属性</span>。
 
-![](./complete-the-network-setup-of-VirtualBox\network3.png)
+![](./complete-the-network-setup-of-VirtualBox/network3.png)
 
 也可以通过ipconfig命令查看到这个地址：重启一次电脑，不要启动VirtualBox，直接执行ipconfig命令，你就会发现系统给他分配的是一个保留地址，直到你启动虚拟机就会被更改。
 
-![](./complete-the-network-setup-of-VirtualBox\network4.png)
+![](./complete-the-network-setup-of-VirtualBox/network4.png)
 
 然后点击DHCP服务器设置：勾选启用，服务器地址一般就填192.168.xxx.1就行。这样设置之后你在VirtualBox创建的虚拟机就会根据这个去自动分配IP地址，第一个虚拟机就默认是这里配置的最小地址（192.168.88.100），第二个是192.168.88.101依次类推。<span style="color:red">所以，一般来说我们没必要去把虚拟机启动起来然后去给它设置一个静态的IP,只需要以此类推就可以知道IP地址的(设置静态IP设置不好就会导致网络无法访问，多一事不如少一事)。</span>
 
-![](./complete-the-network-setup-of-VirtualBox\network2.png)
+![](./complete-the-network-setup-of-VirtualBox/network2.png)
 
 ### 第二步：设置每台虚拟机的网卡
 
 我这里配置了三台虚拟机，每一台都以相同的方式配置，如下：
 
-![](./complete-the-network-setup-of-VirtualBox\network5.png)
+![](./complete-the-network-setup-of-VirtualBox/network5.png)
 
 每一个虚拟机系统<span style="color:red">网卡1都选择Host-Only,网卡2都选择NAT。</span>如下所示：
 
-![](./complete-the-network-setup-of-VirtualBox\network6.png)
+![](./complete-the-network-setup-of-VirtualBox/network6.png)
 
-![](./complete-the-network-setup-of-VirtualBox\network7.png)
+![](./complete-the-network-setup-of-VirtualBox/network7.png)
 
 按照网友的说法，<span style="color:red">Host-Only是用来保证宿主机与虚拟机互通和虚拟机之间互通的，而NAT网络是用来保证可访问外网的</span>。
 
@@ -68,7 +68,7 @@ VirtualBox主界面->管理->主机网络管理器(Ctrl+H)，点开就能看到�
 
 启动三台虚拟机，使用`ifconfig`命令查看IP配置，新装的系统没有这个命令，需要装一下`yum install net-tools -y` 或者使用`ip addr`命令，如下图所示：
 
-![](./complete-the-network-setup-of-VirtualBox\network8.png)
+![](./complete-the-network-setup-of-VirtualBox/network8.png)
 
 可以发现我这里网卡1(enp0s3)设置的是Host-Only,网卡2(enp0s8)设置的是NAT。
 
