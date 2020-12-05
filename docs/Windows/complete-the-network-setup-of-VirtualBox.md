@@ -64,6 +64,18 @@ VirtualBox主界面->管理->主机网络管理器(Ctrl+H)，点开就能看到�
 
 所以这里就有一点网上很多文章没有说全：<span style="color:red">当要设置静态IP时，直接修改`/etc/sysconfig/network-scripts/ifcfg-enp0s3`这个网卡配置是不对的</span>，因为通过我的多次实验发现，我们设置静态IP是宿主机与虚拟机互通和虚拟机之间互通的IP，也就是Host-Only网卡的IP，所以直接修改`enp0s3`这个的前提是，要网卡1设置的是Host-Only（如我前面所说，不建议也没必要去设置静态IP）。<span style="color:orange">如果网卡1和网卡2设置反了，就要考虑是不是应该修改enp0s8这个配置</span>（我发现我这几个系统都没有这个文件的）。
 
+### 第三步：设置开机启动网卡
+
+个人理解：不设置开机启动网卡，刚刚第一步设置的DHCP分配IP就没有工作，导致虚拟机没有IP没有网络。
+
+cd进入`/etc/sysconfig/network-scripts/`目录，修改enp0s3网卡配置，同时也要修改enp0s8网卡配置（如果有ifcfg-enp0s8这个文件的话）。
+
+```shell
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+```
+
+修改`ONBOOT=yes`。然后保存退出，重启网络`systemctl restart network`。
+
 ## 查看IP验证一下
 
 启动三台虚拟机，使用`ifconfig`命令查看IP配置，新装的系统没有这个命令，需要装一下`yum install net-tools -y` 或者使用`ip addr`命令，如下图所示：
