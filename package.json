@@ -15,8 +15,11 @@
 	"license": "ISC",
 	"devDependencies": {
 		"vuepress": "^1.5.4",
+		"vuepress-plugin-baidu-autopush": "^1.0.1",
 		"vuepress-plugin-mathjax": "^1.2.8",
 		"vuepress-theme-reco": "^1.5.7"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"vuepress-plugin-sitemap": "^2.3.1"
+	}
 }

@@ -5,6 +5,10 @@ module.exports = {
       {
         target: 'chtml'
       },
+	  'sitemap': {
+      hostname: 'https://ladybug.top'
+	  },
+	  'vuepress-plugin-baidu-autopush':{}
     ],  
   ],
   // 移动端优化
