@@ -4,13 +4,18 @@ module.exports = {
       'vuepress-plugin-mathjax',
       {
         target: 'chtml'
-      },
+      }
+    ],
+	[
 	  'sitemap',
 	  {
 		hostname: 'https://ladybug.top'
-	  },
-	  'vuepress-plugin-baidu-autopush',{}
-    ],  
+	  }
+	],
+	[
+	  'vuepress-plugin-baidu-autopush',
+	  {}
+	]	
   ],
   // 移动端优化
   head: [
