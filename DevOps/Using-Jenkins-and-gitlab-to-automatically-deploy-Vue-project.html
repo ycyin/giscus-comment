@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用Jenkins+GitLab实现自动部署vue项目 | 敲代码的小松鼠</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <script src="scripts/myfooter.js"></script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="NL5qmCT5yDHkyrRJUGxdC-9yeoSzCGXptwYUFziA64s">
+    <link rel="preload" href="/assets/css/0.styles.77b9ceb1.css" as="style"><link rel="preload" href="/assets/js/app.65456870.js" as="script"><link rel="preload" href="/assets/js/3.f7c3d02a.js" as="script"><link rel="preload" href="/assets/js/1.51f96c15.js" as="script"><link rel="preload" href="/assets/js/6.f292cdf6.js" as="script"><link rel="prefetch" href="/assets/js/10.c81a5cc4.js"><link rel="prefetch" href="/assets/js/11.8d9233db.js"><link rel="prefetch" href="/assets/js/12.2f5aa6ba.js"><link rel="prefetch" href="/assets/js/13.54fb7f61.js"><link rel="prefetch" href="/assets/js/14.005f7786.js"><link rel="prefetch" href="/assets/js/15.d6a9fff2.js"><link rel="prefetch" href="/assets/js/16.ce8a9804.js"><link rel="prefetch" href="/assets/js/17.dcaf04d3.js"><link rel="prefetch" href="/assets/js/18.7390b863.js"><link rel="prefetch" href="/assets/js/19.331bbdbf.js"><link rel="prefetch" href="/assets/js/20.c057a053.js"><link rel="prefetch" href="/assets/js/21.18447e95.js"><link rel="prefetch" href="/assets/js/22.ac3da476.js"><link rel="prefetch" href="/assets/js/23.ed91162e.js"><link rel="prefetch" href="/assets/js/24.4ef1a63c.js"><link rel="prefetch" href="/assets/js/25.60a1356c.js"><link rel="prefetch" href="/assets/js/26.9a022fd1.js"><link rel="prefetch" href="/assets/js/27.0568b2d4.js"><link rel="prefetch" href="/assets/js/28.ad2a7cea.js"><link rel="prefetch" href="/assets/js/29.5ed863ad.js"><link rel="prefetch" href="/assets/js/30.0b51144a.js"><link rel="prefetch" href="/assets/js/31.8deb900f.js"><link rel="prefetch" href="/assets/js/32.1211bd59.js"><link rel="prefetch" href="/assets/js/33.9c5b0b67.js"><link rel="prefetch" href="/assets/js/34.16df5c23.js"><link rel="prefetch" href="/assets/js/35.c82b6902.js"><link rel="prefetch" href="/assets/js/36.0a8b3061.js"><link rel="prefetch" href="/assets/js/37.d193346e.js"><link rel="prefetch" href="/assets/js/4.4d8c52db.js"><link rel="prefetch" href="/assets/js/5.654c1cef.js"><link rel="prefetch" href="/assets/js/7.f2eb4b77.js"><link rel="prefetch" href="/assets/js/8.f997c9fb.js"><link rel="prefetch" href="/assets/js/9.ef3c5c92.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.77b9ceb1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>敲代码的小松鼠</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>小松鼠</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/avatar/bitbug_favicon32.ico" alt="敲代码的小松鼠" class="logo"> <span class="site-name">敲代码的小松鼠</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DB/" class="nav-link"><i class="iconfont undefined"></i>
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DevOps/" class="nav-link"><i class="iconfont undefined"></i>
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JWT/" class="nav-link"><i class="iconfont undefined"></i>
+  JWT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Log/" class="nav-link"><i class="iconfont undefined"></i>
+  Log
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AHP/" class="nav-link"><i class="iconfont undefined"></i>
+  AHP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Maven/" class="nav-link"><i class="iconfont undefined"></i>
+  Maven
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shiro/" class="nav-link"><i class="iconfont undefined"></i>
+  Shiro
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Junit/" class="nav-link"><i class="iconfont undefined"></i>
+  Junit
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring Data Jpa/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring Data Jpa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Layui/" class="nav-link"><i class="iconfont undefined"></i>
+  Layui
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Windows/" class="nav-link"><i class="iconfont undefined"></i>
+  Windows
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/websites.html" class="nav-link"><i class="iconfont reco-document"></i>
+  常用网站
+</a></div><div class="nav-item"><a href="/messageboard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><a href="https://github.com/yinyicao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><!----> <h3 class="name" data-v-ca798c94>
+    小松鼠
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>25</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>42</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DB/" class="nav-link"><i class="iconfont undefined"></i>
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DevOps/" class="nav-link"><i class="iconfont undefined"></i>
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JWT/" class="nav-link"><i class="iconfont undefined"></i>
+  JWT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Log/" class="nav-link"><i class="iconfont undefined"></i>
+  Log
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AHP/" class="nav-link"><i class="iconfont undefined"></i>
+  AHP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Maven/" class="nav-link"><i class="iconfont undefined"></i>
+  Maven
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Shiro/" class="nav-link"><i class="iconfont undefined"></i>
+  Shiro
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Junit/" class="nav-link"><i class="iconfont undefined"></i>
+  Junit
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring Data Jpa/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring Data Jpa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Layui/" class="nav-link"><i class="iconfont undefined"></i>
+  Layui
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Windows/" class="nav-link"><i class="iconfont undefined"></i>
+  Windows
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/websites.html" class="nav-link"><i class="iconfont reco-document"></i>
+  常用网站
+</a></div><div class="nav-item"><a href="/messageboard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><a href="https://github.com/yinyicao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>使用Jenkins+GitLab实现自动部署vue项目</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>小松鼠</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2021
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">使用Jenkins+GitLab实现自动部署vue项目</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>小松鼠</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2021-01-11 16:45:41</span></i> <i class="iconfont reco-eye" data-v-3b7f5bdf><span id="/DevOps/Using-Jenkins-and-gitlab-to-automatically-deploy-Vue-project.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-3b7f5bdf><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Jenkins</span><span class="tag-item" data-v-3b7f5bdf>GitLab</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>在众多持续集成/持续部署(CI/CD)工具中（如<strong>GitLab CI</strong>、<strong>Travis CI</strong>、<strong>TeamCity</strong>等），有人说<a href="https://www.jdon.com/52172" target="_blank" rel="noopener noreferrer">Jenkins已经老了<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，现在也有很多优秀的<a href="http://www.360doc.com/content/20/1111/12/46368139_945280698.shtml" target="_blank" rel="noopener noreferrer">Jenkins替代方案<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。本文选择<strong>Jenkins</strong>仅仅是因为它安装简单、部署简单的项目上手快（有Web界面）。</p> <p>使用的Jenkins版本：<a href="https://jenkins.io/" target="_blank" rel="noopener noreferrer">Jenkins 2.263.1<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，部署机器：CentOS 7</p> <p>使用Jenkins+gitlab实现自动部署vue项目基本思路：gitlab每次提交代码使用 GitLab 的 WebHook 来触发 Jenkins 构建，Jenkins执行shell脚本打包Vue项目，然后将打包后的静态文件复制到nginx指定的html目录中。</p> <h2 id="安装环境"><a href="#安装环境" class="header-anchor">#</a> 安装环境</h2> <h3 id="安装jdk"><a href="#安装jdk" class="header-anchor">#</a> 安装JDK</h3> <blockquote><p>Jenkins基于Java开发，所以需要Java运行环境。</p></blockquote> <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener noreferrer">官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>选择对应JDK版本下载链接：</p> <p>下载：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> https://download.oracle.com/otn/java/jdk/8u271-b09/61ae65e088624f5aaa0b1d2d801acb16/jdk-8u271-linux-x64.tar.gz?AuthParam<span class="token operator">=</span>1610086904_2c9dd4492a9232e623d371bcdaaae54f
+</code></pre></div><p>创建安装目录</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> /usr/local/java/
+</code></pre></div><p>解压至安装目录</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">tar</span> -zxvf jdk-8u271-linux-x64.tar.gz -C /usr/local/java/
+</code></pre></div><p>设置环境变量：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vi</span> /etc/profile
+</code></pre></div><p>在末尾添加</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/local/java/jdk1.8.0_271
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JRE_HOME</span><span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/jre
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">${JAVA_HOME}</span>/lib:<span class="token variable">${JRE_HOME}</span>/lib
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/bin:<span class="token environment constant">$PATH</span>
+</code></pre></div><p>使环境变量生效</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">source</span> /etc/profile
+</code></pre></div><p>添加软链接</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">ln</span> -s /usr/local/java/jdk1.8.0_271/bin/java /usr/bin/java
+</code></pre></div><p>检查</p> <div class="language-shell extra-class"><pre class="language-shell"><code>java -version
+</code></pre></div><h3 id="安装jenkins"><a href="#安装jenkins" class="header-anchor">#</a> 安装Jenkins</h3> <blockquote><p>通过尝试，使用Jenkins不推荐用Docker方式安装，会因为缺少环境而造成不必要的麻烦。</p> <p>这里使用下载好的安装包安装，yum方式参见<a href="https://jenkins.io/download/" target="_blank" rel="noopener noreferrer">官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，比较慢
+<strong>下载rpm包并安装</strong></p></blockquote> <p>官方镜像：https://pkg.jenkins.io/</p> <p>推荐 清华镜像站：https://mirrors.tuna.tsinghua.edu.cn/jenkins/（速度快）</p> <p>中国科学技术大学镜像站：https://mirrors.ustc.edu.cn/jenkins/</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#下载</span>
+<span class="token function">wget</span> https://mirrors.tuna.tsinghua.edu.cn/jenkins/redhat-stable/jenkins-2.263.1-1.1.noarch.rpm
+<span class="token comment">#安装</span>
+<span class="token function">rpm</span> -ivh jenkins-2.263.1-1.1.noarch.rpm
+</code></pre></div><p><strong>网络联通配置</strong></p> <p>1.如果安装Jenkins的机器启动了安全组策略，需要开放修改后的端口，如下：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>firewall-cmd --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">8080</span>/tcp --permanent <span class="token comment">#添加TCP端口</span>
+firewall-cmd --reload
+</code></pre></div><p>2.因为后面GitLab需要配合Jenkins以实现提交代码就完成自动部署，所以如果有需要，则要添加GitLab服务器的IP，使得GitLab服务器可以访问Jenkins服务器。</p> <div class="language-shell extra-class"><pre class="language-shell"><code>firewall-cmd --permanent --zone<span class="token operator">=</span>trusted --add-source<span class="token operator">=</span><span class="token number">172.26</span>.1.15 <span class="token comment">#添加IP</span>
+firewall-cmd --reload
+firewall-cmd --zone<span class="token operator">=</span>trusted --list-all
+</code></pre></div><p>3.因为后面Jenkins要去拉取gitlab的代码，所以需要生成ssh密钥</p> <div class="language-shell extra-class"><pre class="language-shell"><code>ssh-keygen -t rsa -b <span class="token number">4096</span> -C <span class="token string">&quot;your_email@example.com&quot;</span>
+</code></pre></div><p>将公钥添加到gitlab：来到gitlab个人中心，点设置，左边点SSH密钥，右边填入id_rsa.pub里面的字符，然后点添加密钥即可。</p> <p><strong>Jenkins配置</strong></p> <ol><li><p>Jenkins默认端口为8080， 有冲突的自行修改</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vi</span>  /etc/sysconfig/jenkins
+<span class="token comment">#例 修改为</span>
+<span class="token assign-left variable">JENKINS_PORT</span><span class="token operator">=</span><span class="token string">&quot;8080&quot;</span>
+</code></pre></div></li> <li><p>配置JDK路径，JDK安装目录是自定义的，需要添加</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vi</span> /etc/init.d/jenkins
+<span class="token comment">#加上自己的jdk路径</span>
+</code></pre></div><p>我这里添加过软链接到/usr/bin/java，所以不用再添加了。</p> <p><img src="/assets/img/20210111112847.63209237.png" alt=""></p></li> <li><p>启动</p> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start jenkins
+</code></pre></div></li> <li><p>访问
+通过IP:Port即可访问Jenkin页面，通过提示找到密码登录。
+<img src="/assets/img/20210108100916.6019f1c1.png" alt="">
+插件安装选择安装推荐的插件即可。可能安装失败，重试或者继续暂时忽略失败的插件安装。
+<img src="/assets/img/20210108101321.0fa2eda4.png" alt="">
+等待片刻（其实要很久），就安装完成了。</p></li></ol> <h3 id="安装插件"><a href="#安装插件" class="header-anchor">#</a> 安装插件</h3> <p>【系统管理--&gt;插件管理】可以在线安装需要的插件，但是安装比较慢，还经常失败，推荐设置升级站点或上传插件离线安装。</p> <p>本文章需要编译Vue项目，所以需要单独安装一个NodeJS插件。</p> <p><strong>设置升级站点</strong>
+【系统管理--&gt;插件管理--&gt;高级--&gt;升级站点】</p> <p>替换升级站点URL，这里推荐两个地址可用：</p> <div class="language- extra-class"><pre class="language-text"><code>http://mirror.esuni.jp/jenkins/updates/update-center.json
+</code></pre></div><p>或</p> <div class="language-shell extra-class"><pre class="language-shell"><code>https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
+</code></pre></div><p>其它的Jenkins的镜像地址可以查询：http://mirrors.jenkins-ci.org/status.html</p> <p>保存后，即可返回到【可选插件】选项卡下，进行搜索重新安装。</p> <p><strong>离线安装</strong></p> <p>可以通过上面提供的国内镜像地址下载好插件，如：https://mirrors.tuna.tsinghua.edu.cn/jenkins/plugins/ 然后通过【系统管理--&gt;插件管理--&gt;高级--&gt;上传插件】来离线安装</p> <h3 id="安装nodejs"><a href="#安装nodejs" class="header-anchor">#</a> 安装NodeJS</h3> <p>本文章需要编译前端的Vue项目，上面安装好了插件，现在还需要本机安装好NodeJS。</p> <p>（1）去nodejs官网下载最新包</p> <blockquote><p>官网下载地址:https://nodejs.org/dist/latest/</p></blockquote> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> https://nodejs.org/dist/latest/node-v12.18.3-linux-x64.tar.gz
+</code></pre></div><p>（2）解压安装</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">tar</span> xvzf node-v12.18.3-linux-x64.tar.gz -C /opt
+</code></pre></div><p>（3）修改环境变量</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> /etc/profile
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/opt/node-v12.18.3-linux-x64/bin:<span class="token environment constant">$PATH</span>
+</code></pre></div><p>（4）刷新环境变量，使其生效</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">source</span> /etc/profile
+</code></pre></div><p>（5） 安装cnpm与配置淘宝镜像</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> <span class="token function">install</span> -g cnpm --registry<span class="token operator">=</span><span class="token punctuation">[</span>https://registry.npm.taobao.org<span class="token punctuation">]</span><span class="token punctuation">(</span>https://registry.npm.taobao.org/<span class="token punctuation">)</span>
+</code></pre></div><p>（6） 查看npm,cnpm,node版本号</p> <div class="language-shell extra-class"><pre class="language-shell"><code>node -v
+cnpm -v
+</code></pre></div><h3 id="配置nodejs"><a href="#配置nodejs" class="header-anchor">#</a> 配置NodeJS</h3> <blockquote><p>Jenkins中配置node</p></blockquote> <p>【系统配置--&gt;全局工具配置--&gt;NodeJS】配置安装好的node路径。</p> <p><img src="/assets/img/20210111173002.85a2f1c1.png" alt=""></p> <h2 id="jenkins任务"><a href="#jenkins任务" class="header-anchor">#</a> Jenkins任务</h2> <h3 id="构建任务"><a href="#构建任务" class="header-anchor">#</a> 构建任务</h3> <p>现在可以新建一个【构建任务】了。点击新建任务，输入任务名称，选择构建一个自由风格的软件项目，点击确定进入下一步。</p> <p><img src="/assets/img/20210111172623.7d1a91bc.png" alt=""></p> <h3 id="源码管理"><a href="#源码管理" class="header-anchor">#</a> 源码管理</h3> <p>选择【源码管理】，输入仓库地址，会提示连接不上，这时候前面生成的ssh-key就派上用场了。点击添加按钮,</p> <p><img src="/assets/img/20210108114254.92b0e0c9.png" alt=""></p> <p>如图所示添加凭据，将之前生成的私钥添加到Key中，点击添加后即可在上一步的Credentials后面的下拉框中选择刚刚添加的凭据。
+<img src="/assets/img/20210108114105.d914a2dd.png" alt=""></p> <p>选择后就不报错了，说明可以访问到gitlab仓库了。
+<img src="/assets/img/20210108114306.e373cbb6.png" alt=""></p> <h3 id="构建触发器"><a href="#构建触发器" class="header-anchor">#</a> 构建触发器</h3> <p>选择【构建触发器】，选中【触发远程构建】，输入一个身份验证令牌，后面要用。<a href="#build-triggers"></a> <img src="/assets/img/20210111175017.cd19b3ea.png" alt=""></p> <h3 id="构建环境"><a href="#构建环境" class="header-anchor">#</a> 构建环境</h3> <p>选择【构建环境】，选择【Provide Node &amp; npm bin/ folder to PATH】，然后选择我们配置好的Node环境。
+<img src="/assets/img/20210111175434.35a8dc7f.png" alt=""></p> <h3 id="构建"><a href="#构建" class="header-anchor">#</a> 构建</h3> <p>选择【构建】，【增加构建步骤】选择【执行Shell】,然后填入构建时对应需要执行的shell脚本。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">source</span> /etc/profile <span class="token comment">#声明环境变量</span>
+cnpm cache verify <span class="token comment">#清除缓存</span>
+cnpm <span class="token function">install</span> <span class="token comment">#安装</span>
+<span class="token function">npm</span> run build <span class="token comment">#编译</span>
+<span class="token comment">#拷贝dist下所有文件到nginx对应目录下</span>
+<span class="token function">cp</span> -Rf /var/lib/jenkins/workspace/bde-data/dist/*  /usr/local/nginx/html/bde/ 
+</code></pre></div><p>如下图：
+<img src="/assets/img/20210111175526.9b3d19e1.png" alt=""></p> <h3 id="构建后操作"><a href="#构建后操作" class="header-anchor">#</a> 构建后操作</h3> <p>可以配置邮件通知等操作，这里就不配了。</p> <h2 id="配置webhook"><a href="#配置webhook" class="header-anchor">#</a> 配置WebHook</h2> <h3 id="获取账户token"><a href="#获取账户token" class="header-anchor">#</a> 获取账户token</h3> <p>登录有效账户，【用户列表--&gt;点击用户ID--&gt;设置--&gt;API Token--&gt;添加新Token】点击生成，即可生成一个Token
+<img src="/assets/img/20210112111042.9cd99d82.png" alt=""></p> <h3 id="获取项目token"><a href="#获取项目token" class="header-anchor">#</a> 获取项目Token</h3> <p>之前<a href="#build-triggers">构建触发器</a>时输入的身份验证令牌就是项目Token，可以去项目任务配置那获取或重新配置。</p> <h3 id="生成触发器url"><a href="#生成触发器url" class="header-anchor">#</a> 生成触发器URL</h3> <p>之前<a href="#build-triggers">构建触发器</a>时那里有提示URL的格式。</p> <p>JENKINS_URL/job/bde-data/build?token=TOKEN_NAME 或者 /buildWithParameters?token=TOKEN_NAME
+Optionally append &amp;cause=Cause+Text to provide text that will be included in the recorded build cause.</p> <p>然后在需要gitlab项目的 WebHook【settings--&gt;integrations】中填写该 URL（Trigger选择Push events代表Push代码时触发），在 host 前面加上 <code>[账户名]:[账户Token]@</code>，完整格式为：<code>https://myid:mytoken@myjenkins.com/job/myJobName/build?token=my_job_token</code>。比如我这里就是：</p> <p><strong><code>http://admin:11af75c3dd68048c06aaaf77e0f9a15339@172.26.11.160:8080/job/bde-data/build?token=ycyin20210108</code></strong></p> <h2 id="部署测试"><a href="#部署测试" class="header-anchor">#</a> 部署测试</h2> <p>此时，提交一次代码，gitlab触发Jenkins构建。</p> <p>gitlab点击编辑对应的Webhook可以看到成功：</p> <p><img src="/assets/img/20210112114114.d37ce4d5.png" alt=""></p> <p>Jenkins可以看到构建状态、控制台输出等：</p> <p><img src="/assets/img/20210112114154.5e09d081.png" alt=""></p> <p>本文参考：</p> <ol><li>https://www.cnblogs.com/fangts/p/11095316.html</li> <li>https://blog.csdn.net/codebingo/article/details/112126788</li> <li>https://blog.51cto.com/13760351/2382464</li> <li>https://zhuanlan.zhihu.com/p/201307678</li> <li>https://blog.csdn.net/chengyinwu/article/details/103056605</li> <li>https://www.cnblogs.com/sxdcgaq8080/p/10489326.html</li> <li>https://www.colabug.com/2018/0801/3851860/</li></ol></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.65456870.js" defer></script><script src="/assets/js/3.f7c3d02a.js" defer></script><script src="/assets/js/1.51f96c15.js" defer></script><script src="/assets/js/6.f292cdf6.js" defer></script>
+  </body>
+</html>
