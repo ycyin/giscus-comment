@@ -4,7 +4,7 @@ date: 2020-12-29 15:47:41
 tags:
   - k8s
   - 微服务
-categories: K8S
+categories: DevOps
 ---
 
 ## 前言
