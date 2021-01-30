@@ -10,7 +10,7 @@ keywords:
   - integrity constraint violation
   - hsql
 date: 2020-09-08 10:03:43
-categories: Junit
+categories: Spring
 description: Spring单元测试中因外键关联导致的失败,每个用例单独运行都没有问题，可是一起运行，就出现下面的异常错误信息：integrity constraint violation&#58; foreign key no action。这是由于外键级联导致的问题,解决方法可以编写一个类，继承AbstractTestExecutionListener，在beforeTestClass中取消级联依赖。
 ---
 ## 前言

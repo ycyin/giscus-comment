@@ -5,7 +5,7 @@ tags:
   - tomcat
   - SSM
   - Log
-categories: Log
+categories: Spring
 ---
 
 ## 异常重现

@@ -5,7 +5,7 @@ tags:
   - Vue
   - SSM
   - JWT
-categories: JWT
+categories: Spring
 ---
 
 ## JWT(JSON Web Token)
