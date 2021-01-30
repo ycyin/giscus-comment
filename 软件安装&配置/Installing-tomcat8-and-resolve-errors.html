@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>安装Tomcat服务器以及错误汇总（tomcat8.0、jdk8） | 敲代码的小松鼠</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <script src="scripts/myfooter.js"></script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="NL5qmCT5yDHkyrRJUGxdC-9yeoSzCGXptwYUFziA64s">
+    <link rel="preload" href="/assets/css/0.styles.77b9ceb1.css" as="style"><link rel="preload" href="/assets/js/app.748554b7.js" as="script"><link rel="preload" href="/assets/js/3.f7c3d02a.js" as="script"><link rel="preload" href="/assets/js/1.51f96c15.js" as="script"><link rel="preload" href="/assets/js/37.b4fd7be0.js" as="script"><link rel="prefetch" href="/assets/js/10.c81a5cc4.js"><link rel="prefetch" href="/assets/js/11.16314da7.js"><link rel="prefetch" href="/assets/js/12.8cf4b71b.js"><link rel="prefetch" href="/assets/js/13.54fb7f61.js"><link rel="prefetch" href="/assets/js/14.b198aa9a.js"><link rel="prefetch" href="/assets/js/15.22377d40.js"><link rel="prefetch" href="/assets/js/16.f4c9e432.js"><link rel="prefetch" href="/assets/js/17.aabd0e56.js"><link rel="prefetch" href="/assets/js/18.18febeda.js"><link rel="prefetch" href="/assets/js/19.8a7aa20c.js"><link rel="prefetch" href="/assets/js/20.1179a1e3.js"><link rel="prefetch" href="/assets/js/21.ce8659f3.js"><link rel="prefetch" href="/assets/js/22.468eeaf6.js"><link rel="prefetch" href="/assets/js/23.4a3f3fa3.js"><link rel="prefetch" href="/assets/js/24.0eef56cf.js"><link rel="prefetch" href="/assets/js/25.0f4ffb76.js"><link rel="prefetch" href="/assets/js/26.d1f29abf.js"><link rel="prefetch" href="/assets/js/27.d7e07abf.js"><link rel="prefetch" href="/assets/js/28.6c87bd9d.js"><link rel="prefetch" href="/assets/js/29.9f21edd4.js"><link rel="prefetch" href="/assets/js/30.7771d10b.js"><link rel="prefetch" href="/assets/js/31.6b33d335.js"><link rel="prefetch" href="/assets/js/32.d2b082de.js"><link rel="prefetch" href="/assets/js/33.406dc740.js"><link rel="prefetch" href="/assets/js/34.f2a90030.js"><link rel="prefetch" href="/assets/js/35.e9b8687e.js"><link rel="prefetch" href="/assets/js/36.e855da5a.js"><link rel="prefetch" href="/assets/js/38.ba92c891.js"><link rel="prefetch" href="/assets/js/4.4d8c52db.js"><link rel="prefetch" href="/assets/js/5.654c1cef.js"><link rel="prefetch" href="/assets/js/6.150f5c6a.js"><link rel="prefetch" href="/assets/js/7.f2eb4b77.js"><link rel="prefetch" href="/assets/js/8.5f16e404.js"><link rel="prefetch" href="/assets/js/9.8e47c6eb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.77b9ceb1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>敲代码的小松鼠</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>小松鼠</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/avatar/bitbug_favicon32.ico" alt="敲代码的小松鼠" class="logo"> <span class="site-name">敲代码的小松鼠</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/DevOps/" class="nav-link"><i class="iconfont undefined"></i>
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Maven/" class="nav-link"><i class="iconfont undefined"></i>
+  Maven
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Log/" class="nav-link"><i class="iconfont undefined"></i>
+  Log
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Junit/" class="nav-link"><i class="iconfont undefined"></i>
+  Junit
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring Data Jpa/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring Data Jpa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JWT/" class="nav-link"><i class="iconfont undefined"></i>
+  JWT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Web权限/" class="nav-link"><i class="iconfont undefined"></i>
+  Web权限
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端技术/" class="nav-link"><i class="iconfont undefined"></i>
+  前端技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用命令/" class="nav-link"><i class="iconfont undefined"></i>
+  常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库技术/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法&amp;数学/" class="nav-link"><i class="iconfont undefined"></i>
+  算法&amp;数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软件安装&amp;配置/" class="nav-link"><i class="iconfont undefined"></i>
+  软件安装&amp;配置
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/websites.html" class="nav-link"><i class="iconfont reco-document"></i>
+  常用网站
+</a></div><div class="nav-item"><a href="/messageboard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><a href="https://github.com/yinyicao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><!----> <h3 class="name" data-v-ca798c94>
+    小松鼠
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>26</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>43</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/DevOps/" class="nav-link"><i class="iconfont undefined"></i>
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="iconfont undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Maven/" class="nav-link"><i class="iconfont undefined"></i>
+  Maven
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Log/" class="nav-link"><i class="iconfont undefined"></i>
+  Log
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Junit/" class="nav-link"><i class="iconfont undefined"></i>
+  Junit
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Spring Data Jpa/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring Data Jpa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JWT/" class="nav-link"><i class="iconfont undefined"></i>
+  JWT
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Web权限/" class="nav-link"><i class="iconfont undefined"></i>
+  Web权限
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端技术/" class="nav-link"><i class="iconfont undefined"></i>
+  前端技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用命令/" class="nav-link"><i class="iconfont undefined"></i>
+  常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库技术/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库技术
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法&amp;数学/" class="nav-link"><i class="iconfont undefined"></i>
+  算法&amp;数学
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软件安装&amp;配置/" class="nav-link"><i class="iconfont undefined"></i>
+  软件安装&amp;配置
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/websites.html" class="nav-link"><i class="iconfont reco-document"></i>
+  常用网站
+</a></div><div class="nav-item"><a href="/messageboard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><a href="https://github.com/yinyicao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>安装Tomcat服务器以及错误汇总（tomcat8.0、jdk8）</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>小松鼠</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2021
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">安装Tomcat服务器以及错误汇总（tomcat8.0、jdk8）</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>小松鼠</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2019-10-05 15:03:00</span></i> <i class="iconfont reco-eye" data-v-3b7f5bdf><span id="/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85&amp;%E9%85%8D%E7%BD%AE/Installing-tomcat8-and-resolve-errors.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-3b7f5bdf><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Tomcat8.0</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><blockquote><p>该文章为博主原创，最初发表在<a href="https://www.cnblogs.com/hyyq/p/5933214.html" target="_blank" rel="noopener noreferrer">我的博客园<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p></blockquote> <h2 id="tomcat安装和启动"><a href="#tomcat安装和启动" class="header-anchor">#</a> Tomcat安装和启动</h2> <h3 id="一、下载tomcat"><a href="#一、下载tomcat" class="header-anchor">#</a> <strong>一、下载Tomcat</strong></h3> <p>地址栏输入官网地址：http://tomcat.apache.org/，然后进入他的主页，在主页左侧可以找到Download，这里可以看到很多版本，我这里选择Tomcat8这个版本（因为我的MyEclipse是2014版，它支持配置的最高版本Tomcat是8），点击进去，</p> <p><img src="Installing-tomcat8-and-resolve-errors/Installing-tomcat8-and-resolve-errors.md" alt=""></p> <p>这里我选择64-bit Windows zip这个版本，点击它就可以下载了。</p> <h3 id="二、安装tomcat"><a href="#二、安装tomcat" class="header-anchor">#</a> <strong>二、安装Tomcat</strong></h3> <p>怎么安装呢，其实解压就算是安装好了（听说分什么解压版和安装版，我这里就不说了，可能是上面下载的版本问题，但是我下载的这个也可以当作安装版呀），只是还需要相关配置才能正常工作哦，如图，下载的包是1，解压后是2.</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005212648160-735696631.png" alt=""></p> <p>然后，需要检查你的JAVA_HOME变量配好了没（很重要，看了后面其实也不用配，如果是新手，还是配上吧），当然path,classpath也需要正确配置，网上有很多关于配置JDK环境变量的文章，我这里就不一一解说了，举个例子，JAVA_HOME正确的是这样，如图，</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005212954723-965421243.png" alt=""></p> <p>注：变量名为大写，JAVA_HOME（中间有下划线），变量值为你的jdk存放路径（末尾不能有分号）</p> <p>然后打开刚刚解压的Tomcat8文件夹，打开bin目录，然后可以看到很多，批处理文件，点击startup.bat运行，</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005213608207-2064562366.png" alt=""><img src="Installing-tomcat8-and-resolve-errors/945531-20161005213631567-1422305705.png" alt=""></p> <p>如果点击过后等待若秒后，出现下面图中样子，并没有任何报错输出，并且你也可以在电脑服务中（win+r
+输入services.msc）找到一个服务名为Apache Tomcat 8.0 Tomcat8的服务已经启动了，说明你已经启动成功了！</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005213931676-230199906.png" alt=""></p> <h3 id="三、测试启动"><a href="#三、测试启动" class="header-anchor">#</a> <strong>三、测试启动</strong></h3> <p>这时，保持上面窗口没有关闭（如果你想关闭它，不要直接点击右上角的小叉，同样在bin目录下有一个shutdown.bat点击它可以关闭tomcat服务器），你可以在浏览器地址栏输入http://localhost:8080/检查是否真的启动成功，如果出现下面图中样式，则启动成功，你可以不用再往下看了。</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005214339817-68513205.png" alt=""></p> <h2 id="错误排查"><a href="#错误排查" class="header-anchor">#</a> 错误排查</h2> <p>很多时候并不是这样一帆风顺，下面列出几个常见的错误，也是我遇到的。比如：</p> <h3 id="错误一-启动失败"><a href="#错误一-启动失败" class="header-anchor">#</a> 错误一:启动失败</h3> <p><strong>点击startup.bat后，屏幕闪一下就没了，并没有启动成功！</strong></p> <p>查看错误：首先应该想到的是，你的JAVA_HOME环境变量没有配好（路径后面一定要没有分号，因为Tomcat需要获取这个值），如果是配好了，那就右击startup.bat选择编辑，在最后一行输入pause,目的是让当前窗口暂停，不让他消失，如图：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005215221004-805423024.png" alt=""></p> <p>然后再启动它，如果配置正确的话应该是可以看到这些值的，如图：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005215738957-102600795.png" alt=""></p> <p>解决方法一：在tomcat的bin目录下的startup.bat中<code>set JAVA_HOME=&quot;&quot;</code>或<code>set JRE_HOME=&quot;...\jre&quot;,以及CATALINA_BASE或CATALINA_HOME</code>然后测试http://localhost:8080</p> <div class="language-bash extra-class"><pre class="language-bash"><code>rem ---------------------------------------------------------------------------
+rem Start script <span class="token keyword">for</span> the CATALINA Server
+rem ---------------------------------------------------------------------------
+ 
+setlocal
+ 
+rem ---------当前bat文件目录的上级--------
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">CATALINA_HOME</span><span class="token operator">=</span>%~dp0<span class="token punctuation">..</span> 
+rem -----------setclasspath.bat中要用到JAVA_HOME----------
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>C:<span class="token punctuation">\</span>Program Files<span class="token punctuation">\</span>Java<span class="token punctuation">\</span>jdk1.7.0_15
+</code></pre></div><p>解决方法二：去配置这些环境变量，名字是前面大写的部分（如：CATALINA_HOME），值就是后面的了。其实，我配置的是下面的几个：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005220616239-1654551789.png" alt=""></p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005220638348-1674696440.png" alt=""></p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005220700832-1292273273.png" alt=""></p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005220805614-568209122.png" alt=""></p> <p>解决方法三：如果，上面两种方法都试过了，并且配置了各种路径正确，还不行，那么只有试试这种方法了：</p> <p>首先先上面说到的环境变量保证配好，然后，你点击bin目录下的这个选项（如图），是不是弹出一个框说是没有安装。</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005221236942-1561073273.png" alt=""></p> <p>如果上面说的环境变量（特别是path和CATALINA_HOME）配置好了，那么现在按win+R或者直接打开运行，输入cmd，回车（如图）：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005221621707-881708615.png" alt=""></p> <p>然后输入service install Tomcat8
+回车，会提示你安装成功（如图，由于我已经安装过，说以会说是失败），如果提示说：&quot;......&quot;不是内部命令或外部命令，那就是你环境变量没配好。</p> <p>如果某一天你想卸载它，命令是：service uninstall Tomcat8（卸载Tomcat8）。</p> <p>现在你再点击bin目录下的tomcat8w.exe就会出现一个对话框了，里面的一些路径需要和你配置的环境变量和tomcat安装目录一致（默认会自动配置，但有可能不对），如图：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005222906285-944928829.png" alt=""></p> <p>日志文件可以帮助你找到关于tomcat启动、运行中出现的错误或信息。</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005223001723-1762470014.png" alt=""></p> <p>这些都对了，你可以启动tomcat服务器了，点击start启动，关闭点stop如图：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005223443379-2051016714.png" alt=""><img src="Installing-tomcat8-and-resolve-errors/945531-20161005223531395-1346747590.png" alt=""></p> <h3 id="错误二-端口占用"><a href="#错误二-端口占用" class="header-anchor">#</a> 错误二:端口占用</h3> <p><strong>8080端口被占用</strong></p> <p>因为Tomcat服务器默认使用你电脑里的8080端口，如果这个端口被其它程序所占用，
+就启动不了了，这时需要去修改它的默认端口，怎么修改呢？打开tomcat安装目录，找到conf目录下的
+server.xml文件，右键编辑，找到如图所示地方，修改8080为其它，我这里修改为5200.</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005224103020-379395881.png" alt=""></p> <p>重新启动tomcat服务，现在在浏览器中输入http://localhost:5200/（注：5200就是上面你改过的端口号），出现如图页面，就成功了。</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20161005224440504-1537281564.png" alt=""></p> <p>如果在安装过程中，还有其它错误，你可以查看，上文提到的日志文件，里面或许可以找到你需要的。</p> <h3 id="错误三-manager无法进入"><a href="#错误三-manager无法进入" class="header-anchor">#</a> 错误三:Manager无法进入</h3> <p><strong>Tomcat进入Server Status 、Manager App、Host Manager报401或403错误</strong></p> <p>某些情况下可能会用到 <strong>Server Status、 Manager App、 Host Manager</strong>这三个工具，在tomcat启动主页的靠右边点可以看到这三个选项。一般来说安装完成tomcat，测试成功能进入tomcat主页面，但点击Server Status或Manager App、Host Manager都会先让你输入账号密码，然后出现错误，如下图：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20180424120533004-1153864291.png" alt=""></p> <p>这个时候我们可以通过错误提示进行配置。错误中说你需要设置一个角色和用户名以及密码。那我们就去配置，打开conf目录下的tomcat-users.xml文件，拉到最后，配置好相应的角色和用户名及密码，对应角色拥有的权限在上面图中的错误页面可以看到。配置如下图：</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20180424121014721-875215841.png" alt=""></p> <p><code>&lt;role /&gt;标签</code>：</p> <ul><li><p><code>manager-gui</code> - allows access to the HTML GUI and the status pages用于可以进入tomcat的Server Status或Manager App，</p></li> <li><p><code>admin-gui</code> - allows access to the HTML GUI可以进入Host Manager，</p></li></ul> <p><code>&lt;user/&gt;标签</code>：配置用户名、密码以及该用户拥有的角色。配置完成后保存并重启tomcat，发现可以通过用户名和密码进入Server Status或Manager App、Host Manager这三个页面了。</p> <p><img src="Installing-tomcat8-and-resolve-errors/945531-20180424121500447-1417436362.png" alt=""></p> <p>本文如有错误，希望您能帮我指出。如有任何问题请直接在网站右上方留言板给我留言。谢谢。</p> <p>该文章为博主原创，最初发表在<a href="https://www.cnblogs.com/hyyq/p/5933214.html" target="_blank" rel="noopener noreferrer">我的博客园<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.748554b7.js" defer></script><script src="/assets/js/3.f7c3d02a.js" defer></script><script src="/assets/js/1.51f96c15.js" defer></script><script src="/assets/js/37.b4fd7be0.js" defer></script>
+  </body>
+</html>
