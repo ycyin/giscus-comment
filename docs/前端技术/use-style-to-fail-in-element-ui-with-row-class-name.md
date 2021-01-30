@@ -11,7 +11,7 @@ keywords:
   - cell-class-name
   - css 失效
 date: 2020-07-06 14:50:10
-categories: Vue
+categories: 前端技术
 description: Vue项目中，需要给el-table表格中的每一行加入自定义的样式，根据文档给组件加上row-class-name属性即可，直接加入该属性并且在当前Vue组件中配置对应class的样式发现并没有生效。
 ---
 ## 问题描述

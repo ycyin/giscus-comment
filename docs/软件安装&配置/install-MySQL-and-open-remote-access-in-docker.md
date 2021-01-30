@@ -5,7 +5,7 @@ tags:
   - Docker
   - 数据库
   - MySQL
-categories: DB
+categories: 软件安装&配置
 ---
 
 

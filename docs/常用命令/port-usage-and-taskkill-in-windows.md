@@ -9,7 +9,7 @@ keywords:
   - windows结束进程
   - taskkill
 date: 2020-06-26 16:02:33
-categories: Windows
+categories: 常用命令
 description: windows查看端口占用、结束进程。
 ---
 ### 前言

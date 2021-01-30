@@ -5,7 +5,7 @@ tags:
   - Tomcat8.0
 keywords:
   - tomcat
-categories: 软件安装
+categories: 软件安装&配置
 ---
 
 > 该文章为博主原创，最初发表在[我的博客园](https://www.cnblogs.com/hyyq/p/5933214.html)。

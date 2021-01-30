@@ -5,7 +5,7 @@ tags:
 keywords:
   - AHP,层次分析法，层次分析法步骤，层次分析法例子
 date: 2020-06-22 09:10:06
-categories: AHP
+categories: 算法&数学
 description: 层次分析法(Analytic Hierarchy Process,AHP)是对难以完全定量的复杂系统做出决策的模型和方法。这里记录学习层次分析法（AHP）分析步骤与计算方法，层次分析法的基本步骤与流程。
 mathjax: true
 ---

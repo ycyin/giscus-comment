@@ -3,7 +3,7 @@ title: 获取el-table单元格值并根据该值对元素自定义样式渲染
 date: 2020-03-13 20:18:15
 tags:
   - Vue
-categories: Vue
+categories: 前端技术
 ---
 
 ## 最终显示效果

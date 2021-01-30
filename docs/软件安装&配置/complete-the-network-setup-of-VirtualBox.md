@@ -9,7 +9,7 @@ keywords:
   - 网络设置
   - 虚拟机网络设置
 date: 2020-12-04 19:33:33
-categories: Windows
+categories: 软件安装&配置
 description: VirtualBox虚拟机网络设置
 ---
 ## 前言

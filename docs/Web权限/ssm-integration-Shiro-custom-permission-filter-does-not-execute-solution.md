@@ -4,7 +4,7 @@ date: 2020-02-11 16:12:41
 tags:
   - SSM
   - Shiro
-categories: Shiro
+categories: Web权限
 ---
 
 ## 开发环境

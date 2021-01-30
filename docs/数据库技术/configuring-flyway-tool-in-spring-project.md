@@ -5,7 +5,7 @@ tags:
   - Flyway
   - 数据库
   - 版本管理
-categories: DB
+categories: 数据库技术
 ---
 
 ## 前言
