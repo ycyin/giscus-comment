@@ -11,6 +11,8 @@ isShowComments: true
 | 名称            | 地址                             | 备注                                     |
 | --------------- | -------------------------------- | ---------------------------------------- |
 | 在线工具大全    |<https://www.tooleyes.com/>       | 各种办公辅助、图片视频、网络等在线工具   |
+| 在线PDF工具 |<https://smallpdf.com/cn> | 在线PDF工具，加密、解密、编辑等 |
+| 代码转流程图 |<https://app.code2flow.com> | 代码转流程图工具 |
 | 奇Q工具网 |<https://qqe2.com/> | 各种在线工具，如Cron生成器、各类文件格式化转换工具 |
 | SSL在线工具     |<https://www.ssleye.com/>         | 各种密码加密、证书工具、SSL检测、漏洞等  |
 | ProcessOn       |<https://www.processon.com/>      | 在线作图：流程图、UML、思维导图等        |
