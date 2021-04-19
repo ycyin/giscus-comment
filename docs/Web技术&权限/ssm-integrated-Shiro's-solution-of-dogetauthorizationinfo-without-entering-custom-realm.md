@@ -4,7 +4,7 @@ date: 2020-02-10 11:10:14
 tags:
   - SSM
   - Shiro
-categories: Web权限
+categories: Web技术&权限
 ---
 
 ## 问题重现
