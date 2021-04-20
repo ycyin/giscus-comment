@@ -73,7 +73,7 @@ RESTEasy 项目是 JAX-RS 的一个实现，集成的一些亮点：
 
 ## 简单实践
 
-这里使用org.jboss.resteasy 4.6.0.Final版本，我这边实践使用JDK1.8部署到tomcat9.0中可正常运行。点击<a :href="$withBase('/code/RestEasyDemo.zip')" download="spring-scheduler.zip">这里下载完整Demo</a>。
+这里使用org.jboss.resteasy 4.6.0.Final版本，我这边实践使用JDK1.8部署到tomcat9.0中可正常运行。点击<a :href="$withBase('/code/RestEasyDemo.zip')" download="RestEasyDemo.zip">这里下载完整Demo</a>。
 
 使用IDEA新建一个maven构建的简单Web应用。然后简单的编辑几个文件便可发布RESTful接口。
 
@@ -179,7 +179,7 @@ public class Library {
 
 然后同普通Web项目一样在Tomcat中启动即可在浏览器访问。http://localhost:8080/RestEasyDemo_war/library/book/1234
 
-<a :href="$withBase('/code/RestEasyDemo.zip')" download="spring-scheduler.zip">下载完整Demo</a>
+<a :href="$withBase('/code/RestEasyDemo.zip')" download="RestEasyDemo.zip">下载完整Demo</a>
 
 ## 参考
 
