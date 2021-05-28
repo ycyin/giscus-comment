@@ -381,11 +381,11 @@ Process finished with exit code 0
 
 # 生产实例
 
-### 场景
+## 场景
 
 系统需要调用第三方接口，第三方接口最多支持每次查询查50条，现需要开启线程池查询出所有数据（所有数据的条数生产上通过其它方式获得，这里固定为3000条）。
 
-### 代码
+## 代码
 
 ```java
 public class DataOperate {
@@ -471,8 +471,6 @@ public class DataOperate {
     }
 }
 ```
-
-
 
 # 参考
 
