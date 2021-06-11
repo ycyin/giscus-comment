@@ -28,6 +28,7 @@ isShowComments: true
 | 云短信          |<https://www.materialtools.com/>  | 在线短信接收，注册网站、临时短信接收     |
 | 超级云短信      |<http://www.bfkdim.com/>          | 同上                                     |
 | 临时邮件        |<https://temp-mail.org/zh/>         | 临时邮箱，和云短信一个道理               |
+| IpAddress |<https://www.ipaddress.com/> | IP地址工具:反向IP查找，WHOIS等信息查询 |
 
 ## 开发文档
 
@@ -47,6 +48,7 @@ isShowComments: true
 | --------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
 | JAVA教程              | <https://howtodoinjava.com/>                                 | 一个全英语的JAVA教程网站，各种框架、语法等。                |
 | CodeJava教程          | <https://www.codejava.net/>                                  | 另一个不错的全英语JAVA教程网站                              |
+|   beginnersbook                    | <https://beginnersbook.com/>     | 一个比较基础的JAVA教程网站 |
 | 设计模式              | 英文：<https://refactoring.guru/><br />中文：<https://refactoringguru.cn/> | 学习设计模式的网站，提供多种语言伪代码                      |
 | Oracle官方Java技术    | <https://www.oracle.com/cn/java/technologies/>               | Java咨询、JDK下载等                                         |
 | 慕课网                | <https://www.imooc.com/>                                     | 做开发的都知道的视频学习网站                                |
