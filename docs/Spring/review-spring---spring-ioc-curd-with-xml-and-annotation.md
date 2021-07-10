@@ -578,6 +578,8 @@ public class AccountServiceImpl implements IAccountService{
 
 首先，因为我们没有了bean.xml，所以我们要将数据源的配置信息写到配置类中。
 
+<span style="color:red;font-size:1.5em">注意：数据库jdbcConfig.properties配置文件放到resources目录下、配置类放到需要扫描的包的上一层</span>
+
 **jdbcConfig.properties：**
 
 ```properties
