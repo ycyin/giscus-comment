@@ -1255,6 +1255,12 @@ public class AccountServiceTest {
 }
 ```
 
+## 错误
+
+当使用非环绕通知配置AOP时，可能会出现错误<span style="color:red">com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Can't call rollback when autocommit=true</span>，导致无法实现事务回滚。原因是：Spring通知执行顺序问题，先执行了最终通知再执行的后置通知，我们这里最终通知就是释放连接而后置通知是提交事务，在最终通知中关闭了连接后在后置通知中又获取了一个新的连接再去提交事务就会报错。
+
+通过实验发现，这个问题当我们使用`Spring  5.2.7.RELEASE`的时候就可以解决这个问题，原因暂时不知道呢？有木有小伙伴知道欢迎在右上方留言板留言或在[About the MySQLNonTransientConnectionException,Below version 5.2.7.RELEASE of Spring - Stack Overflow](https://stackoverflow.com/questions/68405218/about-the-mysqlnontransientconnectionexception-below-version-5-2-7-release-of-sp) 中回复。
+
 ## *参考*
 
 1. 重学Spring参考黑马57期Spring部分内容
