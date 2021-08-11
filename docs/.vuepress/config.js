@@ -20,7 +20,8 @@ module.exports = {
   // 移动端优化
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
-	['meta', { name: "google-site-verification", content: "NL5qmCT5yDHkyrRJUGxdC-9yeoSzCGXptwYUFziA64s" }],
+	  ['meta', { name: "google-site-verification", content: "NL5qmCT5yDHkyrRJUGxdC-9yeoSzCGXptwYUFziA64s" }],
+    ['link', { rel: 'icon', href: '/img/avatar/bitbug_favicon32.ico' }],  //favicon图标设置
     ["script", { src: "scripts/myfooter.js" }]
   ],
   title: '敲代码的小松鼠',
