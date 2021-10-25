@@ -91,7 +91,7 @@ String publicKey = Base64.encodeBase64String(keyPair.getPublic().getEncoded());
 
 ## 错误解决
 
-通过多次尝试，使用相同的密钥对，发现IOS端的RSA自己加密解密没有问题，后端前同事写的RSA自己加密解密也没有问题。IOS端使用公钥加密后后端用私钥解密出来的不对。
+通过多次尝试，使用相同的密钥对，发现IOS端的RSA自己加密解密没有问题，后端前同事写的RSA自己加密解密也没有问题（<span style="color:red">注意：此处无需尝试IOS端公钥加密为何与后端同一公钥加密同一字符串结果不同，因为使用RSA公钥加密同一字符串每一次结果本来就不一样</span>）。IOS端使用公钥加密后后端用私钥解密出来的不对。
 
 通过许久排查，发现后端对数据解密时的`Cipher.getInstance`，指定了安全服务提供者`BouncyCastleProvider`，去掉这个就可以了。
 
@@ -115,4 +115,5 @@ Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
 - 后端RSA加解密工具类源码：<a :href="$withBase('/code/RSAUtils.zip')" download="RSAUtils.zip">点击下载</a>
 - JDK RSAPublicKey 官方文档：[RSAPublicKey (Java Platform SE 7 ) (oracle.com)](https://docs.oracle.com/javase/7/docs/api/java/security/interfaces/RSAPublicKey.html)
 - [BouncyCastle - 廖雪峰的官方网站 (liaoxuefeng.com)](https://www.liaoxuefeng.com/wiki/1252599548343744/1305362418368545)
+- [为什么RSA公钥每次加密得到的结果都不一样？_洛奇看世界-CSDN博客](https://blog.csdn.net/guyongqiangx/article/details/74930951)
 
