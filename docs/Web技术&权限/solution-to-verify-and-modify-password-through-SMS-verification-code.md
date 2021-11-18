@@ -54,19 +54,19 @@ isShowComments: true
 
 在发送验证码阶段主要做的工作是校验用户和发送验证码及相关数据的存储，还有判断用户频繁发送验证码等。存储到缓存的数据中，验证码数据是必须要存储起来的，发送间隔判断用的缓存数据和验证的次数数据也需要存起来。最后，用户需要修改密码时需要用到的用户ID也在这一步校验用户时可以拿到，为了后面不重复校验用户也可以把用户ID也存起来。同时，短信验证码校验成功返回的标识数据可以在这时生成和用户ID存在一起，可以减少一条缓存数据的存储。
 
-![](solution-to-verify-and-modify-password-through-SMS-verification-code/1.发送验证码.png)
+![](./solution-to-verify-and-modify-password-through-SMS-verification-code/1.发送验证码.png)
 
 ## 验证码校验
 
 由于第一步发送验证码做的工作比较多，这一步就相对比较简单了。只需要校验用户数据的验证码是否正确，以及用户验证的次数是否超过设定次数即可。
 
-![](solution-to-verify-and-modify-password-through-SMS-verification-code/2.验证码校验.png)
+![](./solution-to-verify-and-modify-password-through-SMS-verification-code/2.验证码校验.png)
 
 ## 新密码修改
 
 在新密码修改这一步中，需要校验用户是否通过了短信验证码验证以及用户的ID数据是否存在（用户ID数据设定有效期两小时，这可以保证用户校验验证码通过后必须在两小时内修改密码）。另外这一步中还需要将新密码解密以用户登录时的加密方式重新加密密码后存储。最后用户修改密码成功后，需要删除所有缓存数据，以保证一次短信验证只能修改成功一次密码。
 
-![](solution-to-verify-and-modify-password-through-SMS-verification-code/3.新密码修改.png)
+![](./solution-to-verify-and-modify-password-through-SMS-verification-code/3.新密码修改.png)
 
 ## 带来的思考
 
