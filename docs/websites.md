@@ -32,12 +32,13 @@ isShowComments: true
 
 ## 开发文档
 
-> 开发文档，官方的或者别人翻译的
+> 开发文档（官方的或者他人翻译）、API等
 
 | 名称               | 地址                                                   | 备注                                                         |
 | ------------------ | ------------------------------------------------------ | ------------------------------------------------------------ |
 | JDK8官方文档       | <https://docs.oracle.com/javase/8/docs/api/index.html> | JDK8官方文档地址【英文】，更多版本JDK7-14：<https://docs.oracle.com/en/java/javase/> |
 | JQuery API中文文档 | <http://jquery.cuishifeng.cn/>                         | 一个个人翻译网站，包括 JQuery API ，正则速查等               |
+| 免费API收集        | <https://www.free-api.com/>                            | 接口大全-免费API,收集所有免费的API (free-api.com)            |
 |                    |                                                        |                                                              |
 
 ## 综合学习
@@ -63,6 +64,8 @@ isShowComments: true
 | IBM Developer技术主题 | <https://www.ibm.com/developerworks/cn/topics/>              |                                                             |
 | Linux公社、资源站     | 公社：<https://www.linuxidc.com/><br />资源站：<https://linux.linuxidc.com/> | Linux公社和资源站，学Linux、下Linux系统                     |
 | 前端5本书             | <http://book.ydma.cn/index?qrcode=f57ef6ead95611e6aa5800163e00654d&fid=1> | 个人网站，修改参数fid=后的数字可访问5本前端书内容、视频教程 |
+| 编程知识社区(小众) | <https://learnku.com/>                                       | 编程知识社区，比较小众 |
+|  |                                                              |  |
 
 ## 综合导航
 
