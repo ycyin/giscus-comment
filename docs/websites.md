@@ -47,6 +47,7 @@ isShowComments: true
 
 | 名称                  | 地址                                                         | 备注                                                        |
 | --------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| 代码随想录 | <https://programmercarl.com/>                                | 一套完整的刷题计划 |
 | JAVA教程              | <https://howtodoinjava.com/>                                 | 一个全英语的JAVA教程网站，各种框架、语法等。                |
 | CodeJava教程          | <https://www.codejava.net/>                                  | 另一个不错的全英语JAVA教程网站                              |
 |   beginnersbook                    | <https://beginnersbook.com/>     | 一个比较基础的JAVA教程网站 |
