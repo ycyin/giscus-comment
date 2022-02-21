@@ -144,6 +144,33 @@ COMMENT ON COLUMN T_TABLE_DB_TEST.PRICE IS '金额';
 --rollback drop table T_TABLE_DB_TEST;
 ```
 
+## 使用H2内存数据库测试一下
+
+加入依赖：devtools可以提供h2的图形化操作页面
+
+```groovy
+//h2数据库
+implementation 'com.h2database:h2'
+implementation 'org.springframework.boot:spring-boot-devtools'
+```
+
+配置数据库连接：
+
+```yaml
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:ycyin;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: root
+    password:
+```
+
+启动项目后访问：`http://localhost:8080/h2-console/login.jsp` 登录即可。
+
+第一次执行Liquibase会在数据库中创建两张表：
+`databasechangelog` 用于记录执行的历史脚本
+`databasechangeloglock` 锁定操作，防止多处同时执行
+
 ## *参考*
 
 1. 更多规则和详细信息请访问[Liquibase Online Documentation](https://docs.liquibase.com/home.html)
