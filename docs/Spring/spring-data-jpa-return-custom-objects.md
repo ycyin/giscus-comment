@@ -3,7 +3,7 @@ title: Spring Data Jpa 返回自定义对象（实体部分属性、多表联查
 date: 2020-04-22 08:00:39
 tags:
   - Spring Data Jpa
-  - Springboot
+  - Spring Boot
 categories: Spring Data Jpa
 ---
 
