@@ -32,7 +32,7 @@ description: VirtualBox虚拟机网络设置
 
 ### 第一步：配置主机网络管理器
 
-VirtualBox主界面->管理->主机网络管理器(Ctrl+H)，点开就能看到一个Host-Only的网络适配器，选择属性，勾选DHCP服务器为启用，网卡设置为自动配置网卡。
+<span id="host-network"></span>VirtualBox主界面->管理->主机网络管理器(Ctrl+H)，点开就能看到一个Host-Only的网络适配器，选择属性，勾选DHCP服务器为启用，网卡设置为自动配置网卡。
 
 ![](./complete-the-network-setup-of-VirtualBox/network1.png)
 
@@ -44,7 +44,7 @@ VirtualBox主界面->管理->主机网络管理器(Ctrl+H)，点开就能看到�
 
 ![](./complete-the-network-setup-of-VirtualBox/network4.png)
 
-然后点击DHCP服务器设置：勾选启用，服务器地址一般就填192.168.xxx.1就行。这样设置之后你在VirtualBox创建的虚拟机就会根据这个去自动分配IP地址，第一个虚拟机就默认是这里配置的最小地址（192.168.88.100），第二个是192.168.88.101依次类推。<span style="color:red">所以，一般来说我们没必要去把虚拟机启动起来然后去给它设置一个静态的IP,只需要以此类推就可以知道IP地址的(设置静态IP设置不好就会导致网络无法访问，多一事不如少一事)。</span>
+然后点击DHCP服务器设置：勾选启用，服务器地址一般就填192.168.xxx.1就行。这样设置之后你在VirtualBox创建的虚拟机就会根据这个去自动分配IP地址。
 
 ![](./complete-the-network-setup-of-VirtualBox/network2.png)
 
@@ -62,7 +62,23 @@ VirtualBox主界面->管理->主机网络管理器(Ctrl+H)，点开就能看到�
 
 按照网友的说法，<span style="color:red">Host-Only是用来保证宿主机与虚拟机互通和虚拟机之间互通的，而NAT网络是用来保证可访问外网的</span>。
 
-所以这里就有一点网上很多文章没有说全：<span style="color:red">当要设置静态IP时，直接修改`/etc/sysconfig/network-scripts/ifcfg-enp0s3`这个网卡配置是不对的</span>，因为通过我的多次实验发现，我们设置静态IP是宿主机与虚拟机互通和虚拟机之间互通的IP，也就是Host-Only网卡的IP，所以直接修改`enp0s3`这个的前提是，要网卡1设置的是Host-Only（如我前面所说，不建议也没必要去设置静态IP）。<span style="color:orange">如果网卡1和网卡2设置反了，就要考虑是不是应该修改enp0s8这个配置</span>（我发现我这几个系统都没有这个文件的）。
+所以这里就有一点网上很多文章没有说全：<span style="color:red">当要设置静态IP时，直接修改`/etc/sysconfig/network-scripts/ifcfg-enp0s3`这个网卡配置是不对的</span>，因为通过我的多次实验发现，我们设置静态IP是宿主机与虚拟机互通和虚拟机之间互通的IP，也就是Host-Only网卡的IP，所以直接修改`enp0s3`这个的前提是，要网卡1设置的是Host-Only。<span style="color:orange">如果网卡1和网卡2设置反了，就要考虑是不是应该修改enp0s8这个配置</span>（我发现我这几个系统都没有这个文件的）。
+
+#### 静态IP设置
+
+某些情况下需要固定虚拟机的IP地址，方便我们在宿主机上使用Xshell等类似工具进行连接使用。根据上面的描述，我们直接修改`ifcfg-enp0s3`配置是不对的，要检查之前配置虚拟机网络时选择的网卡1是否设置的是Host-Only，网卡2是否设置的是NAT，如果这两个设置反了，就要考虑是不是应该修改`ifcfg-enp0s8`这个配置。我这里是直接修改`ifcfg-enp0s3`配置。
+
+1. `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`
+
+2. 修改`BOOTPROTO=dhcp`为`BOOTPROTO=static`
+
+3. 根据[配置的主机网络管理器](#host-network)，设置`IPADDR`、`GATEWAY`、`NETMASK`，我这里就可以设置为：
+
+   ```shell
+   IPADDR="192.168.88.111"
+   GATEWAY="192.168.88.1"
+   NETMASK="255.255.255.0"
+   ```
 
 ### 第三步：设置开机启动网卡
 
