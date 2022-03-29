@@ -10,6 +10,8 @@ isShowComments: true
 
 | 名称            | 地址                             | 备注                                     |
 | --------------- | -------------------------------- | ---------------------------------------- |
+| dserctl下载 | <https://d.serctl.com/> | 下载工具（用于下载速度慢的外网下载） |
+| 工具哇 | <http://toolwa.com/> | 提供了几个在线工具：github加速下载、在线ps、图床等 |
 | 在线工具大全    |<https://www.tooleyes.com/>       | 各种办公辅助、图片视频、网络等在线工具   |
 | 在线PDF工具 |<https://smallpdf.com/cn> | 在线PDF工具，加密、解密、编辑等 |
 | 代码转流程图 |<https://app.code2flow.com> | 代码转流程图工具 |
@@ -100,18 +102,18 @@ isShowComments: true
 | 微信社区管理  | 微小宝：<https://www.wxb.com/>，<br />WeTool：<https://www.wxb.com/wetool> | 微信公众号管理工具，微信管理工具(僵尸粉)                     |
 | 公益工具箱    | <http://tools.ngo20.org/>                                    | 可以发现一些好玩、实用的网站或软件                           |
 | 匿名Tor浏览器 | <https://www.torproject.org/zh-CN/>                          | 需要FQ下载。防止你被追踪和监视，避开网络审查的浏览器。       |
+| NetSetMan     | <https://www.netsetman.com/>                                 | 方便的切换网络配置(DNS/IP等)、根据连接的网络自动切换。       |
 
 ## 辅助工具
 
 > 给其它工具或网站提供辅助功能
 
-| 名称             | 地址                        | 备注                                                         |
-| ---------------- | --------------------------- | ------------------------------------------------------------ |
-| IDEA主题样式     |<http://easycolor.cc/>       | JetBrains家族ide的主题、激活码等                             |
-| 文档网站生成工具 |<https://docsify.js.org/#/>  | 生成一个文档网站，类似有GitBook、Hexo。不同的是他不会提前生成html文件。 |
-| 冰点软件         |<http://www.bingdian001.com/>| 无需积分下载百度、豆丁、丁香、MBALib、Book118等文库文档。下载的文档最终生成高清晰度的pdf格式文档。 |
-| 十八文库         |<http://www.18wk.com/>       | 文库网站，最好用的功能还是【百度文库代下载】                 |
-| PPT宝藏          |<http://www.pptbz.com/>      | 免费的PPT资源网站。含PPT模板、PPT素材、PPT教程等             |
+| 名称             | 地址                          | 备注                                                         |
+| ---------------- | ----------------------------- | ------------------------------------------------------------ |
+| 文档网站生成工具 | <https://docsify.js.org/#/>   | 生成一个文档网站，类似有GitBook、Hexo。不同的是他不会提前生成html文件。 |
+| 冰点软件         | <http://www.bingdian001.com/> | 无需积分下载百度、豆丁、丁香、MBALib、Book118等文库文档。下载的文档最终生成高清晰度的pdf格式文档。 |
+| 十八文库         | <http://www.18wk.com/>        | 文库网站，最好用的功能还是【百度文库代下载】                 |
+| PPT宝藏          | <http://www.pptbz.com/>       | 免费的PPT资源网站。含PPT模板、PPT素材、PPT教程等             |
 
 ## 下载服务
 
