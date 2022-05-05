@@ -84,25 +84,25 @@ isShowComments: true
 
 > 需要下载使用的工具软件，都很好用哦~一些很知名的软件就不放了，比如IDEA、Eclipse这些百度/Google一下就有地址啦！
 
-| 名称          | 地址                                                         | 备注                                                         |
-| ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| uTools        | <http://www.u.tools/>                                        | 效率工具平台，自由组合丰富插件，打造随手可取的终极神器       |
-| Everything    | <https://www.voidtools.com/zh-cn/>                           | 基于名称快速定位文件和文件夹。                               |
-| 万彩办公      | <http://www.wofficebox.com/>                                 | PDF工具/万能格式转换/识别工具/图片处理，多达60+个小工具      |
-| snipaste      | <https://snipaste.com/><br />或<br /><https://zh.snipaste.com/> | 截图，贴图；免费/免安装/个性定制                             |
-| 天若OCR识别   | <https://tianruoocr.cn/>                                     | 收费，天若OCR截图识别文字、翻译等                            |
-| 分流抢票      | <https://www.bypass.cn/>                                     | 12306抢票软件                                                |
-| GifCam        | <https://gifcam.en.softonic.com/>                            | 录制屏幕Gif动图                                              |
-| 微PE工具      | <http://www.wepe.com.cn/>                                    | 纯净的U盘启动盘、无捆绑、无广告                              |
-| 速盘SpeedPan  | <http://www.supanx.com/>                                     | 免登录，极速的度盘下载工具                                   |
-| XSHELL和XFTP  | 免费：<https://www.netsarang.com/zh/free-for-home-school/>，<br /><https://www.netsarang.com/zh/> | 良心、好用的shell、ftp工具，家庭/学校免费使用，网站访问慢（耐心等待） |
-| 宝塔面板      | <https://www.bt.cn/>                                         | 简单好用的服务器运维面板                                     |
-| Typora        | <https://www.typora.io/>                                     | 一个好用的MarkDown文档编辑器                                 |
-| 奇易软件      | <https://www.qyisoft.com/>                                   | 各种QQ相关PC软件，浏览器拦截通过即可                         |
-| 微信社区管理  | 微小宝：<https://www.wxb.com/>，<br />WeTool：<https://www.wxb.com/wetool> | 微信公众号管理工具，微信管理工具(僵尸粉)                     |
-| 公益工具箱    | <http://tools.ngo20.org/>                                    | 可以发现一些好玩、实用的网站或软件                           |
-| 匿名Tor浏览器 | <https://www.torproject.org/zh-CN/>                          | 需要FQ下载。防止你被追踪和监视，避开网络审查的浏览器。       |
-| NetSetMan     | <https://www.netsetman.com/>                                 | 方便的切换网络配置(DNS/IP等)、根据连接的网络自动切换。       |
+| 名称          | 地址                                                         | 备注                                                    |
+| ------------- | ------------------------------------------------------------ | ------------------------------------------------------- |
+| uTools        | <http://www.u.tools/>                                        | 效率工具平台，自由组合丰富插件，打造随手可取的终极神器  |
+| Everything    | <https://www.voidtools.com/zh-cn/>                           | 基于名称快速定位文件和文件夹。                          |
+| 万彩办公      | <http://www.wofficebox.com/>                                 | PDF工具/万能格式转换/识别工具/图片处理，多达60+个小工具 |
+| snipaste      | <https://snipaste.com/><br />或<br /><https://zh.snipaste.com/> | 截图，贴图；免费/免安装/个性定制                        |
+| 天若OCR识别   | <https://tianruoocr.cn/>                                     | 收费，天若OCR截图识别文字、翻译等                       |
+| 分流抢票      | <https://www.bypass.cn/>                                     | 12306抢票软件                                           |
+| GifCam        | <https://gifcam.en.softonic.com/>                            | 录制屏幕Gif动图                                         |
+| 微PE工具      | <http://www.wepe.com.cn/>                                    | 纯净的U盘启动盘、无捆绑、无广告                         |
+| 速盘SpeedPan  | <http://www.supanx.com/>                                     | 免登录，极速的度盘下载工具                              |
+| XSHELL和XFTP  | 免费：<https://www.xshell.com/zh/free-for-home-school/>，<br /><https://www.netsarang.com/zh/free-for-home-school/>，<br /><https://www.netsarang.com/zh/> | 良心、好用的shell、ftp工具，家庭/学校免费使用           |
+| 宝塔面板      | <https://www.bt.cn/>                                         | 简单好用的服务器运维面板                                |
+| Typora        | <https://www.typora.io/>                                     | 一个好用的MarkDown文档编辑器                            |
+| 奇易软件      | <https://www.qyisoft.com/>                                   | 各种QQ相关PC软件，浏览器拦截通过即可                    |
+| 微信社区管理  | 微小宝：<https://www.wxb.com/>，<br />WeTool：<https://www.wxb.com/wetool> | 微信公众号管理工具，微信管理工具(僵尸粉)                |
+| 公益工具箱    | <http://tools.ngo20.org/>                                    | 可以发现一些好玩、实用的网站或软件                      |
+| 匿名Tor浏览器 | <https://www.torproject.org/zh-CN/>                          | 需要FQ下载。防止你被追踪和监视，避开网络审查的浏览器。  |
+| NetSetMan     | <https://www.netsetman.com/>                                 | 方便的切换网络配置(DNS/IP等)、根据连接的网络自动切换。  |
 
 ## 辅助工具
 
