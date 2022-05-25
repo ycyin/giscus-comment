@@ -139,7 +139,6 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-
 ## *参考：*
 
 [Install VMware tools on Ubuntu 20.04 Focal Fossa Linux - Linux Tutorials - Learn Linux Configuration](https://linuxconfig.org/install-vmware-tools-on-ubuntu-20-04-focal-fossa-linux)
