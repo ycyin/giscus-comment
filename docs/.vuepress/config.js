@@ -68,9 +68,12 @@ module.exports = {
             platform: 'github',
             owner: 'yinyicao',
             repo: 'yinyicao.github.io',
+            // below is test
+            // clientId: '0ae77c0f28a6e152bbaa',
+            // clientSecret: '49eaed0b9f0eadae4699a062b7b8cb79d0367e6e',
             clientId: '8e13003e6b6d3db2dfe3',
             clientSecret: '89926d894f5f5166a9b421f668234b8f81b42e0c',
-			proxy: url => `https://cors-anywhere.azm.workers.dev/${url}`
+            proxy: 'https://vssue-proxy.herokuapp.com/https://github.com/login/oauth/access_token'
         },
         // 备案
         record: '渝ICP备19002727号-2',
