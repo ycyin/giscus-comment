@@ -70,6 +70,7 @@ module.exports = {
             repo: 'yinyicao.github.io',
             clientId: '8e13003e6b6d3db2dfe3',
             clientSecret: '89926d894f5f5166a9b421f668234b8f81b42e0c',
+			proxy: url => `https://cors-anywhere.azm.workers.dev/${url}`
         },
         // 备案
         record: '渝ICP备19002727号-2',
