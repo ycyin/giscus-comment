@@ -4,7 +4,7 @@ date: 2021-01-11 16:45:41
 tags:
   - Jenkins
   - GitLab
-categories: DevOps
+categories: 云原生
 ---
 
 ## 前言
