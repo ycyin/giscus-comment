@@ -4,7 +4,7 @@ date: 2022-06-07 15:42:44
 tags:
   - Spring
   - SpringMVC
-  - SpringBoot
+  - Spring Boot
 categories: Spring
 description: SpringMVC升级为SpringBoot实战
 ---
