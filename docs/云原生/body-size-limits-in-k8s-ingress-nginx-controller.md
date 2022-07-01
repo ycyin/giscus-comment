@@ -35,13 +35,13 @@ client_max_body_size     20M; #默认为1M
 可以使用`kubectl cp`命令将配置文件copy出来
 
 ```shell
-kubectl cp  ingress-nginx/nginx-ingress-controller-6dc776b7bc-2nfmw:/etc/nginx/nginx.conf ~/ycyin/nginx.conf
+kubectl cp  ingress-nginx/nginx-ingress-controller-6dc776b7bc-2nfmw:etc/nginx/nginx.conf ~/ycyin/nginx.conf
 ```
 
 关于`nginx.ingress.kubernetes.io/proxy-body-size`注解的更多信息：
 
-https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#custom-max-body-size
+<https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#custom-max-body-size>
 
 关于Ingress中可添加的更多注解：
 
-https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/
+<https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/>
