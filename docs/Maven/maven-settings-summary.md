@@ -19,7 +19,7 @@ categories: Maven
 
 对其中一些使用过程中涉及到的配置理解：
 
-# maven加载配置文件顺序
+## maven加载配置文件顺序
 
 `settings.xml`是maven的全局配置文件。而`pom.xml`文件是所在项目的局部配置
 `settings.xml`文件一般存在于两个位置：
@@ -29,7 +29,7 @@ categories: Maven
 用户配置优先于全局配置。局部配置优先于全局配置。配置优先级从高到低：`pom.xml> user settings > global settings`
 如果这些文件同时存在，在应用配置时，会合并它们的内容，如果有重复的配置，优先级高的配置会覆盖优先级低的。
 
-# repository和mirror
+## repository和mirror
 
 通常可以在`settings.xml`中看到如下配置：
 
@@ -99,7 +99,7 @@ repo,repo1 = repo or repo1 拦截指定 <repositories>名称的远程地址请�
 
 如果该镜像仓库需要认证，则配置setting.xml中的servers即可。
 
-# 关于私库用户密码
+## 关于私库用户密码
 
 ```xml
   <servers>
@@ -119,7 +119,7 @@ repo,repo1 = repo or repo1 拦截指定 <repositories>名称的远程地址请�
 
 2.使用mvn deploy命令上传依赖包到私库中时，通常要指定一个repositoryId，这个repositoryId=server.id=配置的仓库Id
 
-# 批量上传本地仓库到私库
+## 批量上传本地仓库到私库
 
 写了一个脚本：[maven私库nexus批量上传jar工具-OS文档类资源-CSDN文库](https://download.csdn.net/download/qq_36323797/86405234)
 
