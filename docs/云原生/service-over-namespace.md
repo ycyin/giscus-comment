@@ -37,7 +37,7 @@ Ingress
 
 网络上搜了一番，都是在说使用[ExternalName 类型](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#externalname)的Service，官方文档说明如下：
 
-![image-20220902145952351](./service-over-namespace\externalname-gf.png)
+![image-20220902145952351](./service-over-namespace/externalname-gf.png)
 
 在官方文档的说明和警告中可以发现可能有一些限制，在实际使用中我也发现了。
 
@@ -62,7 +62,7 @@ spec:
 
 在官方文档中[没有选择算符的 Service](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#services-without-selectors)说明很详细。官网截图如下：
 
-![image-20220902153307127](./service-over-namespace\service-without-selecter.png)
+![image-20220902153307127](./service-over-namespace/service-without-selecter.png)
 
 创建没有选择算符的Service，由于此服务没有选择算符，因此不会自动创建相应的 Endpoints 对象。 需要通过手动添加 Endpoints 对象，将服务手动映射到运行该服务的网络地址和端口。
 
