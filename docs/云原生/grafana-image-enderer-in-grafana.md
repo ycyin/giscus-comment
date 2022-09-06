@@ -97,9 +97,9 @@ three.点击下方的“<span style="color:red">Direct link rendered image</span
 
 ## *参考*
 
-https://grafana.com/grafana/plugins/grafana-image-renderer/
+<https://grafana.com/grafana/plugins/grafana-image-renderer/>
 
-https://github.com/grafana/grafana/tree/main/packaging/docker/custom
+<https://github.com/grafana/grafana/tree/main/packaging/docker/custom>
 
 [Grafana 报警配置 – 兰陵美酒郁金香的个人博客 (xhyonline.com)](https://www.xhyonline.com/?p=1534)
 
