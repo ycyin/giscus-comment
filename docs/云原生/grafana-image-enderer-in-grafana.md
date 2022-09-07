@@ -29,11 +29,11 @@ GF_SMTP_PASSWORD SMTP授权码
 GF_SMTP_FROM_ADDRESS yinyicao@qq.com
 ```
 
-## 关于容器中安装image-renderer插件[<span style="color:red">不行</span>]
+## 关于容器中安装image-renderer插件
 
-> <span style="color:red">注意：</span>通过尝试，发现在容器中安装了grafana-image-renderer插件也无法使用截图，详情请查看本文后面的遇到的坑。
+> <span style="color:red">注意：</span>通过尝试，发现在grafana的容器中安装grafana-image-renderer插件<span style="color:red">需要特别注意版本对应</span>，否则也无法使用截图，详情请查看本文后面的遇到的坑。
 
-**不能**和其它面板插件一样放入plugins目录即可，我试过发现会无法启动Grafana容器。
+容器中安装image-renderer插件**不能**像其它面板插件一样放入plugins目录即可，我试过发现会无法启动Grafana容器。
 
 官方也有说明，需要在构建镜像时加入。
 
@@ -45,7 +45,18 @@ GF_SMTP_FROM_ADDRESS yinyicao@qq.com
 
 其中构建的Dockerfile在grafana有的：https://github.com/grafana/grafana/tree/main/packaging/docker/custom 可以直接用，比如我要在Grafana7.0.3中安装grafana-image-renderer插件：
 
-官方Dockerfile：https://github.com/grafana/grafana/blob/v7.0.3/packaging/docker/custom/Dockerfile
+官方Dockerfile：https://github.com/grafana/grafana/blob/v7.0.3/packaging/docker/custom/Dockerfile，可能需要做一些更改，详见后面遇到的坑2和坑4。
+
+修改后的Dockerfile代码片段：
+
+```dockerfile
+RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
+    grafana-cli \
+        --pluginsDir "$GF_PATHS_PLUGINS" \
+        --pluginUrl https://github.com/grafana/grafana-image-renderer/releases/download/v2.1.1/plugin-linux-x64-glibc-no-chromium.zip \
+        plugins install grafana-image-renderer; \
+fi
+```
 
 构建命令：
 
@@ -53,7 +64,7 @@ GF_SMTP_FROM_ADDRESS yinyicao@qq.com
 docker build --build-arg "GRAFANA_VERSION=7.0.3" --build-arg "GF_INSTALL_IMAGE_RENDERER_PLUGIN=true" -t grafana-custom -f Dockerfile .
 ```
 
-## 独立运行renderer插件镜像作为远程服务[<span style="color:green">行</span>]
+## 独立运行renderer插件镜像作为远程服务
 
 > 比在容器中直接安装grafana-image-renderer插件好使。但是有几个坑，详情请查看本文后面的遇到的坑。
 
@@ -66,24 +77,7 @@ GF_RENDERING_CALLBACK_URL  http://grafana:3000
 
 ## 遇到的坑和经验
 
-1.容器中安装了grafana-image-renderer插件<span style="color:red">也无法使用截图</span>
-
-> 打开[`rendering:debug`](https://grafana.com/docs/grafana/v7.0/administration/configuration/#rendering_verbose_logging)可查看grafana render的debug日志，环境变量为：`GF_LOG_FILTERS rendering:debug`
-
-报错信息如下：尝试了多种方式也无法解决，比如尝试修改CALLBACK_URL、修改GRAFANA_IMAGE_RENDERER_RENDERING_MODE、修改镜像中的时区和时间保持与宿主机同步等，甚至更换版本
-
-```
-INFO[09-04|10:06:01] Rendering                  logger=rendering renderer=plugin path="d-solo/-QbYsVMVz/new-dashboard-copy?orgId=1&from=1662264351713&to=1662285951713&panelId=2&width=1000&height=500&tz=Asia%2FShanghai"
-DBUG[09-04|10:06:01] Calling renderer plugin    logger=rendering renderer=plugin req="url:\"http://localhost:3000/d-solo/-QbYsVMVz/new-dashboard-copy?orgId=1&from=1662264351713&to=1662285951713&panelId=2&width=1000&height=500&tz=Asia%2FShanghai&render=1\" width:1000 height:500 deviceScaleFactor:1 filePath:\"/var/lib/grafana/png/KuhYOWtGcN29Bl0Nx1Su.png\" renderKey:\"hCTUBU04a03ROzRUdgAhzJBzqIEPHGPx\" domain:\"localhost\" timeout:60 timezone:\"Asia/Shanghai\" headers:<key:\"Accept-Language\" value:<values:\"zh-CN,zh;q=0.9\" > > "
-EROR[09-04|10:06:01] Rendering failed.          logger=context userId=1 orgId=1 uname=admin error="rpc error: code = Unauthenticated desc = Unauthorized request"
-EROR[09-04|10:06:01] Request Completed          logger=context userId=1 orgId=1 uname=admin method=GET path=/render/d-solo/-QbYsVMVz/new-dashboard-copy status=500 remote_addr=172.17.0.1 time_ms=19 size=1723 referer="http://192.168.158.196:3000/d/-QbYsVMVz/new-dashboard-copy?orgId=1"
-```
-
-2.独立运行renderer插件镜像作为远程服务的地址<span style="color:red">不能是localhost或127.0.0.1</span>
-
-包括grafana中的DataSources地址、GF_RENDERING_SERVER_URL、GF_RENDERING_CALLBACK_URL都不能是localhost或127.0.0.1，在本地测试需要使用`ipconfig`查看ipv4地址使用，巨坑！否则莫名奇妙504、timeout等。
-
-3.关于如何验证renderer是否正常工作的坑
+坑1.关于如何验证renderer是否正常工作的坑
 
 在容器中构建镜像时加入image-renderer插件，通知通道那里测试邮箱配置时可以勾选Include image（文章开始的截图），也能正常收到包含图片的测试邮件，但是实际监控报警时没有截图。
 
@@ -94,6 +88,24 @@ one.一定要保存面板，<span style="color:red">保存面板</span>，保存
 two.在任意一张图表标题，点击后展示下拉菜单，选择"Share"
 
 three.点击下方的“<span style="color:red">Direct link rendered image</span>”后打开跳转页面，正常显示截图才算行！
+
+坑2.Grafana版本为7.0.3时，即使安装了grafana-image-renderer插件<span style="color:red">也无法使用截图</span>
+
+> 打开[`rendering:debug`](https://grafana.com/docs/grafana/v7.0/administration/configuration/#rendering_verbose_logging)可查看grafana render的debug日志，环境变量为：`GF_LOG_FILTERS rendering:debug`
+
+尝试了多种方式也无法解决，比如尝试修改CALLBACK_URL、修改GRAFANA_IMAGE_RENDERER_RENDERING_MODE、修改镜像中的时区和时间保持与宿主机同步等。最终发现问题是<span style="color:red">Grafana版本和image-renderer插件版本不对应导致</span>。可以在Grafana界面设置-->Plugins中查看安装的插件版本。
+
+虽然[Grafana Image Renderer](https://grafana.com/grafana/plugins/grafana-image-renderer/)插件提示Version3.5.0支持Grafana >=7.0.0，但是我使用的Grafana 7.0.3安装v3.5.0或v3.2.0的renderer插件均无法使用截图功能，使用更低的v2.1.1后正常。
+
+如果Grafana版本和image-renderer插件版本不对应，使用第一条验证方式，点击Direct link rendered image后打开跳转页面显示<span style="color:red">Rendering failed.</span> 验证截图功能失败，邮件通知也无法包含截图。
+
+坑3.独立运行renderer插件镜像作为远程服务的地址<span style="color:red">不能是localhost或127.0.0.1</span>
+
+包括grafana中的DataSources地址、GF_RENDERING_SERVER_URL、GF_RENDERING_CALLBACK_URL都不能是localhost或127.0.0.1，在本地测试需要使用`ipconfig`查看ipv4地址使用，巨坑！否则莫名奇妙504、timeout等。
+
+坑4.构建镜像时安装grafana-image-renderer插件build镜像失败
+
+是github上官方给的Dockerfile中添加的仓库有问题，只需要<span style="color:red">删除Dockerfile中的对应脚本再build镜像</span>即可，后续官方应该也会修复这个问题，详见<https://github.com/grafana/grafana/issues/53551>
 
 ## *参考*
 
