@@ -5,10 +5,10 @@ tags:
   - k8s
   - nginx-ingress
 categories: 云原生
-description: 介绍K8s中使用Ingress访问请求体过大问题解决、使用nginx-ingress-controller
+description: 介绍K8s中使用Ingress访问请求体过大问题解决、使用ingress-nginx-controller
 ---
 
-在k8s中使用了nginx-ingress-controller作为Ingress控制器，默认bodysize最大限制为1M，在类似文件上传下载比较大的请求中就会出现失败返回413状态码的情况。
+在k8s中使用了ingress-nginx-controller作为Ingress控制器，默认bodysize最大限制为1M，在类似文件上传下载比较大的请求中就会出现失败返回413状态码的情况。如果是nginx-ingress-controller注解是不一样的，它们两的区别可以查看我另一篇文章[K8s中的两种nginx-ingress-controller及其区别](nginx-ingress-controller-and-ingress-nginx-controller-timeout-error)
 
 解决：在Ingress的metadata中添加如下annotations
 
