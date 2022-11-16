@@ -409,7 +409,7 @@ bean.xml配置文件：
 
 ### 解决案例中新的问题
 
-会用到JDK的动态代理先直接解决问题，后面我们回顾一下[动态代理](#Proxy)。这里需要创建一个Service业务层的代理对象BeanFactory：其中accountService和txManager由Spring注入：<span id="servie-proxy">
+会用到JDK的动态代理先直接解决问题，后面我们回顾一下[动态代理](#Proxy)。这里需要创建一个Service业务层的代理对象BeanFactory：其中accountService和txManager由Spring注入：<span id="servie-proxy"></span>
 
 ```java
 /**
@@ -724,7 +724,7 @@ public class Client {
         final Producer producer = new Producer();
         Producer cglibProducer = (Producer)Enhancer.create(producer.getClass(), new MethodInterceptor() {
             /**
-             * 执行北地阿里对象的任何方法都会经过该方法
+             * 执行被代理对象的任何方法都会经过该方法
              * @param proxy
              * @param method
              * @param args
