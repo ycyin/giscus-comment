@@ -204,14 +204,14 @@ spec:
 
 这样Prometheus就可以在采集数据指标时自动加上Base认证了。
 
-这里遇到一个坑就是Prometheus Operator在较低的版本中的PodMonitor不支持basicAuth字段，注意查看对应版本prometheus-operator-crd的定义[^3]。
+这里遇到一个坑就是Prometheus Operator在较低的版本中的PodMonitor不支持basicAuth字段，注意查看对应版本prometheus-operator-crd的定义[^1]。
 
 ## 参考：
 
-[^1]:https://www.amitph.com/how-to-secure-spring-boot-actuator-endpoints/
+1:https://www.amitph.com/how-to-secure-spring-boot-actuator-endpoints/
 
-[^2]:https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/basic-auth.md
+2:https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/basic-auth.md
 
-[^3]:https://github.com/prometheus-operator/prometheus-operator/tree/main/example/prometheus-operator-crd
+3:https://github.com/prometheus-operator/prometheus-operator/tree/main/example/prometheus-operator-crd
 
-[^4]: Spring Boot Actuator https://blog.csdn.net/weixin_50518271/article/details/111183826 ，https://blog.csdn.net/weixin_50518271/article/details/111237298
+4: Spring Boot Actuator https://blog.csdn.net/weixin_50518271/article/details/111183826 ，https://blog.csdn.net/weixin_50518271/article/details/111237298
