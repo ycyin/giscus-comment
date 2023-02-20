@@ -2,8 +2,8 @@
 title: 'Prometheus中Monitor添加对SpringBoot Actuator的Basic认证'
 date: 2023-2-18 17:52:43
 tags:
-  - Docker
-  - Nginx
+  - Prometheus
+  - Spring Boot
 categories: 云原生
 description: 一般地，我们使用Prometheus对SpringBoot应用进行监控时，没有做任何认证，监控接口是完全开放的，这在某些程度上不安全。
 ---
@@ -208,10 +208,10 @@ spec:
 
 ## 参考：
 
-1:https://www.amitph.com/how-to-secure-spring-boot-actuator-endpoints/
+1:<https://www.amitph.com/how-to-secure-spring-boot-actuator-endpoints/>
 
-2:https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/basic-auth.md
+2:<https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/basic-auth.md>
 
-3:https://github.com/prometheus-operator/prometheus-operator/tree/main/example/prometheus-operator-crd
+3:<https://github.com/prometheus-operator/prometheus-operator/tree/main/example/prometheus-operator-crd>
 
-4: Spring Boot Actuator https://blog.csdn.net/weixin_50518271/article/details/111183826 ，https://blog.csdn.net/weixin_50518271/article/details/111237298
+4: Spring Boot Actuator <https://blog.csdn.net/weixin_50518271/article/details/111183826> ，<https://blog.csdn.net/weixin_50518271/article/details/111237298>
