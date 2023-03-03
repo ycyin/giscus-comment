@@ -14,7 +14,7 @@ description: 介绍在Docker环境下安装Choerodon的解决方案，在K8S中�
 由于只给了两台8C16G的机器，我们先是将需要存储空间的基础组件（MySQL、Redis和MinIO）部署在其中一台带有1T硬盘机器， 其它Choerodon的微服务使用docker-compose部署在另外一台机器上，这样在docker-compose中只需要为<span style="color:red">每一个service指定一个相同的type:bridge桥接网络</span>就可以互通了。
   但是后来发现，所有的微服务部署在一台机器上内存不够用，需要将两台机器的Docker网络打通进行部署。
 
-> 本文部署的Choerodon为[开源版1.0.0](https://open.hand-china.com/document-center/doc/product/10003/10426?doc_id=125686&doc_code=1723)
+> 本文部署的Choerodon为[开源版1.0.0](https://open.hand-china.com/document-center/doc/product/10003/10426?doc_id=125686&doc_code=1723)的敏捷模块，不含devops和CD部分。
 
 ## 离线环境下的安装准备
 1. 离线安装docker：https://blog.csdn.net/qq_27706119/article/details/122311325
@@ -68,7 +68,7 @@ networks:
 
 ### 三、基于overlay的docker容器间跨宿主机通信【采用】
 
-![](.\Solution-for-installing-Choerodon-in-a-Docker-environment\image-20230302175003411.png)
+![](./Solution-for-installing-Choerodon-in-a-Docker-environment/image-20230302175003411.png)
 
 #### Consul搭建
 
@@ -260,9 +260,11 @@ networks:
         - /etc/localtime:/etc/localtime:ro
   ```
 
-3. 最好使用域名来设置访问c7n，暂时还没有调通直接通过IP访问的。
+3. 最好使用域名来设置访问c7n，暂时还没有调通直接通过IP访问的；
 
-4. 
+4. docker安装方式主要从k8s的pod的yaml转换过来，主要是环境变量和挂载卷的变化；
+
+5. 注意Choerodon本身也是个SpringCloud微服务有注册中心，Consul又是一个注册中心。
 
 *参考：*
 
