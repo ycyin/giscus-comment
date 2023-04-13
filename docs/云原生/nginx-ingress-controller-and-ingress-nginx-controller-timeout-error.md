@@ -73,11 +73,11 @@ description: 注解没生效？可能是ingress-controller不对应。介绍K8s�
 
 我们有一个数据量大的导出接口阻塞等待大约5分钟，每次在刚好1分钟时接口报错`504 Gateway Time-out`，怎么处理？
 
-如果只是nginx，这只需要设置nginx的`proxy-read-timeout`（顾名思义这个参数是设置nginx代理读取超时时间，默认60s)即可。比如**`proxy-read-timeout 600s`**
+如果只是nginx，这只需要设置nginx的`proxy_read_timeout`（顾名思义这个参数是设置nginx代理读取超时时间，默认60s)即可。比如`proxy_read_timeout 600s`
 
-对于`kubernetes/ingress-nginx`需要使用**`nginx.ingress.kubernetes.io/proxy-read-timeout: "600"`** 
+对于`kubernetes/ingress-nginx`需要使用`nginx.ingress.kubernetes.io/proxy-read-timeout: "600"`
 
-对于`nginxinc/kubernetes-ingress with NGINX`需要使用**`nginx.org/proxy-read-timeout: "10m"`**
+对于`nginxinc/kubernetes-ingress with NGINX`需要使用`nginx.org/proxy-read-timeout: "10m"`
 
 更多注解上的使用区分可查看`kubernetes/ingress-nginx`： <https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/>，`nginxinc/kubernetes-ingress with NGINX`：<https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/>
 
