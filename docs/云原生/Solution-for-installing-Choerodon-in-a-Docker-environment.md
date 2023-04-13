@@ -18,7 +18,7 @@ description: 介绍在Docker环境下安装Choerodon的解决方案，在K8S中�
 
 ## 离线环境下的安装准备
 1. 离线安装docker：https://blog.csdn.net/qq_27706119/article/details/122311325
-2. 离线安装registry：使用`docker save -o` 命令在本地将镜像打包，然后通过ftp上传镜像文件后使用`docker load -i`命令将镜像包导出为镜像，然后启动即可。
+2. 离线安装registry：使用`docker save -o` 命令在本地将镜像打包，然后通过ftp上传镜像文件后使用`docker load -i`命令将镜像包导出为镜像，然后`docker run --name registry -d -p 8080:5000 -v /data/docker-registry/:/var/lib/registry/ registry:2`启动即可。
 3. 然后将需要的镜像上传到registry
 
 ## 多机Docker网络互通方案
@@ -86,8 +86,7 @@ consul通过docker部署在节点1，首先需要修改cdh1中的docker配置并
 在节点1启动一个consul：
 
 ```bash
-docker run -d -p 8500:8500 -h consul -e 'CONSUL_LOCAL_CONFIG={"limits":{"kv_max_value_size": 1024}}' --name consul consul:1.12.9
-
+docker run -d -p 8081:8500 -h consul -v /data/consul/data:/consul/data --name consul consul:1.15.2
 ```
 
 修改节点1中的docker配置并重启：
@@ -234,7 +233,24 @@ networks:
 
 ### 2.微服务数据初始化
 
-可以直接使用[yinyicao/choerodon-dbtool-jdk](https://hub.docker.com/r/yinyicao/choerodon-dbtool-jdk/)这个镜像将会事半功倍！
+可以直接使用[yinyicao/choerodon-initdb-tool](https://hub.docker.com/r/yinyicao/choerodon-initdb-tool/)这个镜像将会事半功倍！<a id="initDb"></a>需要注意，**choerodon的所有模块并不是使用同一个版本的db-tool初始化数据的**，比如以下是我安装的模块版本和dbtool镜像版本的对应关系，则需要去官方github对应的tag下挨个查看values文件中配置的镜像版本，比如：[message模块](https://github.com/open-hand/choerodon-message/blob/ccdf82f8e45798fa28ead0e3d2508b4f058c87a7/chart/choerodon-message/values.yaml#L6)
+
+| 模块:版本                   | dbtool镜像版本 |
+| --------------------------- | -------------- |
+| choerodon-platform:1.0.0    | 0.8.0          |
+| choerodon-admin:1.0.1       | 0.8.0          |
+| choerodon-iam:1.0.8         | 0.8.0          |
+| choerodon-asgard:1.0.0      | 0.7.1          |
+| choerodon-message:1.0.1     | 0.8.0          |
+| choerodon-monitor:1.0.0     | 0.8.0          |
+| choerodon-file:1.0.0        | 0.8.0          |
+| workflow-service:1.0.2      | 0.7.2          |
+| devops-service:1.0.12       | 0.7.1          |
+| agile-service:1.0.4         | 0.7.2          |
+| test-manager-service:1.0.3  | 0.7.2          |
+| knowledgebase-service:1.0.2 | 0.7.2          |
+| code-repo-service:1.0.12    | 0.7.1          |
+| prod-repo-service:1.0.1     | 0.7.1          |
 
 ## c7n微服务安装
 
@@ -242,9 +258,13 @@ networks:
 
 ## 遇到的坑
 
-1. c7n的1.0这个版本的workflow在环境变量中设置SPRING_REDIS_PASSWORD无效；
+1. c7n的1.0这个版本的workflow在环境变量中设置SPRING_REDIS_PASSWORD无效，后面不清楚修复没；
 
-2. minio可能会因为时区不正确而无法上传文件,且通过nginx代理后使用域名也无法上传只能通过内部地址服务名访问；
+2. 初始化数据老是失败，需要注意choerodon的所有模块并不是使用同一个版本的db-tool初始化数据的，详见前面的[数据初始化](#initDb)部分；
+
+3. minio可能会因为时区不正确而无法上传文件,~~且通过nginx代理后使用域名也无法上传只能通过内部地址服务名访问(后来解决了，是因为代理配置不对，详见docker-compose仓库)~~；
+
+4. 由于后面重新搭了一次minio，发现**直接移动minio的文件夹到新安装挂载的卷下面，可以在minio的console中查看，但是在c7n上没有权限预览**，新上传的也无法预览，不太清楚C7n是否做了绑定；
 
   docker-compose.yml文件配置东八时区上海时间示例：
 
@@ -260,11 +280,50 @@ networks:
         - /etc/localtime:/etc/localtime:ro
   ```
 
-3. 最好使用域名来设置访问c7n，暂时还没有调通直接通过IP访问的；
+4. 最好使用域名来设置访问c7n，暂时还没有调通直接通过IP访问的；
 
-4. docker安装方式主要从k8s的pod的yaml转换过来，主要是环境变量和挂载卷的变化；
+5. docker安装方式主要从k8s的pod的yaml转换过来，主要是环境变量和挂载卷的变化；
 
-5. 注意Choerodon本身也是个SpringCloud微服务有注册中心，Consul又是一个注册中心。
+6. 注意Choerodon本身也是个SpringCloud微服务有注册中心，Consul又是一个注册中心
+
+7. 创建overlay网络时可能会报错：`Error response from daemon: pool configuration failed because of Unexpected response code: 413 (Request body(2290 bytes) too large, max size: 2048 bytes. See https://www.consul.io/docs/agent/config/config-files#kv_max_value_size.)`，没有找到原因，但是可以重启docker得到临时解决[1](https://github.com/docker/cli/issues/1891) [2](https://stackoverflow.com/questions/40524602/error-creating-default-bridge-network-cannot-create-network-docker0-confli) [3](https://github.com/docker/compose/issues/3041)：
+
+   ```bash
+   systemctl daemon-reload
+   systemctl restart docker.service
+   ```
+
+   或者换低版本的consul：
+
+   ```bash
+   docker run -d -p 8500:8500 -h consul -e 'CONSUL_LOCAL_CONFIG={"limits":{"kv_max_value_size": 1024}}' --name consul consul:1.12.9
+   ```
+
+8. 执行`docker compose up -d`时报错
+
+   ```
+   Error response from daemon: container de14e5a75d4a1e44f552dca873e9b89404e8eeba176ab44ce2bf65fa1bdd5983: endpoint join on GW Network failed: driver failed programming external connectivity on endpoint gateway_e8c1ed0247cb (e19e88a85a19bd65706d1bed5aa73a691f1664c1310fd07e04f4b48b03d6e6bc): Bind for 0.0.0.0:8082 failed: port is already allocated
+   ```
+   或者报错：
+   ```
+   Error response from daemon: endpoint with name nginx-proxy already exists in network c7n_overlay
+   ```
+   
+   通过`docker inspect c7n_overlay`命令查看，发现Endpoint还存在。
+   
+   并且通过执行`docker network disconnect -f`也是无效的，也并不能删除对应的ep；
+   
+   尝试删除network，报错：
+   
+   ```
+   Cannot remove network due to active endpoint, but cannot stop/remove containers
+   ```
+   
+   但是实际上`docker ps -a` 查看并没有nginx容器，通过`netstat -anp | grep 8082`或者`lsof -i :8082`查看端口占用也没有；
+   
+   通过`ps -aux | grep -v grep | grep nginx`发现有nginx正在运行但是kill不掉。
+   
+   [这可能是docker的一个bug](https://github.com/moby/moby/issues/23302#issuecomment-1027184897)，我只有执行了`docker system prune -a -f`(注意会删除所有的容器和镜像)并且重启了Docker，再启动就没有报错了。
 
 *参考：*
 
@@ -275,4 +334,6 @@ networks:
 [docker容器间跨宿主机通信-基于overlay](https://blog.csdn.net/mrliqifeng/article/details/113833523)
 
 <https://github.com/bitnami/containers>
+
+[docker 排错：容器无法删除掉 和 Endpoint 已经存在](https://blog.csdn.net/meandmyself/article/details/105046793)
 
