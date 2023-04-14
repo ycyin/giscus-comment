@@ -264,29 +264,36 @@ networks:
 
 3. minio可能会因为时区不正确而无法上传文件,~~且通过nginx代理后使用域名也无法上传只能通过内部地址服务名访问(后来解决了，是因为代理配置不对，详见docker-compose仓库)~~；
 
-4. 由于后面重新搭了一次minio，发现**直接移动minio的文件夹到新安装挂载的卷下面，可以在minio的console中查看，但是在c7n上没有权限预览**，新上传的也无法预览，不太清楚C7n是否做了绑定；
+4. minio文件上传报错：`get input/output error (*fs.PathError)`,是[磁盘问题](https://github.com/minio/minio/issues/16998)，换一块磁盘就可以了。
 
-  docker-compose.yml文件配置东八时区上海时间示例：
+5. 由于后面重新搭了一次minio，发现**直接移动minio的文件夹到新安装挂载的卷下面，可以在minio的console中查看，但是在c7n上没有权限预览**，新上传的也无法预览，不太清楚C7n是否做了绑定；
 
-  ```yaml
-  version: "3.5"
-  services:
-    mysql:
-      image: minio
-      environment:    #设置东八时区上海时间
-        - SET_CONTAINER_TIMEZONE=true
-        - CONTAINER_TIMEZONE=Asia/Shanghai
-      volumes:    #挂载宿主机东八时区
-        - /etc/localtime:/etc/localtime:ro
-  ```
+    docker-compose.yml文件配置东八时区上海时间示例：
 
-4. 最好使用域名来设置访问c7n，暂时还没有调通直接通过IP访问的；
+    ```yaml
+    version: "3.5"
+    services:
+      mysql:
+        image: minio
+        environment:    #设置东八时区上海时间
+          - SET_CONTAINER_TIMEZONE=true
+          - CONTAINER_TIMEZONE=Asia/Shanghai
+        volumes:    #挂载宿主机东八时区
+          - /etc/localtime:/etc/localtime:ro
+    ```
 
-5. docker安装方式主要从k8s的pod的yaml转换过来，主要是环境变量和挂载卷的变化；
+6. 最好使用域名来设置访问c7n，暂时还没有调通直接通过IP访问的；
 
-6. 注意Choerodon本身也是个SpringCloud微服务有注册中心，Consul又是一个注册中心
+7. docker安装方式主要从k8s的pod的yaml转换过来，主要是环境变量和挂载卷的变化；
 
-7. 创建overlay网络时可能会报错：`Error response from daemon: pool configuration failed because of Unexpected response code: 413 (Request body(2290 bytes) too large, max size: 2048 bytes. See https://www.consul.io/docs/agent/config/config-files#kv_max_value_size.)`，没有找到原因，但是可以重启docker得到临时解决[1](https://github.com/docker/cli/issues/1891) [2](https://stackoverflow.com/questions/40524602/error-creating-default-bridge-network-cannot-create-network-docker0-confli) [3](https://github.com/docker/compose/issues/3041)：
+8. 注意Choerodon本身也是个SpringCloud微服务有注册中心，Consul又是一个注册中心
+
+9. 创建overlay网络时报错：
+    ```
+    Error response from daemon: pool configuration failed because of Unexpected response code: 413 (Request body(2290 bytes) too large, max size: 2048 bytes. See https://www.consul.io/docs/agent/config/config-files#kv_max_value_size.)
+    ```
+
+    没有找到原因，但是可以重启docker得到临时解决[1](https://github.com/docker/cli/issues/1891) [2](https://stackoverflow.com/questions/40524602/error-creating-default-bridge-network-cannot-create-network-docker0-confli) [3](https://github.com/docker/compose/issues/3041)：
 
    ```bash
    systemctl daemon-reload
@@ -299,31 +306,31 @@ networks:
    docker run -d -p 8500:8500 -h consul -e 'CONSUL_LOCAL_CONFIG={"limits":{"kv_max_value_size": 1024}}' --name consul consul:1.12.9
    ```
 
-8. 执行`docker compose up -d`时报错
+10. 执行`docker compose up -d`时报错
 
-   ```
-   Error response from daemon: container de14e5a75d4a1e44f552dca873e9b89404e8eeba176ab44ce2bf65fa1bdd5983: endpoint join on GW Network failed: driver failed programming external connectivity on endpoint gateway_e8c1ed0247cb (e19e88a85a19bd65706d1bed5aa73a691f1664c1310fd07e04f4b48b03d6e6bc): Bind for 0.0.0.0:8082 failed: port is already allocated
-   ```
-   或者报错：
-   ```
-   Error response from daemon: endpoint with name nginx-proxy already exists in network c7n_overlay
-   ```
-   
-   通过`docker inspect c7n_overlay`命令查看，发现Endpoint还存在。
-   
-   并且通过执行`docker network disconnect -f`也是无效的，也并不能删除对应的ep；
-   
-   尝试删除network，报错：
-   
-   ```
-   Cannot remove network due to active endpoint, but cannot stop/remove containers
-   ```
-   
-   但是实际上`docker ps -a` 查看并没有nginx容器，通过`netstat -anp | grep 8082`或者`lsof -i :8082`查看端口占用也没有；
-   
-   通过`ps -aux | grep -v grep | grep nginx`发现有nginx正在运行但是kill不掉。
-   
-   [这可能是docker的一个bug](https://github.com/moby/moby/issues/23302#issuecomment-1027184897)，我只有执行了`docker system prune -a -f`(注意会删除所有的容器和镜像)并且重启了Docker，再启动就没有报错了。
+    ```
+      Error response from daemon: container de14e5a75d4a1e44f552dca873e9b89404e8eeba176ab44ce2bf65fa1bdd5983: endpoint join on GW Network failed: driver failed programming external connectivity on endpoint gateway_e8c1ed0247cb (e19e88a85a19bd65706d1bed5aa73a691f1664c1310fd07e04f4b48b03d6e6bc): Bind for 0.0.0.0:8082 failed: port is already allocated
+    ```
+    或者报错：
+    ```
+      Error response from daemon: endpoint with name nginx-proxy already exists in network c7n_overlay
+    ```
+
+    通过`docker inspect c7n_overlay`命令查看，发现Endpoint还存在。
+
+    并且通过执行`docker network disconnect -f`也是无效的，也并不能删除对应的ep；
+
+    尝试删除network，报错：
+
+    ```
+      Cannot remove network due to active endpoint, but cannot stop/remove containers
+    ```
+
+    但是实际上`docker ps -a` 查看并没有nginx容器，通过`netstat -anp | grep 8082`或者`lsof -i :8082`查看端口占用也没有；
+
+    通过`ps -aux | grep -v grep | grep nginx`发现有nginx正在运行但是kill不掉。
+
+    [这可能是docker的一个bug](https://github.com/moby/moby/issues/23302#issuecomment-1027184897)，我只有执行了`docker system prune -a -f`(注意会删除所有的容器和镜像)并且重启了Docker，再启动就没有报错了。
 
 *参考：*
 
