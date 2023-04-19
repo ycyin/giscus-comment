@@ -27,7 +27,7 @@ categories: 设计模式
 
 ## 一、饿汉式（静态变量）（可用）
 
-使用静态变量方法实现的饿汉式单例模式是**线程安全**的，可以使用。但是尽早的创建对象会造成资源的浪费。
+使用静态变量方法实现的饿汉式单例模式是**线程安全**的，可以使用。但是缺点在于，如果单例对象的创建过程比较耗时，那么应用程序的启动将会比较慢，尽早的创建对象会造成资源的浪费。
 
 ```java
 public class Singleton1 {
@@ -72,7 +72,6 @@ public class Singleton3 {
 
     private static Singleton3 instance;
 
-
     private Singleton3(){
 
     }
@@ -86,9 +85,15 @@ public class Singleton3 {
 }
 ```
 
+假设在单例类被实例化之前，有两个线程同时在获取单例对象：
+
+线程1在执行完`if (instance == null)` 后，线程调度机制将 CPU 资源分配给线程2，
+
+此时线程2在执行  `if (instance == null)`时也发现单例类还没有被实例化，这样就会导致单例类被实例化两次。
+
 ## 四、懒汉式(加方法锁)（不用）
 
-在懒汉式的基础上对获取实例的方法上加synchronized锁，虽然保证了**线程安全**，但是效率极低，不推荐使用。
+在懒汉式的基础上对获取实例的方法上加synchronized锁，虽然保证了**线程安全**，但是效率极低（每次获取对象都会加锁带来性能损失 ），不推荐使用。
 
 ```java
 public class Singleton4 {
@@ -134,6 +139,21 @@ public class Singleton5 {
 }
 ```
 
+> 可能有的会有疑问，如果把synchronized锁放到if外面行不行，就像这样：
+>
+> ```java
+>     public static Singleton5 getInstance(){
+>         synchronized (Singleton6.class){
+>             if (instance == null) {
+>                instance = new Singleton6();
+>             }
+>          }
+>         return instance;
+>     }
+> ```
+>
+> 这样也是不行的，这和加方法锁是一样的效果，虽然保证了**线程安全**，但是效率极低，不推荐使用
+
 ## 六、懒汉式(双重检查锁)（推荐使用）
 
 使用双重检查锁的方式实现的单例模式，既保证了效率又保证**线程安全**。但是写起来稍微比较复杂，需要注意对实例变量的声明必须使用**volatile**关键字。
@@ -160,6 +180,12 @@ public class Singleton6 {
     }
 }
 ```
+
+就算在单例类准备被实例化时有多个线程同时通过了第一个`if (instance == null)`的判断，但同一时间也只有一个线程获得锁后进入临界区。通过第一个if检查判断的每个线程会依次获得锁进入临界区，进入临界区后还要再判断一次单例类是否已被其它线程实例化，以避免多次实例化。
+
+由于双重加锁实现仅在实例化单例类时需要加锁，所以相较于加方法锁的实现方式会带来性能上的提升。
+
+另外需要注意的是双重加锁要对 `instance` 域加上 `volatile`修饰符。由于 `synchronized` 并不是对 `instance` 实例进行加锁（因为现在还并没有实例），所以线程在执行`instance = new Singleton6();`完成实例创建，修改 `instance` 的值后，应该将修改后的 `instance` 立即写入主存（`main memory`），而不是暂时存在寄存器或者高速缓冲区（`caches`）中，以保证新的值对其它线程可见。
 
 ## 七、懒汉式(静态内部类)（可用）
 
