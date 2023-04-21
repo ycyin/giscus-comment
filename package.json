@@ -1,26 +1,20 @@
 {
-	"name": "blog_yyc",
-	"version": "1.0.0",
-	"description": "博客",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"docs:dev": "vuepress dev docs",
-		"docs:build": "vuepress build docs"
-	},
-	"keywords": [
-		"尹以操的博客"
-	],
-	"author": "尹以操",
-	"license": "ISC",
-	"devDependencies": {
-		"vuepress": "^1.7.1",
-		"vuepress-plugin-baidu-autopush": "^1.0.1",
-		"vuepress-plugin-mathjax": "^1.2.8",
-		"vuepress-theme-reco": "^1.6.11"
-	},
-	"dependencies": {
-		"vue": "^2.6.14",
-		"vuepress-plugin-sitemap": "^2.3.1"
-	}
+  "name": "vuepress-theme-hope-template",
+  "version": "2.0.0",
+  "description": "A project of vuepress-theme-hope",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "docs:build": "vuepress build src",
+    "docs:clean-dev": "vuepress dev src --clean-cache",
+    "docs:dev": "vuepress dev src",
+    "docs:update-package": "npx vp-update"
+  },
+  "devDependencies": {
+    "@vuepress/client": "2.0.0-beta.61",
+    "vue": "^3.2.47",
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-plugin-search-pro": "^2.0.0-beta.205",
+    "vuepress-theme-hope": "2.0.0-beta.205"
+  }
 }
