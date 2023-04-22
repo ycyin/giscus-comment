@@ -21,9 +21,15 @@ export default hopeTheme({
 
   repo: "yinyicao/yinyicao.github.io",
 
-  docsDir: "docs",
+  docsBranch: "master",
+
+  docsDir: "src",
+
+  lastUpdated: false,
 
   darkmode: "toggle",
+
+  hotReload: true,
 
   blog: {
     medias: {
