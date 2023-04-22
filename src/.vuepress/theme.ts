@@ -75,8 +75,8 @@ export default hopeTheme({
       provider: "Giscus",
       repo: "yinyicao/yinyicao.github.io",
       repoId: "MDEwOlJlcG9zaXRvcnkyOTYxODY2Mjc=",
-      category: "MDEwOlJlcG9zaXRvcnkyOTYxODY2Mjc=",
-      categoryId: "DIC_kwDOEadzA84CV775",
+      category: "Announcements",
+      categoryId: "DIC_kwDOEadzA84CV774",
       mapping: "og:title",
     },
 
