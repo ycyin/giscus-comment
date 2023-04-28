@@ -281,7 +281,7 @@ show slave status;
 yumdownloader --resolve --destdir /tmp/local-yum/Packages perl-IO-Socket-SSL perl-DBD-MySQL perl-Time-HiRes perl perl-DBI perl-Digest-Perl-MD5 perl-TermReadKey  mariadb
 ```
 
-<span style="color:red">最开始就是根据网上的教程下载的perl包不全踩了坑，如果有遇到可以直接把报错到网上(chatgpt好用)搜一下看查哪个依赖包。</span>
+<span style="color:red">最开始就是根据网上的教程下载的perl包不全，踩了坑，如果有遇到可以直接把报错到网上(chatgpt好用)搜一下看差哪个依赖包。</span>
 
 ## Percona Toolkit使用
 
@@ -346,7 +346,9 @@ pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --repli
 > p=：密码
 > P= ：端口
 
-第一次运行的时候需要加上--create-replicate-table参数，生成checksums表！！<span style="color:red">我这里使用--replicate=huanqiu.checksums指定了生成的表名是huanqiu库下的checksums表</span>如果不加这个参数，那么就需要在对应库下手工添加这张表了,表结构SQL如下
+--recursion-method使用`--recursion-method="dsn=h=172.27.241.132,u=root,p=*****,P=3306,D=wps,t=dsns"`就表示去172.27.241.132上的wps库找dsns表查从库信息。
+
+第一次运行的时候需要加上--create-replicate-table参数，生成checksums表！！<span style="color:red">我这里使用--replicate=huanqiu.checksums指定了生成的表名是huanqiu库下的checksums表</span>，如果不加这个参数，那么就需要在对应库下手工添加这张表了,表结构SQL如下
 
 ```sql
 CREATE` `TABLE` `checksums (
@@ -464,6 +466,8 @@ mysql -uroot -p***** < /temp/dbschemes.sql
 ```
 
 ## *参考：*
+
+主从搭建参考：<https://www.cnblogs.com/haima/p/14341903.html>
 
 主从原理：<https://www.cnblogs.com/wade-lt/p/9008058.html>
 
