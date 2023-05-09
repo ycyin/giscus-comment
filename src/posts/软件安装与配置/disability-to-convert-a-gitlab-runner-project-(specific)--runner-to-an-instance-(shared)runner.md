@@ -1,5 +1,5 @@
 ---
-title: [避坑]在gitlab-runner中不能将specific类型改变为share类型
+title: [避坑]不能将specific类型的gitlab-runner改变为share类型
 tags:
   - gitlab-runner
 keywords:
@@ -8,13 +8,13 @@ keywords:
   - shared to specific
 date: 2023-05-09 20:24:22
 categories: 软件安装&配置
-description: 在gitlab-runner中将share类型改变为specific类型后不能将specific类型改变回share类型，只能重新注册
+description: 在gitlab中将类型为share的gitlab-runner改变为specific类型后不能将specific类型改变回share类型，只能重新注册
 ---
 ## 前言
 
-在gitlab-runner中将share类型改变为specific类型后不能将specific类型改变回share类型，只能重新注册runner
+在gitlab中将类型为share的gitlab-runner改变为specific类型后不能将specific类型改变回share类型，只能重新注册一个新的runner
 
-![](./disability-to-convert-an-instance-(shared)-runner-to-a-project-(specific)-runner-in-gitlab/20230509202609.png)
+![](./disability-to-convert-a-gitlab-runner-project-(specific)--runner-to-an-instance-(shared)runner/20230509202609.png)
 
 GitLab版本：GitLab Community Edition [11.11.7](https://gitlab.com/gitlab-org/gitlab-ce/tags/v11.11.7) 
 
@@ -27,7 +27,7 @@ Runner版本：13.9.0
 根据验证，这确实是不可逆的，[Change Runner back to shared after marking it as specific](https://gitlab.com/gitlab-org/gitlab/-/issues/16167)
 
 也不知道是什么原因造成这种不可逆的行为，直到Gitlab 15.0 中删除了这个特性。也就是说15.0后，不能将shared类型的runner转为specific类型。
-![](./disability-to-convert-an-instance-(shared)-runner-to-a-project-(specific)-runner-in-gitlab/20230509203739.png)
+![](./disability-to-convert-a-gitlab-runner-project-(specific)--runner-to-an-instance-(shared)runner/20230509203739.png)
 [Remove ability to convert an instance (shared) runner to a project (specific) runner](https://gitlab.com/gitlab-org/gitlab/-/issues/345347)
 
 ## 参考
