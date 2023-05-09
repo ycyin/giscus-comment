@@ -1,6 +1,6 @@
 ---
-title: [避坑]不能将specific类型的gitlab-runner改变为share类型
-tags:
+title: 避坑-不能将specific类型的gitlab-runner改变为share类型
+tags: 
   - gitlab-runner
 keywords:
   - gitlab
