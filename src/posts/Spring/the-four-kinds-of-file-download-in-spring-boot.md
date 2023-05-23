@@ -3,12 +3,13 @@ title: Spring Boot中4种文件下载方法的实现
 date: 2023-05-19 17:10:36
 tags:
   - Spring Boot
-categories: Spring Boot中分别返回ResponseEntity<InputStreamResource>、ResponseEntity<Resource>、ResponseEntity<StreamingResponseBody>、HttpServletResponse.getOutputStream()4种文件下载方法的实现
+categories: Spring
+description: Spring Boot中分别返回ResponseEntity<InputStreamResource>、ResponseEntity<Resource>、ResponseEntity<StreamingResponseBody>、HttpServletResponse.getOutputStream()4种文件下载方法的实现
 ---
 
 本篇文章介绍Spring Boot中分别返回`ResponseEntity<InputStreamResource>`、`ResponseEntity<Resource>`、`ResponseEntity<StreamingResponseBody>`、`HttpServletResponse.getOutputStream()`4种文件下载方法的实现。
 
-<!--more-->
+<!-- more -->
 
 先看看Controller比较直观的展示效果：
 
