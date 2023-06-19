@@ -41,7 +41,7 @@ ORDER BY
 
 网上查了一下其中有一条原因可能是使用了大量的临时表造成的，回想起前几天执行了一个存储过程。
 
-```mysql
+```sql
 DELIMITER //
 CREATE PROCEDURE get_top_folder_id(IN p_folder_id BIGINT, OUT p_top_folder_id BIGINT)
 BEGIN
