@@ -1,10 +1,10 @@
 ---
 title: Git配置SSH Key（Git配置多个账户）
 date: 2019-12-25 18:51:55
-tags:
+tag:
   - Git
   - 使用技巧
-categories: Git
+category: Git
 ---
 
 ##  前言

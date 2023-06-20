@@ -1,10 +1,10 @@
 ---
 title: '在Nginx的容器镜像中隐藏Nginx的Server响应头'
 date: 2023-1-10 17:45:34
-tags:
+tag:
   - Docker
   - Nginx
-categories: 云原生
+category: 云原生
 description: 以Nginx基底的镜像，如何在浏览器的访问响应头中删除Server信息？主要是需要添加headers-more-nginx-module这个模块来实现
 ---
 

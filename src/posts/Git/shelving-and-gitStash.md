@@ -1,11 +1,11 @@
 ---
 title: IDEA中Shelve Changes 和 Git Stash
 date: 2021-05-21 15:20:58
-tags:
+tag:
   - Git
   - 使用技巧
   - IDEA
-categories: Git
+category: Git
 ---
 
 > 在IDEA中看到这两个暂存代码的功能，在此记录一下它们的区别。

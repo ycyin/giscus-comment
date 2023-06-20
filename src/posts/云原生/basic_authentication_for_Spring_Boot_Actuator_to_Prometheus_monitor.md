@@ -1,10 +1,10 @@
 ---
 title: 'Prometheus中Monitor添加对SpringBoot Actuator的Basic认证'
 date: 2023-2-18 17:52:43
-tags:
+tag:
   - Prometheus
   - Spring Boot
-categories: 云原生
+category: 云原生
 description: 一般地，我们使用Prometheus对SpringBoot应用进行监控时，没有做任何认证，监控接口是完全开放的，这在某些程度上不安全。
 ---
 

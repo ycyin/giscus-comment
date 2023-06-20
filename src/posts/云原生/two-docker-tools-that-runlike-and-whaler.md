@@ -1,9 +1,9 @@
 ---
 title: 两个docker工具:runlike和whaler
 date: 2022-11-10 10:39:39
-tags:
+tag:
   - Docker
-categories: 云原生
+category: 云原生
 description: 两个非常好用的工具，一个是runlike，一个是whaler,runlike：通过容器打印出容器的启动命令,whaler：通过镜像导出dockerfile
 ---
 

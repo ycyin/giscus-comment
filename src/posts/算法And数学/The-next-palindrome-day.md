@@ -1,11 +1,11 @@
 ---
 title: 获取下一个完全对称日
-tags:
+tag:
   - Python
 keywords:
   - 完全对称日
 date: 2021-12-02 13:22:29
-categories: 算法&数学
+category: 算法&数学
 description: 使用Python来获取下一个完全对称日
 ---
 

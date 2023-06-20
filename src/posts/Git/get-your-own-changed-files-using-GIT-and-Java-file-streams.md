@@ -1,10 +1,10 @@
 ---
 title: 利用git命令和java文件流 获取自己改动过的文件
 date: 2020-11-24 10:21:28
-tags:
+tag:
   - Git
   - 使用技巧
-categories: Git
+category: Git
 ---
 
 ##  需求描述

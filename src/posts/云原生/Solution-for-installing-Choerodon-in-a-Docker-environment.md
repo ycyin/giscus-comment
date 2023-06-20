@@ -1,10 +1,10 @@
 ---
 title: 在多机Docker环境下部署Choerodon的解决方案
 date: 2023-03-02 16:36:29
-tags:
+tag:
   - Docker
   - Choerodon
-categories: 云原生
+category: 云原生
 description: 介绍在Docker环境下安装Choerodon的解决方案，在K8S中部署Choerodon，官方提供了较为完善的安装文档，在Docker中部署Choerodon主要需要解决数据初始化、多机网络互通等问题
 ---
 

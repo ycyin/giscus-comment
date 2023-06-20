@@ -1,10 +1,10 @@
 ---
 title: Spring Data Jpa 返回自定义对象（实体部分属性、多表联查）
 date: 2020-04-22 08:00:39
-tags:
+tag:
   - Spring Data Jpa
   - Spring Boot
-categories: Spring Data Jpa
+category: Spring Data Jpa
 ---
 
 ### 应用场景

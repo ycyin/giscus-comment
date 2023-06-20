@@ -1,13 +1,13 @@
 ---
 title: 重温Spring---Spring IOC基于XML和注解的配置和比较
 date: 2021-07-02 14:12:17
-tags:
+tag:
   - Spring
   - IOC
   - Spring IOC
   - Annotation
   - Junit
-categories: Spring
+category: Spring
 ---
 
 ## 前言

@@ -1,10 +1,10 @@
 ---
 title: 'Kubernetes:使用hostPath挂载nginx集群的配置文件和html'
 date: 2020-12-29 15:47:41
-tags:
+tag:
   - k8s
   - 微服务
-categories: 云原生
+category: 云原生
 ---
 
 ## 前言

@@ -1,10 +1,10 @@
 ---
 title: 如何将一个jar放到本地maven仓库中
 date: 2020-04-17 13:45:57
-tags:
+tag:
   - maven
   - 使用技巧
-categories: Maven
+category: Maven
 ---
 
 ### 重现场景

@@ -1,11 +1,11 @@
 ---
 title: 在SpringBoot项目配置Liquibase数据库版本管理
 date: 2022-02-18 17:44:18
-tags:
+tag:
   - Liquibase
   - 数据库
   - 版本管理
-categories: 数据库技术
+category: 数据库技术
 ---
 
 ## 前言

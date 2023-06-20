@@ -1,14 +1,14 @@
 ---
 title: 重温Spring---AOP动态代理和Spring AOP及其基本原理
 date: 2021-07-10 21:30:12
-tags:
+tag:
   - Spring
   - AOP
   - Spring AOP
   - 事务
   - 动态代理
   - 切入点表达式
-categories: Spring
+category: Spring
 ---
 
 ## 前言

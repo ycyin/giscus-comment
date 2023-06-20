@@ -1,11 +1,11 @@
 ---
 title: Git拉代码推送代码提示密码错误如何修改
 date: 2019-12-26 19:20:57
-tags:
+tag:
   - Git
   - 错误解决
   - Windows
-categories: Git
+category: Git
 ---
 
 ## 操作环境

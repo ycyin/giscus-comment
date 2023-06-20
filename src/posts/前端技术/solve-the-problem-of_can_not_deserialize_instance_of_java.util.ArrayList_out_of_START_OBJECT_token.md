@@ -1,10 +1,10 @@
 ---
 title: 解决前端请求后台接口,后台报错Can not deserialize instance of java.util.ArrayList out of START_OBJECT token
 date: 2021-03-30 17:47:08
-tags:
+tag:
   - Java
   - 序列化
-categories: 前端技术
+category: 前端技术
 ---
 
 ## 问题重现

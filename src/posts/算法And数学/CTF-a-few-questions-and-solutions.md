@@ -1,13 +1,13 @@
 ---
 title: 几道简单的CTF题目思路
-tags:
+tag:
   - CTF
   - Python
   - Java
 keywords:
   - CTF
 date: 2021-08-23 13:46:20
-categories: 算法&数学
+category: 算法&数学
 description: 关于几道简单的CTF题目思路。
 ---
 ##  前言

@@ -1,10 +1,10 @@
 ---
 title: 使用RSA加解密时注意Cipher.getInstance(String var0,Provider var1)提供的Provider是否正确
 date: 2021-10-19 22:03:53
-tags:
+tag:
   - RSA
   - BouncyCastleProvider
-categories: 安全&设计
+category: 安全&设计
 ---
 
 ## 前言

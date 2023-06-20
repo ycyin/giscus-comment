@@ -1,11 +1,11 @@
 ---
 title: 在Windows10中安装MySQL5.7 Zip版本及常用配置
 date: 2021-07-02 09:33:23
-tags:
+tag:
   - MySQL 5.7
   - 数据库
   - MySQL
-categories: 软件安装&配置
+category: 软件安装&配置
 ---
 
 ## 前言

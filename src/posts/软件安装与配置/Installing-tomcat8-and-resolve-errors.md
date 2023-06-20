@@ -1,11 +1,11 @@
 ---
 title: 安装Tomcat服务器以及错误汇总（tomcat8.0、jdk8）
 date: 2019-10-05 15:03:00
-tags:
+tag:
   - Tomcat8.0
 keywords:
   - tomcat
-categories: 软件安装&配置
+category: 软件安装&配置
 ---
 
 > 该文章为博主原创，最初发表在[我的博客园](https://www.cnblogs.com/hyyq/p/5933214.html)。

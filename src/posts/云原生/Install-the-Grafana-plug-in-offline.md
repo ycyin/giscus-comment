@@ -1,9 +1,9 @@
 ---
 title: 离线安装Grafana插件
 date: 2022-05-07 16:44:00
-tags:
+tag:
   - Grafana
-categories: 云原生
+category: 云原生
 description: 介绍如何在Grafana中离线安装Grafana插件
 ---
 

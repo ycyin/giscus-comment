@@ -1,10 +1,10 @@
 ---
 title: SSM集成Shiro自定义权限过滤器不执行解决方案
 date: 2020-02-11 16:12:41
-tags:
+tag:
   - SSM
   - Shiro
-categories: Web技术&权限
+category: Web技术&权限
 ---
 
 ## 开发环境

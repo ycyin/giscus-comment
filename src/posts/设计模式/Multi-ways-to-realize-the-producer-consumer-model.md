@@ -1,10 +1,10 @@
 ---
 title: 三种常用的生产者消费者模式实现
 date: 2022-01-12 11:19:23
-tags:
+tag:
   - 生产者与消费者模式
   - 软件设计
-categories: 设计模式
+category: 设计模式
 ---
 
 > 本篇是在学习[5.Thread和Object中线程相关的重要方法 (ladybug.top)](https://notes.ladybug.top/#/Java/Java线程/Thread和Object中线程相关的重要方法)时对`notify()`和`wait()`的相关用法记录。<span style="font-size:10px">本篇除代码外多处引用网上文字，具体出处见文末参考。</span>

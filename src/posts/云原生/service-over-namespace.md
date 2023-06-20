@@ -1,9 +1,9 @@
 ---
 title: K8s中跨命名空间(NameSpace)服务调用探索
 date: 2022-08-31 17:46:44
-tags:
+tag:
   - k8s
-categories: 云原生
+category: 云原生
 description: 介绍如何在K8s中跨命名空间(NameSpace)服务调用，在 Ingress 中访问不同命名空间下的服务。
 ---
 

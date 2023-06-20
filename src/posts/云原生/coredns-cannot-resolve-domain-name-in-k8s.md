@@ -1,10 +1,10 @@
 ---
 title: 'K8s中的coredns无法解析svc问题排查'
 date: 2022-07-29 14:41:48
-tags:
+tag:
   - k8s
   - coredns
-categories: 云原生
+category: 云原生
 description: 介绍K8s中的coredns无法解析svc服务名
 
 ---

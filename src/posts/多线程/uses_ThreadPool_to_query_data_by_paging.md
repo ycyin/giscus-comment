@@ -1,6 +1,6 @@
 ---
 title: ThreadPoolExecutor的使用方法与分页查询数据实例
-tags:
+tag:
   - ThreadPoolExecutor
   - 多线程
   - 线程池
@@ -9,7 +9,7 @@ keywords:
   - 线程池
   - 查询大量数据
 date: 2021-05-28 10:02:37
-categories: 多线程
+category: 多线程
 description: Java使用ThreadPoolExecutor分页查询数据（第三方数据、数据库）
 ---
 # ThreadPoolExecutor

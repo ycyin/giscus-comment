@@ -1,10 +1,10 @@
 ---
 title: Spring Data Jpa 中使用CriteriaBuilder动态拼接SQL
 date: 2022-03-08 18:06:13
-tags:
+tag:
   - Spring Data Jpa
   - Spring Boot
-categories: Spring Data Jpa
+category: Spring Data Jpa
 ---
 
 之前在我的博客园[Spring data jpa - 随笔分类 - 敲代码的小松鼠 - 博客园 (cnblogs.com)](https://www.cnblogs.com/hyyq/category/1015791.html)有记录过相关技巧问题，之前的应用场景太简单，重新记录一篇。

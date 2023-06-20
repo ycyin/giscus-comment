@@ -1,11 +1,11 @@
 ---
 title: 重温Spring---Spring AOP基于XML和注解的配置
 date: 2021-07-11 00:02:33
-tags:
+tag:
   - Spring
   - AOP
   - Spring AOP
-categories: Spring
+category: Spring
 ---
 
 ## 前言

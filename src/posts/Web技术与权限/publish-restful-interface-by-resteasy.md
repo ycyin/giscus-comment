@@ -1,10 +1,10 @@
 ---
 title: 通过resteasy发布RESTful接口
 date: 2021-04-19 18:47:02
-tags:
+tag:
   - resteasy
   - RESTful
-categories: Web技术&权限
+category: Web技术&权限
 ---
 
 ## 开发环境

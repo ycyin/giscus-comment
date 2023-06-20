@@ -1,6 +1,6 @@
 ---
 title: 记录Vue中父子组件传值的实战应用
-tags:
+tag:
   - vue
   - props
   - emit
@@ -8,7 +8,7 @@ keywords:
   - vue父子组件传值
   - vue自定义组件
 date: 2022-02-15 15:47:58
-categories: 前端技术
+category: 前端技术
 description: Vue项目中，父子组件的传值是比较常用的，这里记录使用方法。
 ---
 

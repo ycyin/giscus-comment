@@ -1,10 +1,10 @@
 ---
 title: 解决Git每次push都要重新输入账号密码和HttpRequestException encountered的问题
 date: 2020-03-12 11:54:58
-tags:
+tag:
   - Git
   - 使用技巧
-categories: Git
+category: Git
 ---
 
 在Git进行多账户配置后-[（Git多用户账号配置）](https://ladybug.top/Git/git-multi-user-account-configuration---configure-SSH-key.html),最开始使用没有问题，可以实现多线push。过了几天，不知道为啥就不行了，每次提交都要重新输入账号密码。以下是我处理该问题的总结步骤：

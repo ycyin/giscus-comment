@@ -1,12 +1,12 @@
 ---
 title: 重温Spring---使用Spring IOC解决程序耦合
 date: 2021-06-30 14:03:32
-tags:
+tag:
   - Spring
   - IOC
   - Spring IOC
   - Bean
-categories: Spring
+category: Spring
 ---
 
 ## 前言

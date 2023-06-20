@@ -1,10 +1,10 @@
 ---
 title: 'K8s中flexvolume插件驱动的安装'
 date: 2022-07-29 17:27:59
-tags:
+tag:
   - k8s
   - coredns
-categories: 云原生
+category: 云原生
 description: 介绍K8s中flexvolume插件驱动的安装
 ---
 

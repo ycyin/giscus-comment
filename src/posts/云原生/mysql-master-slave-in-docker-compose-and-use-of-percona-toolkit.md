@@ -1,12 +1,12 @@
 ---
 title: Docker compose中的MySQL主从复制模式和percona-toolkit工具使用
 date: 2023-04-27 18:30:42
-tags:
+tag:
   - Docker
   - MySQL
   - 数据库
   - percona-toolkit
-categories: 云原生
+category: 云原生
 description: 介绍在Docker compose中的MySQL主从复制模式和percona-toolkit工具（数据一致性监测、延迟监控）使用
 ---
 

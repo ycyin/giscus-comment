@@ -1,9 +1,9 @@
 ---
 title: 修改k8s节点主机名并重新加入集群
 date: 2022-05-19 09:41:06
-tags:
+tag:
   - k8s
-categories: 云原生
+category: 云原生
 description: 介绍如何在K8s中修改节点主机名称并重新加入集群
 ---
 

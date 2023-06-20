@@ -1,10 +1,10 @@
 ---
 title: 关于部署于JBoss5中的Spring应用获取项目真实部署路径的问题
 date: 2021-12-10 11:03:18
-tags:
+tag:
   - Spring
   - JBoss
-categories: Spring
+category: Spring
 description: 部署于JBoss5中的Spring应用获取项目真实部署路径,使用ContextLoader.getCurrentWebApplicationContext()
 ---
 

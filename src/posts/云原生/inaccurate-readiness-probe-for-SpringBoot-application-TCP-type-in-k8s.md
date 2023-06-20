@@ -1,10 +1,10 @@
 ---
 title: '关于k8s中对于SpringBoot应用TCP类型的就绪探针不准确的问题发现'
 date: 2022-06-25 14:56:43
-tags:
+tag:
   - k8s
   - Spring Boot
-categories: 云原生
+category: 云原生
 description: 关于k8s中对于SpringBoot应用TCP类型的就绪探针不准确的问题发现
 ---
 

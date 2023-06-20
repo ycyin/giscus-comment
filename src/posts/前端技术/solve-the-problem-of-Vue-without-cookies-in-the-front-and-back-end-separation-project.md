@@ -1,10 +1,10 @@
 ---
 title: 解决前后端分离项目中Vue不带cookies的问题
 date: 2020-03-11 16:29:08
-tags:
+tag:
   - Vue
   - Cookies
-categories: 前端技术
+category: 前端技术
 ---
 
 ## 问题重现

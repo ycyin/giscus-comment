@@ -1,12 +1,12 @@
 ---
 title: 实现单例模式的8种方法
 date: 2022-02-08 14:54:01
-tags:
+tag:
   - 单例模式
   - 软件设计
   - 饿汉式
   - 懒汉式
-categories: 设计模式
+category: 设计模式
 ---
 
 > 本篇是在学习[Java内存模型 (ladybug.top)](https://notes.ladybug.top/#/Java/Java线程/Java内存模型)时对JMM的实例记录。

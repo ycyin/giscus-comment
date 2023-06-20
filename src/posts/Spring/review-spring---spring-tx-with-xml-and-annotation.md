@@ -1,11 +1,11 @@
 ---
 title: 重温Spring---Spring事务控制与基于XML和注解的配置方法
 date: 2021-08-04 13:27:16
-tags:
+tag:
   - Spring
   - 事务控制
   - Spring AOP
-categories: Spring
+category: Spring
 ---
 
 ## 前言

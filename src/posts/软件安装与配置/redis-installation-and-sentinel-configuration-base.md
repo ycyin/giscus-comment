@@ -1,13 +1,13 @@
 ---
 title: Redis安装与哨兵模式配置入门
-tags:
+tag:
   - redis
   - 缓存
 keywords:
   - reids安装
   - 哨兵模式
 date: 2020-08-27 13:52:26
-categories: 软件安装&配置
+category: 软件安装&配置
 description: 在多台机器上安装和配置Redis，并启用Sentinel模式。在三台机器上安装Redis（一个主，两个从），并启动三个哨兵（多哨兵模式可以有效地防止单哨兵不可用的情况）。本文主要记录如何安装Redis,如何配置redis.conf和sentinel.conf文件
 ---
 ## 前言

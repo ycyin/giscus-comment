@@ -1,13 +1,13 @@
 ---
 title: Linux上直接打开war包修改文件
-tags:
+tag:
   - Linux
   - vi
 keywords:
   - 直接打开文件
   - 修改war
 date: 2021-06-11 16:31:54
-categories: 常用命令
+category: 常用命令
 description: linux上直接打开war包修改文件内容。
 ---
 ### 前言

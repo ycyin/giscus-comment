@@ -1,10 +1,10 @@
 ---
 title: '在minio中开启https访问以及使用rclone备份minio桶'
 date: 2023-04-16 18:10:16
-tags:
+tag:
   - minio
   - rclone
-categories: 云原生
+category: 云原生
 description: 在docker运行的minio中开启https访问，以及如何使用rclone备份minio桶文件
 ---
 

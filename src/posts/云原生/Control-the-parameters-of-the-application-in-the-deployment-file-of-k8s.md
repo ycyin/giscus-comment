@@ -1,10 +1,10 @@
 ---
 title: 'K8s中的环境变量与应用程序的对应关系与操作'
 date: 2022-06-16 14:48:08
-tags:
+tag:
   - k8s
   - Spring Boot
-categories: 云原生
+category: 云原生
 description: 介绍如何通过K8s中的环境变量与应用程序进行交互的
 ---
 

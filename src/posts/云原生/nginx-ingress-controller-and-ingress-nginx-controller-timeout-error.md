@@ -1,10 +1,10 @@
 ---
 title: 'K8s中的两种nginx-ingress-controller及其区别'
 date: 2022-11-16 22:10:36
-tags:
+tag:
   - k8s
   - nginx-ingress
-categories: 云原生
+category: 云原生
 description: 注解没生效？可能是ingress-controller不对应。介绍K8s中的两种nginx-ingress-controller及其区别。
 ---
 

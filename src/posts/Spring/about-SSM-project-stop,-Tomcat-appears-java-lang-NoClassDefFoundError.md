@@ -1,11 +1,11 @@
 ---
 title: '关于SSM项目停止Tomcat时Log4j出现java.lang.NoClassDefFoundError:'
 date: 2020-03-29 14:43:41
-tags:
+tag:
   - tomcat
   - SSM
   - Log
-categories: Spring
+category: Spring
 ---
 
 ## 异常重现

@@ -1,9 +1,9 @@
 ---
 title: Grafana中的邮件报警和截图插件grafana-image-enderer
 date: 2022-09-06 07:21:41
-tags:
+tag:
   - k8s
-categories: 云原生
+category: 云原生
 description: 介绍Grafana中的邮件报警，如何在Grafana中安装grafana-image-enderer插件，以及截图功能的使用
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: '使用Jenkins+GitLab实现自动部署vue项目'
 date: 2021-01-11 16:45:41
-tags:
+tag:
   - Jenkins
   - GitLab
-categories: 云原生
+category: 云原生
 ---
 
 ## 前言

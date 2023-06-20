@@ -1,11 +1,11 @@
 ---
 title: 在Spring项目简单配置Flyway(V4.2版本)数据库版本管理
 date: 2020-10-23 15:20:08
-tags:
+tag:
   - Flyway
   - 数据库
   - 版本管理
-categories: 数据库技术
+category: 数据库技术
 ---
 
 ## 前言

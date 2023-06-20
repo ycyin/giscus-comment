@@ -1,11 +1,11 @@
 ---
 title: SpringMVC4升级为SpringBoot2实战
 date: 2022-06-07 15:42:44
-tags:
+tag:
   - Spring
   - SpringMVC
   - Spring Boot
-categories: Spring
+category: Spring
 description: SpringMVC升级为SpringBoot实战
 ---
 

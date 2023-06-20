@@ -1,6 +1,6 @@
 ---
 title: Element-UI中实现可动态增加行列和可编辑单元格的表格
-tags:
+tag:
   - Vue
   - AHP
   - Element-UI
@@ -12,7 +12,7 @@ keywords:
   - Element-UI
   - el-table
 date: 2020-06-27 00:09:11
-categories: 前端技术
+category: 前端技术
 description: 使用Vue+Element-UI的Table组件实现动态增加行列、可编辑的表格。并实现右上三角单元格为灰色不可编辑。
 ---
 ### 前言

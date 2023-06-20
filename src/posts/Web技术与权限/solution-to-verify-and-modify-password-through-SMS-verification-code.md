@@ -1,10 +1,10 @@
 ---
 title: 通过短信验证码验证修改密码的解决方案
 date: 2021-11-18 18:25:58
-tags:
+tag:
   - sms
   - 短信验证码
-categories: Web技术&权限
+category: Web技术&权限
 isShowComments: true
 ---
 

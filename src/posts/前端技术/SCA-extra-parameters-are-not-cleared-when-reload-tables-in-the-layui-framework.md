@@ -1,10 +1,10 @@
 ---
 title: 源码分析之解决layui框架重载表格时额外参数不清空的问题
 date: 2020-04-29 15:31:49
-tags:
+tag:
   - layui
   - 源码分析
-categories: 前端技术
+category: 前端技术
 ---
 
 ### 问题场景

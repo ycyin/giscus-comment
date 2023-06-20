@@ -1,6 +1,6 @@
 ---
 title: Windows系统查看端口占用、结束进程方法和命令
-tags:
+tag:
   - windows
   - 端口占用
   - taskkill
@@ -9,7 +9,7 @@ keywords:
   - windows结束进程
   - taskkill
 date: 2020-06-26 16:02:33
-categories: 常用命令
+category: 常用命令
 description: windows查看端口占用、结束进程。
 ---
 ### 前言

@@ -1,6 +1,6 @@
 ---
 title: 彻底搞定VirtualBox虚拟机的网络设定
-tags:
+tag:
   - VirtualBox
   - 虚拟机
   - 网络设置
@@ -9,7 +9,7 @@ keywords:
   - 网络设置
   - 虚拟机网络设置
 date: 2020-12-04 19:33:33
-categories: 软件安装&配置
+category: 软件安装&配置
 description: VirtualBox虚拟机网络设置
 ---
 ## 前言

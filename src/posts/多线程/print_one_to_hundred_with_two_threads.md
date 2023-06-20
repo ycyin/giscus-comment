@@ -1,6 +1,6 @@
 ---
 title: 使用两个线程交替打印0-100的奇偶数
-tags:
+tag:
   - Thread
   - 多线程
 keywords:
@@ -8,7 +8,7 @@ keywords:
   - 多线程
   - 交替打印
 date: 2022-01-10 17:12:06
-categories: 多线程
+category: 多线程
 description: Java使用两个线程交替打印0-100的奇偶数
 ---
 > 本篇是在学习[5.Thread和Object中线程相关的重要方法 (ladybug.top)](https://notes.ladybug.top/#/Java/Java线程/Thread和Object中线程相关的重要方法)时对`notify()`和`wait()`的相关用法记录。

@@ -1,10 +1,10 @@
 ---
 title: 在Win10中使用Win+R快速启动软件
 date: 2021-10-25 10:15:33
-tags:
+tag:
   - 使用技巧
   - windows
-categories: 软件安装&配置
+category: 软件安装&配置
 ---
 
 ## 前言

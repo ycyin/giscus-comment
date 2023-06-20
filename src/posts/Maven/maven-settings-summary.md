@@ -1,10 +1,10 @@
 ---
 title: maven配置文件settings.xml中的一些概念总结
 date: 2022-08-21 09:50:20
-tags:
+tag:
   - maven
   - 使用技巧
-categories: Maven
+category: Maven
 ---
 
 在`settings.xml`文件中有如下几个常用的配置标签：

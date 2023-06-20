@@ -1,13 +1,13 @@
 ---
 title: 避坑-不能将specific类型的gitlab-runner改变为share类型
-tags: 
+tag: 
   - gitlab-runner
 keywords:
   - gitlab
   - gitlab-runner
   - shared to specific
 date: 2023-05-09 20:24:22
-categories: 软件安装&配置
+category: 软件安装&配置
 description: 在gitlab中将类型为share的gitlab-runner改变为specific类型后不能将specific类型改变回share类型，只能重新注册
 ---
 ## 前言

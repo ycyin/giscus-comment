@@ -1,12 +1,12 @@
 ---
 title: 在Vmware中Ubuntu22.04的vm-tools和网络问题
 date: 2022-05-25 18:11:10
-tags:
+tag:
   - Vmware
   - Ubuntu
   - network
   - vm-tools
-categories: 软件安装&配置
+category: 软件安装&配置
 ---
 
 ## 前言

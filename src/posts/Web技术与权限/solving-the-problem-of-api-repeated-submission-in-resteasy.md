@@ -1,10 +1,10 @@
 ---
 title: 在RestEasy2.x中解决接口重复提交问题
 date: 2021-09-17 13:18:25
-tags:
+tag:
   - resteasy
   - 重复提交
-categories: Web技术&权限
+category: Web技术&权限
 ---
 
 ## 前言

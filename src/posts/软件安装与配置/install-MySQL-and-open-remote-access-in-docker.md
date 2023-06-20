@@ -1,11 +1,11 @@
 ---
 title: 在Docker中安装MySQL5.7并开启远程访问(附授权和修改密码方式)
 date: 2020-11-25 16:59:08
-tags:
+tag:
   - Docker
   - 数据库
   - MySQL
-categories: 软件安装&配置
+category: 软件安装&配置
 ---
 
 

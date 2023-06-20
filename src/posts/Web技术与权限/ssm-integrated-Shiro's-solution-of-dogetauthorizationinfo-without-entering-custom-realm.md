@@ -1,10 +1,10 @@
 ---
 title: SSM集成Shiro不进入自定义Realm的doGetAuthorizationInfo的解决方案
 date: 2020-02-10 11:10:14
-tags:
+tag:
   - SSM
   - Shiro
-categories: Web技术&权限
+category: Web技术&权限
 ---
 
 ## 问题重现

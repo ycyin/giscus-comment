@@ -1,11 +1,11 @@
 ---
 title: 使用VBA脚本汇总Excel文档
-tags:
+tag:
   - VBA
 keywords:
   - VBA,文件汇总，Excel汇总
 date: 2021-03-08 23:00:06
-categories: 算法&数学
+category: 算法&数学
 description: 使用Visual Basic for Applications(VBA)将多个使用同一模板的Excel文件汇总到一个文档中。快速汇总文档。
 ---
 ## 效果展示

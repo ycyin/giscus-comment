@@ -1,11 +1,11 @@
 ---
 title: Vue+SSM中使用Token验证登录
 date: 2019-12-31 14:31:08
-tags:
+tag:
   - Vue
   - SSM
   - JWT
-categories: Spring
+category: Spring
 ---
 
 ## JWT(JSON Web Token)
