@@ -76,6 +76,11 @@ export default hopeTheme({
 
   plugins: {
     blog: true,
+    feed: {
+      rss: true,
+      json: true,
+      atom: true
+    },
 
     comment: {
       provider: "Giscus",
