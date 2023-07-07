@@ -25,12 +25,24 @@ export default defineUserConfig({
       indexContent: true,
     }),
     redirectPlugin({
-      // 重定向配置
+      // 重定向配置,为了不让之前收录到Google的访问是404链接
       config: (app) =>{
-        // 如果是/posts/开头的页面就设置一条规则[/a,/posts/a],表示访问/a时重定向到/posts/a
+        // 如果是/posts/开头的页面就设置一条规则[访问url,重定向到url]
+        // [/Spring,/posts/Spring],表示访问/Spring 时重定向到/posts/Spring
+        // [/云原生,/posts/云原生],表示访问/云原生 时重定向到/posts/云原生
         const redirects  = app.pages
         .filter(({ path }) => path.startsWith("/posts/"))
-        .map(({ path }) => [path.replace(/^\/posts\//, "/"), path]);
+        .map(({ path }) => [
+          path.replace(/^\/posts\//, "/")
+          .replace('/Frontend/',"/前端技术/")
+          .replace('/Database/','/数据库技术/')
+          .replace('/CloudNative/','/云原生/')
+          .replace('/Software/','/软件安装&配置/')
+          .replace('/DesignPatterns/','/设计模式/')
+          .replace('/WebAndSecurity/','/安全&设计/')
+          .replace('/Concurrent/','/多线程/')
+          .replace('/Commands/','/常用命令/')
+          .replace('/Algorithms/','/算法&数学/'), path]);
         // console.log(redirects)
         return Object.fromEntries(
           redirects
