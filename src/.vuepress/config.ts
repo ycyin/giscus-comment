@@ -28,8 +28,11 @@ export default defineUserConfig({
       // 重定向配置,为了不让之前收录到Google的访问是404链接
       config: (app) =>{
         // 如果是/posts/开头的页面就设置一条规则[访问url,重定向到url]
-        // [/Spring,/posts/Spring],表示访问/Spring 时重定向到/posts/Spring
-        // [/云原生,/posts/云原生],表示访问/云原生 时重定向到/posts/云原生
+        // path = /posts/CloudNative/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html
+        // replace(/^\/posts\//, "/") ===> path = /CloudNative/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html
+        // replace('/CloudNative/','/云原生/') ==> /云原生/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html
+        // 就生成一条：[/云原生/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html,/posts/CloudNative/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html]
+        // 表示访问/云原生/... 时重定向到/posts/CloudNative/...
         const redirects  = app.pages
         .filter(({ path }) => path.startsWith("/posts/"))
         .map(({ path }) => [
