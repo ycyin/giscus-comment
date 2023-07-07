@@ -4,7 +4,7 @@ date: 2021-09-17 13:18:25
 tag:
   - resteasy
   - 重复提交
-category: Web技术&权限
+category: Web技术&安全
 ---
 
 ## 前言

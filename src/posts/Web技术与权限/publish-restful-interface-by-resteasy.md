@@ -4,7 +4,7 @@ date: 2021-04-19 18:47:02
 tag:
   - resteasy
   - RESTful
-category: Web技术&权限
+category: Web技术&安全
 ---
 
 ## 开发环境
