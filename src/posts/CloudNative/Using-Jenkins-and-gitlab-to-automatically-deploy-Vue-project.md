@@ -7,14 +7,13 @@ tag:
 category: 云原生
 ---
 
-## 前言
 在众多持续集成/持续部署(CI/CD)工具中（如**GitLab CI**、**Travis CI**、**TeamCity**等），有人说[Jenkins已经老了](https://www.jdon.com/52172)，现在也有很多优秀的[Jenkins替代方案](http://www.360doc.com/content/20/1111/12/46368139_945280698.shtml)。本文选择**Jenkins**仅仅是因为它安装简单、部署简单的项目上手快（有Web界面）。
+
+<!-- more -->
 
 使用的Jenkins版本：[Jenkins 2.263.1](https://jenkins.io/)，部署机器：CentOS 7
 
 使用Jenkins+gitlab实现自动部署vue项目基本思路：gitlab每次提交代码使用 GitLab 的 WebHook 来触发 Jenkins 构建，Jenkins执行shell脚本打包Vue项目，然后将打包后的静态文件复制到nginx指定的html目录中。
-
-
 
 ## 安装环境
 

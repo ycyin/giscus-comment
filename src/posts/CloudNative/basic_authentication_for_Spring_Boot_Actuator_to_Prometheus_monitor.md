@@ -8,11 +8,11 @@ category: 云原生
 description: 一般地，我们使用Prometheus对SpringBoot应用进行监控时，没有做任何认证，监控接口是完全开放的，这在某些程度上不安全。
 ---
 
-## 背景
-
 一般地，我们使用Prometheus对SpringBoot应用进行监控时，没有做任何认证，监控接口是完全开放的，我们直接访问暴露出来的指标接口`http://localhost:8081/actuator/prometheus`就可以拿到指标接口，这在某些程度上不安全。。
 
 我们需要给我们的监控指标接口添加一个Base认证。
+
+<!-- more -->
 
 ## 应用添加Basic认证
 

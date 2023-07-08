@@ -10,6 +10,8 @@ description: 注解没生效？可能是ingress-controller不对应。介绍K8s�
 
 有两种基于 NGINX 的 Ingress 控制器实现：一种是[nginxinc/kubernetes-ingress](https://github.com/nginxinc/kubernetes-ingress)，另一种是[kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx)。
 
+<!-- more -->
+
 ## 什么是Ingress Controller?
 
 为了让 Ingress 资源工作，集群中至少要有一个 Ingress Controller运行。 Ingress Controller抽象出 Kubernetes 应用程序流量路由的复杂性，并在 Kubernetes 服务和外部服务（外部世界）之间提供桥梁。[^1]

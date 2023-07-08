@@ -8,9 +8,9 @@ category: 云原生
 description: 在docker运行的minio中开启https访问，以及如何使用rclone备份minio桶文件
 ---
 
-## 背景和环境
-
 根据上一篇文章搭建好了Choerodon，启动的Minio文件服务使用docker安装，文件存储在本地属于单点存储，具有数据丢失的风险。现在需要对minio存储的文件进行备份到另外一台机器，通过调研决定使用rclone进行备份。在实际操作中发现rclone需要让minio开启https访问。以下是使用的相关组件及其版本信息：
+
+<!-- more -->
 
 minio：RELEASE.2020-01-03T19-12-21Z
 

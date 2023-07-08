@@ -11,6 +11,8 @@ description: 介绍K8s中的coredns无法解析svc服务名
 
 我们知道k8s中可以通过服务名进行调用，初次部署coredns后正常运行但无法解析服务名，导致各pod之间通信不能通过svc，排查后发现kube-proxy报如下错误：
 
+<!-- more -->
+
 ```
 [root@k8s-node2 ~]# systemctl status kube-proxy -l
 ● kube-proxy.service - Kubernetes Proxy

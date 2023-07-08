@@ -8,9 +8,11 @@ category: 云原生
 description: 介绍在Docker环境下安装Choerodon的解决方案，在K8S中部署Choerodon，官方提供了较为完善的安装文档，在Docker中部署Choerodon主要需要解决数据初始化、多机网络互通等问题
 ---
 
-## 背景
-  我们的Choerodon部署在测试网段的K8S中，现在需要给另一部门在办公网部署一套Choerodon的敏捷管理模块。
+我们的Choerodon部署在测试网段的K8S中，现在需要给另一部门在办公网部署一套Choerodon的敏捷管理模块。
 首先为了减少在在Docker中部署与在k8s中部署Choerodon（SpringCloud）微服务项目的差异性，我们选择使用docker-compose来部署，这样微服务之间仍然可以使用服务名进行互相访问。
+
+<!-- more -->
+
 由于只给了两台8C16G的机器，我们先是将需要存储空间的基础组件（MySQL、Redis和MinIO）部署在其中一台带有1T硬盘机器， 其它Choerodon的微服务使用docker-compose部署在另外一台机器上，这样在docker-compose中只需要为<span style="color:red">每一个service指定一个相同的type:bridge桥接网络</span>就可以互通了。
   但是后来发现，所有的微服务部署在一台机器上内存不够用，需要将两台机器的Docker网络打通进行部署。
 

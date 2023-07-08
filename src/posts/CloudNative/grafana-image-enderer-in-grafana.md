@@ -9,6 +9,8 @@ description: 介绍Grafana中的邮件报警，如何在Grafana中安装grafana-
 
 `Grafana Image Renderer`是一个 Grafana 后端插件，它使用无头浏览器 (Chromium) 将面板和仪表板渲染为 PNG。比如下面的邮件通知，`Include image`功能则需要这个插件。
 
+<!-- more -->
+
 <img src="./grafana-image-enderer-in-grafana/alert-include-image.png" alt="alert-include-image" style="zoom:50%;" />
 
 本文中的Grafana在Docker容器中运行，用的Grafana7和Grafana8.5的镜像都实验了，如果是二进制本地化安装可能很多经验不适用。

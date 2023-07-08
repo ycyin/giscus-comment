@@ -11,6 +11,8 @@ description: 介绍如何在K8s中跨命名空间(NameSpace)服务调用，在 I
 
 先说答案：第一种方式：在NameSpace A中创建无Selecter选择运算符的Service，然后手动创建EndPoints指向NameSpace B中的Service IP。或者第二种方式使用ExternalName 类型的Service
 
+<!-- more -->
+
 其实原理很简单，和我们创建平时创建普通Service一样：创建Service时一般会使用selecter选择Pod，会创建一个与Serivce同名EndPoints去调用Pod，使用`kubectl get endpoints -n ns xxx -o yaml`可以看到在EndPoints中指定了Pod Ip和端口。
 
 我们这里就是将自动创建EndPoints的过程变为手动，EndPoints指向Pod Ip变为指向Service IP。

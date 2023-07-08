@@ -8,9 +8,9 @@ category: 云原生
 description: 以Nginx基底的镜像，如何在浏览器的访问响应头中删除Server信息？主要是需要添加headers-more-nginx-module这个模块来实现
 ---
 
-## 背景
-
 前端应用部署在K8s中，Nginx以容器的方式运行。由于一些安全因素，我们需要将Nginx返回的响应头中Server隐藏掉不让访问者知道我们的服务器信息（包括服务器类型和版本号）。
+
+<!-- more -->
 
 ## 方案
 

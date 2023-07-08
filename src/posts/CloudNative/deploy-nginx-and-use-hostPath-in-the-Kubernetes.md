@@ -7,8 +7,9 @@ tag:
 category: 云原生
 ---
 
-## 前言
 [Kubernetes 卷（Volume）](https://kubernetes.io/zh/docs/concepts/storage/volumes/)有很多的类型，hostPath方式只是其中一个，关于hostPath，它的定位可能还是一个比较简单的应用设计，例如demo，测试等，因为它需要在每一个node节点都要有对应的挂载目录/文件。比如在k8s集群中，Master调用nginx服务，他可能会分配到多个节点，例如有2个node节点，这次nginx服务被分配到了node2节点，如果node2节点没有建立相应的目录以及配置文件，就会映射失败，那么怎么解决这个问题？
+
+<!-- more -->
 
 - 有一个方案比较省事，用ansible自动化运维，批量建立，但是这样的话，还不如使用NFS或者gluster进行挂载，更省事；
 - 第二个方案：使用scp命令，将一台机器上的文件复制到其它Node节点机器上，比较麻烦，但是用来部署demo足够了。

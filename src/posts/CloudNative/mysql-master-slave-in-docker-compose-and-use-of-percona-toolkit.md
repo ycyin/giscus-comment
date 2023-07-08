@@ -10,8 +10,9 @@ category: 云原生
 description: 介绍在Docker compose中的MySQL主从复制模式和percona-toolkit工具（数据一致性监测、延迟监控）使用
 ---
 
-## 背景
 现需要对docker compose上部署的单机mysql进行备份，我们可以使用[脚本](https://github.com/yinyicao/usefulScript/blob/d24d286ecc62e5c4f78ff3b94801a057eb43848f/shell/backupDB.sh)执行mysqldump命令进行定时备份，但是会存在定时备份时间间隔数据丢失的风险。可以使用主从复制模式来解决这个问题。同时可以使用[percona-toolkit](https://www.percona.com/downloads)工具检查数据一致性。
+
+<!-- more -->
 
 MySQL：5.7.23
 

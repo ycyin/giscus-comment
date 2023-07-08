@@ -10,6 +10,8 @@ description: 介绍K8s中flexvolume插件驱动的安装
 
 K8s中flexvolume插件驱动的安装只需要将对应驱动文件放到对应宿主机目录下，k8s 1.17及其之前需要重启kubelet组件生效
 
+<!-- more -->
+
 二进制集群环境默认路径：`/usr/libexec/kubernetes/kubelet-plugins/volume/exec/<vendor~driver>/`
 
 Rancher集群环境默认路径：`/var/lib/kubelet/volumeplugins/<vendor~driver>/`

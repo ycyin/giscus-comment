@@ -7,6 +7,10 @@ category: 云原生
 description: 介绍如何在Grafana中离线安装Grafana插件
 ---
 
+介绍如何在Grafana中离线安装Grafana插件
+
+<!-- more -->
+
 # 离线安装Grafana插件
 
 ## 方案调研
