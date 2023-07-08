@@ -33,7 +33,8 @@ export default defineUserConfig({
         // replace('/CloudNative/','/云原生/') ==> /云原生/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html
         // 就生成一条：[/云原生/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html,/posts/CloudNative/mysql-master-slave-in-docker-compose-and-use-of-percona-toolkit.html]
         // 表示访问/云原生/... 时重定向到/posts/CloudNative/...
-        const redirects  = app.pages
+        // 兼容之前的版本
+        const redirect1  = app.pages
         .filter(({ path }) => path.startsWith("/posts/"))
         .map(({ path }) => [
           path.replace(/^\/posts\//, "/")
@@ -46,6 +47,23 @@ export default defineUserConfig({
           .replace('/Concurrent/','/多线程/')
           .replace('/Commands/','/常用命令/')
           .replace('/Algorithms/','/算法&数学/'), path]);
+
+        // 兼容上个中文路径的版本
+        const redirect2  = app.pages
+        .filter(({ path }) => path.startsWith("/posts/"))
+        .map(({ path }) => [
+          path.replace(/^\/posts\//, "/")
+          .replace('/Frontend/',"/posts/前端技术/")
+          .replace('/Database/','/posts/数据库技术/')
+          .replace('/CloudNative/','/posts/云原生/')
+          .replace('/Software/','/posts/软件安装与配置/')
+          .replace('/DesignPatterns/','/posts/设计模式/')
+          .replace('/WebAndSecurity/','/posts/Web技术与权限/')
+          .replace('/Concurrent/','/posts/多线程/')
+          .replace('/Commands/','/posts/常用命令/')
+          .replace('/Algorithms/','/posts/算法And数学/'), path]);
+
+        const redirects = redirect1.concat(redirect2)
         // console.log(redirects)
         return Object.fromEntries(
           redirects
