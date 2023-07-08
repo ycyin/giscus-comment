@@ -10,9 +10,9 @@ date: 2023-05-09 20:24:22
 category: 软件安装&配置
 description: 在gitlab中将类型为share的gitlab-runner改变为specific类型后不能将specific类型改变回share类型，只能重新注册
 ---
-## 前言
-
 在gitlab中将类型为share的gitlab-runner改变为specific类型后不能将specific类型改变回share类型，只能重新注册一个新的runner
+
+<!-- more -->
 
 ![](./disability-to-convert-a-gitlab-runner-project-(specific)--runner-to-an-instance-(shared)runner/20230509202609.png)
 
