@@ -254,6 +254,7 @@ func ClearSession(c *gin.Context) {
 ## 参考
 
 1. https://github.com/gin-contrib/sessions
-1. https://github.com/go-session/session
-1. https://github.com/go-session/gin-session
-1. https://github.com/go-session/redis
+2. https://github.com/go-session/session
+3. https://github.com/go-session/gin-session
+4. https://github.com/go-session/redis
+5. https://segmentfault.com/q/1010000042454467
