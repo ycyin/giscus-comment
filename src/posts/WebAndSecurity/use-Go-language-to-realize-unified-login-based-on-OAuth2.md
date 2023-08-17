@@ -5,7 +5,7 @@ tag:
   - Go
   - OAuth2
   - Choerodon
-category: 云原生
+category: Web技术&安全
 ---
 
 本文主要记录使用Go语言的golang.org/x/oauth2库接入OAuth2实现统一身份认证登录的过程。由于我们内网部署了Choerodon开源版1.0,所以OAuth2的认证服务端直接使用Choerodon的OAuth服务。即在我们的自研服务接入Choerodon的OAuth2服务实现统一身份认证登录。
@@ -18,7 +18,7 @@ Choerodon的OAuth服务是对Spring Security的二开，和接入Spring Security
 
 OAuth有4种授权模式，我们选择最为安全的授权码模式，如下图：
 
-![](./Use-Go-language-to-realize-unified-login-based-on-OAuth2/cropped1982305230936502679.jpg)
+![](./use-Go-language-to-realize-unified-login-based-on-OAuth2/cropped1982305230936502679.jpg)
 
 这是一个简化的流程图，User代表我们用户和浏览器端，Client代表我们的Go程序即要接入OAuth2的客户端，OAuth2 Provider代表授权服务端这里就是Choerodon OAuth服务（以下简称OAuth2服务）。
 
