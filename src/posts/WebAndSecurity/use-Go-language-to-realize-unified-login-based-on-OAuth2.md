@@ -8,7 +8,7 @@ tag:
 category: Web技术&安全
 ---
 
-本文主要记录使用Go语言的golang.org/x/oauth2库接入OAuth2实现统一身份认证登录的过程。由于我们内网部署了Choerodon开源版1.0,所以OAuth2的认证服务端直接使用Choerodon的OAuth服务。即在我们的自研服务接入Choerodon的OAuth2服务实现统一身份认证登录。
+本文主要记录使用Go语言的 <golang.org/x/oauth2> 库接入OAuth2实现统一身份认证登录的过程。由于我们内网部署了Choerodon开源版1.0,所以OAuth2的认证服务端直接使用Choerodon的OAuth服务。即在我们的自研服务接入Choerodon的OAuth2服务实现统一身份认证登录。
 
 <!-- more -->
 
