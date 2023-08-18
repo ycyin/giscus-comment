@@ -81,7 +81,7 @@ description: 注解没生效？可能是ingress-controller不对应。介绍K8s�
 
 对于`nginxinc/kubernetes-ingress with NGINX`需要使用`nginx.org/proxy-read-timeout: "10m"`
 
-更多注解上的使用区分可查看`kubernetes/ingress-nginx`： <https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/>，`nginxinc/kubernetes-ingress with NGINX`：<https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/>
+更多注解上的使用区分可查看[kubernetes/ingress-nginx](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/)和[nginxinc/kubernetes-ingress with NGINX](https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/)
 
 ## 参考：
 
