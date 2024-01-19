@@ -1,13 +1,13 @@
 ---
-title: K8s中跨命名空间(NameSpace)服务调用探索
+title: K8s中externalName-service和services-without-selectors
 date: 2022-08-31 17:46:44
 tag:
   - k8s
 category: 云原生
-description: 介绍如何在K8s中跨命名空间(NameSpace)服务调用，在 Ingress 中访问不同命名空间下的服务。
+description: 介绍如何在K8s中externalName-service和services-without-selectors的使用，在 Ingress 中访问不同命名空间下的服务。
 ---
 
-我们都知道在k8s中，NameSpace是资源隔离的，那如何在命名空间A中调用B中的服务呢？
+我们都知道在k8s中，NameSpace是资源隔离的，那如何在命名空间A中调用B中的服务呢？直接使用`服务名.命名空间名.svc.cluster.local`就可以实现，那么还有其它办法吗？
 
 先说答案：第一种方式：在NameSpace A中创建无Selecter选择运算符的Service，然后手动创建EndPoints指向NameSpace B中的Service IP。或者第二种方式使用ExternalName 类型的Service
 
@@ -60,9 +60,29 @@ spec:
 
 似乎是无法解析`test-service-2.namespace-b.svc.cluster.local`这个service的IP，指定test-service-2的ip就可以访问`externalName: 	10.43.6.139`
 
+<span style="color:red">2024-01-19补充：</span> 实际上ExternalName 类型的Service的真正用处在于使用DNS CNAME机制把自己CNAME到集群外部的域名，而在集群中就可以直接使用这个ExternalName 类型的Service名字来请求而不是用集群外部的域名，无须知道集群外部的域名是怎样的。但是前提是在集群内部也得对这个集群外部的域名能正常访问（比较常见的就是DNS无法解析，需要在域名解析器如CoreDNS里配置这个外部域名的host）,比如：
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: search
+  namespace: dev
+spec:
+  type: ExternalName
+  externalName: www.baidu.com
+```
+
+创建这个yaml，就可以在集群内部的pod中就可以通过`search.dev.svc.cluster.local` 访问`www.baidu.com`了，前提是在集群内本身能访问`www.baidu.com`(DNS能解析+网络可达)，可以通过curl或者dig命令验证。参考:[Kubernetes----ExternalName类型的Service-CSDN博客](https://blog.csdn.net/redrose2100/article/details/124003258)
+
 ## 没有选择算符的 Service
 
-在官方文档中[没有选择算符的 Service](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#services-without-selectors)说明很详细。官网截图如下：
+在官方文档中[没有选择算符的 Service](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#services-without-selectors)说明很详细。注意区别于[无头服务（headless-services Service） | Kubernetes](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#headless-services)。官网截图如下：
 
 ![image-20220902153307127](./service-over-namespace/service-without-selecter.png)
 
