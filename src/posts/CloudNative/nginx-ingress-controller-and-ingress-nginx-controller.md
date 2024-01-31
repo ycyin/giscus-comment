@@ -1,5 +1,6 @@
 ---
 title: 'K8s中的两种nginx-ingress-controller及其区别'
+star: 1
 date: 2022-11-16 22:10:36
 tag:
   - k8s

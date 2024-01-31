@@ -1,5 +1,6 @@
 ---
 title: 'K8s中使用Ingress访问请求体过大问题解决'
+star: 1
 date: 2022-07-01 14:29:11
 tag:
   - k8s

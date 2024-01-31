@@ -1,5 +1,6 @@
 ---
 title: 两个docker工具:runlike和whaler
+star: 1
 date: 2022-11-10 10:39:39
 tag:
   - Docker
