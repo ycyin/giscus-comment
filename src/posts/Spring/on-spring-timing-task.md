@@ -143,7 +143,7 @@ xml配置：
 
 输出结果：
 
-```reStructuredText
+```
 TASK2-Wed Nov 04 15:13:30 CST 2020--Thread[pool-1-thread-1,5,RMI Runtime]
 TASK1-Wed Nov 04 15:13:30 CST 2020--Thread[pool-1-thread-1,5,RMI Runtime]
 TASK2-Wed Nov 04 15:13:45 CST 2020--Thread[pool-1-thread-1,5,RMI Runtime]
@@ -172,7 +172,7 @@ xml配置：
 
 输出结果：
 
-```reStructuredText
+```
 TASK1-Wed Nov 04 15:35:50 CST 2020--Thread[dataScheduler-1,5,RMI Runtime]
 TASK1-Wed Nov 04 15:35:55 CST 2020--Thread[dataScheduler-1,5,RMI Runtime]
 TASK1-Wed Nov 04 15:36:00 CST 2020--Thread[dataScheduler-1,5,RMI Runtime]
@@ -213,7 +213,7 @@ xml配置：
 
 输出结果：
 
-```reStructuredText
+```
 TASK1-Wed Nov 04 15:58:25 CST 2020--Thread[dataExecutor-1,5,RMI Runtime]
 TASK1-Wed Nov 04 15:58:30 CST 2020--Thread[dataExecutor-2,5,RMI Runtime]
 TASK1-Wed Nov 04 15:58:35 CST 2020--Thread[dataExecutor-3,5,RMI Runtime]

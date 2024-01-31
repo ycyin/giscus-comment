@@ -14,7 +14,7 @@ category: 数据库技术
 
 ## 现象与起因
 
-![](./Use-stored-procedures-with-caution-100%-of-the-storage-caused-by-a-statement-is-occupied/Snipaste_2023-06-19_17-24-15.png)
+![](./Use-stored-procedures-with-caution-100-of-the-storage-caused-by-a-statement-is-occupied/Snipaste_2023-06-19_17-24-15.png)
 
 根据监控查看到mysql存储空间被占满，但是使用SQL查询数据库表文件却只是占用了几个G。
 
@@ -76,7 +76,7 @@ innodb_temp_data_file_path = ibtmp1:12M:autoextend:max:5G
 
 4）重启后，验证配置是否生效：
 
-```mysql
+```bash
 mysql> show variables like 'innodb_temp_data_file_path';
 +----------------------------+------------------------------+
 | Variable_name              | Value                        |

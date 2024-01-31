@@ -6,16 +6,16 @@
   "type": "module",
   "scripts": {
     "docs:build": "vuepress build src",
-    "docs:clean-dev": "vuepress dev src --clean-cache",
+    "docs:dev-no-cache": "vuepress dev src --no-cache",
     "docs:dev": "vuepress dev src",
     "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.64",
-    "vue": "^3.3.4",
-    "vuepress": "2.0.0-beta.64",
-    "vuepress-plugin-redirect": "^2.0.0-beta.230",
-    "vuepress-plugin-search-pro": "2.0.0-beta.230",
-    "vuepress-theme-hope": "2.0.0-beta.230"
+    "@vuepress/client": "2.0.0-rc.2",
+    "vue": "3.4.15",
+    "vuepress": "2.0.0-rc.2",
+    "vuepress-plugin-redirect": "2.0.0-rc.16",
+    "vuepress-plugin-search-pro": "2.0.0-rc.16",
+    "vuepress-theme-hope": "2.0.0-rc.16"
   }
 }

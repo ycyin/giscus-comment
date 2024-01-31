@@ -20,7 +20,7 @@ description: 使用Visual Basic for Applications(VBA)将多个使用同一模板
 
 ## **主要脚本内容**
 
-```vbscript
+```vb
 Private Sub CommandButton1_Click()
   Dim mypath As String
   Dim myExtension As String
