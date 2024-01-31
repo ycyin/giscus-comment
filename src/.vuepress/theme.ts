@@ -76,6 +76,10 @@ export default hopeTheme({
 
   plugins: {
     blog: true,
+    searchPro: {
+      // 索引全部内容
+      indexContent: true,
+    },
     feed: {
       rss: true,
       json: true,
@@ -110,7 +114,7 @@ export default hopeTheme({
       playground: {
         presets: ["ts", "vue"],
       },
-      presentation: {
+      revealJs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
       stylize: [

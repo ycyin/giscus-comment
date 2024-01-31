@@ -2,9 +2,11 @@ import { defineUserConfig } from "vuepress";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { redirectPlugin } from "vuepress-plugin-redirect";
 import theme from "./theme.js";
+import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
   base: "/",
+  bundler: viteBundler(),
   // 移动端优化
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
@@ -24,10 +26,6 @@ export default defineUserConfig({
     },
   },
   plugins: [
-    searchProPlugin({
-      // 索引全部内容
-      indexContent: true,
-    }),
     redirectPlugin({
       // 重定向配置,为了不让之前收录到Google的访问是404链接
       config: (app) =>{
