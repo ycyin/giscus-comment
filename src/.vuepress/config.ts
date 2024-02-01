@@ -3,8 +3,6 @@ import { redirectPlugin } from "vuepress-plugin-redirect";
 import theme from "./theme.js";
 import { viteBundler } from '@vuepress/bundler-vite'
 import { injectSpeedInsights } from '@vercel/speed-insights';
- 
-injectSpeedInsights();
 
 export default defineUserConfig({
   base: "/",
@@ -81,3 +79,5 @@ export default defineUserConfig({
   // Enable it with pwa
   shouldPrefetch: false,
 });
+
+injectSpeedInsights();
