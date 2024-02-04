@@ -22,8 +22,5 @@
     "vuepress-plugin-redirect": "2.0.0-rc.16",
     "vuepress-plugin-search-pro": "^2.0.0-rc.16",
     "vuepress-theme-hope": "2.0.0-rc.16"
-  },
-  "dependencies": {
-    "@vercel/speed-insights": "^1.0.9"
   }
 }
