@@ -36,7 +36,7 @@ export default hopeTheme({
     medias: {
       Dingding: "dingtalk://dingtalkclient/action/sendmsg?spm=dingtalk_id=yinyicao",
       QQ: "tencent://message/?uin=34782655",
-      Email: "mailto:34782655@qq.com",
+      Email: "mailto:ycyin@ladybug.top",
       Gmail: "mailto:b676278908@gmail.com",
       Gitee: "https://gitee.com/yyc007",
       GitHub: "https://github.com/yinyicao",
