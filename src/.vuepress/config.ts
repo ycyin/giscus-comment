@@ -1,5 +1,4 @@
 import { defineUserConfig } from "vuepress";
-import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { redirectPlugin } from "vuepress-plugin-redirect";
 import theme from "./theme.js";
 import { viteBundler } from '@vuepress/bundler-vite'
@@ -78,4 +77,8 @@ export default defineUserConfig({
 
   // Enable it with pwa
   shouldPrefetch: false,
+  // 插件API Hooks 启动开发服务器并开始监听文件修改后被调用 https://vuejs.press/zh/reference/plugin-api.html#onwatched
+  onWatched: () =>{
+    console.log("onWatched")
+  },
 });
