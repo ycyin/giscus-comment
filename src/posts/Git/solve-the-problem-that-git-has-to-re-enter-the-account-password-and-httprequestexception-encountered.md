@@ -7,7 +7,7 @@ tag:
 category: Git
 ---
 
-在Git进行多账户配置后-[（Git多用户账号配置）](https://ladybug.top/Git/git-multi-user-account-configuration---configure-SSH-key.html),最开始使用没有问题，可以实现多线push。过了几天，不知道为啥就不行了，每次提交都要重新输入账号密码。以下是我处理该问题的总结步骤：
+在Git进行多账户配置后-[（Git多用户账号配置）](https://ycyin.eu.org/Git/git-multi-user-account-configuration---configure-SSH-key.html),最开始使用没有问题，可以实现多线push。过了几天，不知道为啥就不行了，每次提交都要重新输入账号密码。以下是我处理该问题的总结步骤：
 
  1、查看系统ssh-key代理,执行如下命令 <!--more-->
 
@@ -33,7 +33,7 @@ ssh-agent bash
 ssh-add -D
 ```
 
-4、最后重新添加代理，将私钥添加到本地-[Git多用户账号配置](https://ladybug.top/Git/git-multi-user-account-configuration---configure-SSH-key.html) 
+4、最后重新添加代理，将私钥添加到本地-[Git多用户账号配置](https://ycyin.eu.org/Git/git-multi-user-account-configuration---configure-SSH-key.html) 
 
 ```shell
 ssh-add ~/.ssh/id_rsa_github // 将 GitHub 私钥添加到本地

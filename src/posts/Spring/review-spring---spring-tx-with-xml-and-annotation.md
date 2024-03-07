@@ -10,7 +10,7 @@ category: Spring
 
 ## 前言
 
-此前，我们学习了Spring AOP的配置方式：[重温Spring---Spring AOP基于XML和注解的配置 | 敲代码的小松鼠 (ladybug.top)](https://ladybug.top/Spring/review-spring---spring-aop-with-xml-and-annotation.html)，本篇旨在记录Spring事务控制的一些概念和基于XML和注解Spring 事务控制的方式。
+此前，我们学习了Spring AOP的配置方式：[重温Spring---Spring AOP基于XML和注解的配置 | 敲代码的小松鼠 (ycyin.eu.org)](https://ycyin.eu.org/Spring/review-spring---spring-aop-with-xml-and-annotation.html)，本篇旨在记录Spring事务控制的一些概念和基于XML和注解Spring 事务控制的方式。
 
 ## Spring事务管理的两种方式
 

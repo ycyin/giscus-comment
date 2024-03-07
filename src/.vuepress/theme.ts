@@ -7,11 +7,11 @@ const MR_HOPE_AVATAR =
 
 export default hopeTheme({
   pure: true,
-  hostname: "https://ladybug.top",
+  hostname: "https://ycyin.eu.org",
 
   author: {
     name: "ycyin",
-    url: "https://ladybug.top",
+    url: "https://ycyin.eu.org",
   },
 
   fullscreen: true,

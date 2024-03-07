@@ -13,7 +13,7 @@ category: Spring Data Jpa
 
 &emsp;&emsp;在Spring Data Jpa中，可以使用提供的[Spring Data JPA - query-methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods)进行方便的查询，甚至可以使用`@Query`注解自己写HQL或SQL完成更复杂的数据库操作。但是这些都很难实现动态拼接SQL（即where条件中某个参数没有值就不添加这个条件）。<!--more-->
 
-在这个场景下，我们需要返回自定义的结果（即非实体结果），这在我之前的博客中有记录可以直接通过`@Query`注解自己定义HQL实现[Spring Data Jpa 返回自定义对象（实体部分属性、多表联查） | 敲代码的小松鼠 (ladybug.top)](https://ladybug.top/Spring/spring-data-jpa-return-custom-objects.html)，本文记录另一种可以通过CriteriaBuilder实现。同时我们通过CriteriaBuilder实现动态拼接SQL，在大多复杂的业务场景中都需要动态拼接Where查询条件。
+在这个场景下，我们需要返回自定义的结果（即非实体结果），这在我之前的博客中有记录可以直接通过`@Query`注解自己定义HQL实现[Spring Data Jpa 返回自定义对象（实体部分属性、多表联查） | 敲代码的小松鼠 (ycyin.eu.org)](https://ycyin.eu.org/Spring/spring-data-jpa-return-custom-objects.html)，本文记录另一种可以通过CriteriaBuilder实现。同时我们通过CriteriaBuilder实现动态拼接SQL，在大多复杂的业务场景中都需要动态拼接Where查询条件。
 
 本篇文章以实体类（UserPO）为主，根据department字段分组sum计算moneyCount字段查询为例，这实体类在<a href="#end">文章末尾</a>提供。
 

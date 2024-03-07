@@ -77,7 +77,7 @@ lo: # 省略
 
 docker0 是默认的桥接网络，是运行了 docker 这个软件就会有 docker0；
 
-docker_gwbridge这是集群模式下创建overlay模式网络后在每台机器上创建的桥接网络，docker-gwbridge 是一个虚拟网桥，连接覆盖网络（overlay network ,包含 ingress网络）和docker主机的实际物理网络。[之前有文章用到过这个网络](https://ladybug.top/posts/%E4%BA%91%E5%8E%9F%E7%94%9F/Solution-for-installing-Choerodon-in-a-Docker-environment.html#%E4%B8%89%E3%80%81%E5%9F%BA%E4%BA%8Eoverlay%E7%9A%84docker%E5%AE%B9%E5%99%A8%E9%97%B4%E8%B7%A8%E5%AE%BF%E4%B8%BB%E6%9C%BA%E9%80%9A%E4%BF%A1%E3%80%90%E9%87%87%E7%94%A8%E3%80%91)
+docker_gwbridge这是集群模式下创建overlay模式网络后在每台机器上创建的桥接网络，docker-gwbridge 是一个虚拟网桥，连接覆盖网络（overlay network ,包含 ingress网络）和docker主机的实际物理网络。[之前有文章用到过这个网络](https://ycyin.eu.org/posts/%E4%BA%91%E5%8E%9F%E7%94%9F/Solution-for-installing-Choerodon-in-a-Docker-environment.html#%E4%B8%89%E3%80%81%E5%9F%BA%E4%BA%8Eoverlay%E7%9A%84docker%E5%AE%B9%E5%99%A8%E9%97%B4%E8%B7%A8%E5%AE%BF%E4%B8%BB%E6%9C%BA%E9%80%9A%E4%BF%A1%E3%80%90%E9%87%87%E7%94%A8%E3%80%91)
 
 br 开头的则是 docker-compose中的自定义网络（br 就是 bridge 的缩写，如果docker compose中的networks不是自定义的比如下面这种方式定义的也不会创建br网络），每跑一个 docker-compose.yaml 都会有且只创建一个 br 虚拟网卡。
 

@@ -10,7 +10,7 @@ category: 数据库技术
 
 ## 前言
 
-此前写过一篇[在Spring项目简单配置Flyway(V4.2版本)数据库版本管理](https://ladybug.top/数据库技术/configuring-flyway-tool-in-spring-project.html)。本次新项目使用SpringBoot3.0.4，尝试采用Liquibase4.5作为数据库版本管理工具。
+此前写过一篇[在Spring项目简单配置Flyway(V4.2版本)数据库版本管理](https://ycyin.eu.org/数据库技术/configuring-flyway-tool-in-spring-project.html)。本次新项目使用SpringBoot3.0.4，尝试采用Liquibase4.5作为数据库版本管理工具。
 
 这里记录使用XML和SQL两种方式，这两种方式使用最普遍，实际使用时选择其一即可。
 
@@ -174,7 +174,7 @@ spring:
 ## *参考*
 
 1. 更多规则和详细信息请访问[Liquibase Online Documentation](https://docs.liquibase.com/home.html)
-3. Flyway可以参考[在Spring项目简单配置Flyway(V4.2版本)数据库版本管理](https://ladybug.top/数据库技术/configuring-flyway-tool-in-spring-project.html)，底部有示例代码可供下载。
+3. Flyway可以参考[在Spring项目简单配置Flyway(V4.2版本)数据库版本管理](https://ycyin.eu.org/数据库技术/configuring-flyway-tool-in-spring-project.html)，底部有示例代码可供下载。
 3. [liquibase-数据库脚本升级管理_薛定谔的雄猫-CSDN博客](https://blog.csdn.net/iteye_19045/article/details/98885817)
 3. [SpringBoot集成H2数据库 - 仅此而已-远方 - 博客园 (cnblogs.com)](https://www.cnblogs.com/xuwenjin/p/14829316.html)
 3. [如何查看内存数据库H2中的数据-百度经验 (baidu.com)](https://jingyan.baidu.com/article/0a52e3f4fc53aabf62ed72b5.html)

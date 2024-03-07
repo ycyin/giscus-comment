@@ -7,7 +7,7 @@ tag:
 category: 设计模式
 ---
 
-> 本篇是在学习[5.Thread和Object中线程相关的重要方法 (ladybug.top)](https://notes.ladybug.top/#/Java/Java线程/Thread和Object中线程相关的重要方法)时对`notify()`和`wait()`的相关用法记录。<span style="font-size:10px">本篇除代码外多处引用网上文字，具体出处见文末参考。</span>
+> 本篇是在学习[5.Thread和Object中线程相关的重要方法 (ycyin.eu.org)](https://notes.ycyin.eu.org/#/Java/Java线程/Thread和Object中线程相关的重要方法)时对`notify()`和`wait()`的相关用法记录。<span style="font-size:10px">本篇除代码外多处引用网上文字，具体出处见文末参考。</span>
 >
 > 生产者消费者模式并不是GOF提出的23种设计模式之一，23种设计模式都是建立在面向对象的基础之上的，但其实面向过程的编程中也有很多高效的编程模式，生产者消费者模式便是其中之一，它是我们编程过程中最常用的一种设计模式。
 

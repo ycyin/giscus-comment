@@ -17,7 +17,7 @@ description: 使用Vue+Element-UI的Table组件实现动态增加行列、可编
 ---
 ### 前言
 
-> 基本需求场景：使用层次分析法（AHP）时，需要前端实现一个可动态添加表格行列、且单元格可编辑的表格。关于层次分析法可查看另一篇博客：[层次分析法（AHP）分析步骤与计算方法]( https://ladybug.top/AHP-base/ )
+> 基本需求场景：使用层次分析法（AHP）时，需要前端实现一个可动态添加表格行列、且单元格可编辑的表格。关于层次分析法可查看另一篇博客：[层次分析法（AHP）分析步骤与计算方法]( https://ycyin.eu.org/AHP-base/ )
 
 使用到的技术主要是`vue`和`element-ui`，`element-ui`官方文档：https://element.eleme.cn/#/zh-CN/component/table  中`el-table`组件不支持动态增加列，增加行则可以通过增加数据行实现，并且并不支持单元格的编辑，唯一可用到的就是可以监听单元格的双击/单击事件。
 

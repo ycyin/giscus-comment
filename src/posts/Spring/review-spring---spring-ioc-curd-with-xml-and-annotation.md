@@ -12,7 +12,7 @@ category: Spring
 
 ## 前言
 
-继上篇[重温Spring---使用Spring IOC解决程序耦合 | 敲代码的小松鼠 (ladybug.top)](https://ladybug.top/Spring/review-spring---spring-ioc)，学习了使用Spring IOC，均是采用XML配置文件形式配置的Bean及Bean的注入。本篇会基于XML和注解的方式分别实现一个CRUD，可以通过本篇文章了解XML和注解的方式使用及其异同，同时还可以了解到在Spring中使用Junit的方法。
+继上篇[重温Spring---使用Spring IOC解决程序耦合 | 敲代码的小松鼠 (ycyin.eu.org)](https://ycyin.eu.org/Spring/review-spring---spring-ioc)，学习了使用Spring IOC，均是采用XML配置文件形式配置的Bean及Bean的注入。本篇会基于XML和注解的方式分别实现一个CRUD，可以通过本篇文章了解XML和注解的方式使用及其异同，同时还可以了解到在Spring中使用Junit的方法。
 
 ## 注解配置Bean
 
@@ -159,7 +159,7 @@ public class AccountServiceImpl implements IAccountService {
 
 ## 数据库安装与数据准备
 
-数据库安装专门写了一篇：[在Windows10中安装MySQL5.7 Zip版本及常用配置 | 敲代码的小松鼠 (ladybug.top)](https://ladybug.top/软件安装&配置/install-MySQL5.7-zip-in-windows10.html)
+数据库安装专门写了一篇：[在Windows10中安装MySQL5.7 Zip版本及常用配置 | 敲代码的小松鼠 (ycyin.eu.org)](https://ycyin.eu.org/软件安装&配置/install-MySQL5.7-zip-in-windows10.html)
 
 **数据准备：**
 

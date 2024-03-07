@@ -11,7 +11,7 @@ date: 2022-01-10 17:12:06
 category: 多线程
 description: Java使用两个线程交替打印0-100的奇偶数
 ---
-> 本篇是在学习[5.Thread和Object中线程相关的重要方法 (ladybug.top)](https://notes.ladybug.top/#/Java/Java线程/Thread和Object中线程相关的重要方法)时对`notify()`和`wait()`的相关用法记录。
+> 本篇是在学习[5.Thread和Object中线程相关的重要方法 (ycyin.eu.org)](https://notes.ycyin.eu.org/#/Java/Java线程/Thread和Object中线程相关的重要方法)时对`notify()`和`wait()`的相关用法记录。
 
 ## 方法一：使用同步锁
 

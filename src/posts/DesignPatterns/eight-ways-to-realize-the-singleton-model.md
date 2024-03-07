@@ -9,7 +9,7 @@ tag:
 category: 设计模式
 ---
 
-> 本篇是在学习[Java内存模型 (ladybug.top)](https://notes.ladybug.top/#/Java/Java线程/Java内存模型)时对JMM的实例记录。
+> 本篇是在学习[Java内存模型 (ycyin.eu.org)](https://notes.ycyin.eu.org/#/Java/Java线程/Java内存模型)时对JMM的实例记录。
 
 以下记录了八种实现单例模式的方式，这多种方法中有的<span style="color:green">推荐使用</span>、有的虽然不存在线程安全问题但是效率比较低<span style="color:orange">可以使用但不推荐</span>、有的则存在线程安全问题不可使用。
 

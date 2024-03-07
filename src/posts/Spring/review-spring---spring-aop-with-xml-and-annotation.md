@@ -10,11 +10,11 @@ category: Spring
 
 ## 前言
 
-上一篇学习了Spring AOP及其基本原理：[重温Spring---AOP动态代理和Spring AOP及其基本原理 | 敲代码的小松鼠 (ladybug.top)](https://ladybug.top/Spring/review-spring---aop-and-spring-aop)，本篇旨在记录基于XML和注解Spring AOP的方式。
+上一篇学习了Spring AOP及其基本原理：[重温Spring---AOP动态代理和Spring AOP及其基本原理 | 敲代码的小松鼠 (ycyin.eu.org)](https://ycyin.eu.org/Spring/review-spring---aop-and-spring-aop)，本篇旨在记录基于XML和注解Spring AOP的方式。
 
 ## 基础代码准备
 
-使用之前有的代码，一个有Service层和DAO层的增删改查例子，之前我们[通过基于JDK的动态代理实现了事务管理](https://ladybug.top/Spring/review-spring---aop-and-spring-aop#servie-proxy)，这次使用Spring AOP来实现。
+使用之前有的代码，一个有Service层和DAO层的增删改查例子，之前我们[通过基于JDK的动态代理实现了事务管理](https://ycyin.eu.org/Spring/review-spring---aop-and-spring-aop#servie-proxy)，这次使用Spring AOP来实现。
 
 ### pom.xml依赖包
 
