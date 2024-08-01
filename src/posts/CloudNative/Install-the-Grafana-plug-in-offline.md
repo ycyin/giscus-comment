@@ -36,13 +36,13 @@ $ unzip grafana-piechart-panel-1.6.2.zip -d YOUR_PLUGIN_DIR/grafana-piechart-pan
 
 **确认挂载的Grafana插件卷目录**
 ```bash
-$ kubectl get pod grafana-557846c649-46xcc -n gtp-metric -o yaml | grep mount
+$ kubectl get pod grafana-557846c649-46xcc -n my-metric -o yaml | grep mount
     - mountPath: /etc/grafana/grafana.ini
     - mountPath: /var/lib/grafana
     - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
     - mountPath: /var/lib/grafana
     - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-$ kubectl exec -it -n gtp-metric grafana-557846c649-46xcc -- cat /etc/grafana/grafana.ini
+$ kubectl exec -it -n my-metric grafana-557846c649-46xcc -- cat /etc/grafana/grafana.ini
 ...
 [paths]
 data = /var/lib/grafana/data
@@ -56,9 +56,9 @@ provisioning = /etc/grafana/provisioning
 **复制插件到Grafana插件卷目录**
 
 ```bash
-$ kubectl cp /data/grafana-piechart-panel -n gtp-metric grafana-557846c649-46xcc:/var/lib/grafana/plugins/
+$ kubectl cp /data/grafana-piechart-panel -n my-metric grafana-557846c649-46xcc:/var/lib/grafana/plugins/
 
-$ kubectl exec -it -n gtp-metric grafana-557846c649-46xcc -- ls /var/lib/grafana/plugins
+$ kubectl exec -it -n my-metric grafana-557846c649-46xcc -- ls /var/lib/grafana/plugins
 grafana-piechart-panel
 
 ```
@@ -66,7 +66,7 @@ grafana-piechart-panel
 
 **重启pod**
 ```bash
-$ kubectl get pod grafana-557846c649-46xcc -n gtp-metric -o yaml | kubectl replace --force -f -
+$ kubectl get pod grafana-557846c649-46xcc -n my-metric -o yaml | kubectl replace --force -f -
 ```
 
 至此，离线安装Grafana插件完成，访问Grafana页面的插件页面即可看到刚刚安装的插件。

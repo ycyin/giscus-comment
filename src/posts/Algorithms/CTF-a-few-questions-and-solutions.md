@@ -153,7 +153,7 @@ def pojie_zip(path,password,zip):
   #print(path)
   try:
    #若解压成功，则返回True,和密码
-   zip.extractall(path='C:\\Users\\travelskyy\\Desktop\\zipDeep',members=zip.namelist() , pwd=password.encode('ascii'))
+   zip.extractall(path='C:\\Users\\y\\Desktop\\zipDeep',members=zip.namelist() , pwd=password.encode('ascii'))
    print(' ----success!,The password is %s' % password)
    zip.close()
    return True
@@ -165,14 +165,14 @@ def pojie_zip(path,password,zip):
   
 def get_pass():
  #压缩文件的路径
- path = r'C:\\Users\\travelskyy\\Desktop\\zipDeep\\1024.zip'
+ path = r'C:\\Users\\y\\Desktop\\zipDeep\\1024.zip'
  print('正在尝试解压 %s'% path)
  for i in range(2048): 
    zip = zipfile.ZipFile(path, "r",zipfile.zlib.DEFLATED)
    #print(zip.namelist())
    #print(zip.namelist()[0][0:4])
    #密码字典的路径
-   passPath='C:\\Users\\travelskyy\\Desktop\\zipDeep\\passwd.txt'
+   passPath='C:\\Users\\y\\Desktop\\zipDeep\\passwd.txt'
    passFile=open(passPath,'r')
    for line in passFile.readlines():
     password=line.strip('\n')
